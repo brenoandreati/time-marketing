@@ -53,7 +53,7 @@ Se a loja tiver horário fixo, vale trocar uma linha por ele (ex.: "🕘 Seg a s
 
 O Instagram só deixa trocar o nome 2 vezes a cada 14 dias.
 
-## Destaques (nesta ordem, capas verdes #427D49 com ícone dourado)
+## Destaques (nesta ordem, capas verde #254A29 com ícone rosa #FF9EBF ou dourado #EFA800)
 1. **A Loja**: fachada, inauguração, endereço e como chegar
 2. **Novidades**: o que acabou de chegar
 3. **Semijoias**: brincos, colares, anéis

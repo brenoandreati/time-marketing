@@ -5,4 +5,4 @@ Público: mulheres da região que gostam de acessórios e make (a marca chama de
 Ação desejada: chamar no WhatsApp, visitar a loja
 Tom: carinhosa, próxima, de amiga | Uso: "Oi amiga!" | Evito: (não informado)
 Palavra-chave → entregável: não tem
-Cor: #427D49 (verde do logo)
+Cor: #254A29 (verde) · rosa #FF9EBF · sombra magenta #A42B61 · dourado #EFA800 (tiradas do logo oficial)

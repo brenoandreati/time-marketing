@@ -1,0 +1,14 @@
+{
+  "arroba": "@suamarca",
+  "cor": "#E5484D",
+  "tema": "escuro",
+  "slides": [
+    {"tipo": "capa", "titulo": "5 erros que *afastam cliente* do seu perfil", "sub": "o 3º quase todo mundo comete"},
+    {"tipo": "texto", "rotulo": "Erro 1", "titulo": "Bio que fala de *você*, não do cliente", "texto": "“Apaixonada por café e por pessoas” não diz o que você resolve. Troque por: quem você ajuda + o resultado + como chamar."},
+    {"tipo": "texto", "rotulo": "Erro 2", "titulo": "Post sem *gancho* na primeira linha", "texto": "Quem rola o feed decide em um segundo. Se a primeira frase não prende, o resto nem é lido."},
+    {"tipo": "texto", "rotulo": "Erro 3", "titulo": "Pedir pra seguir *antes* de entregar", "texto": "Pedido no começo afasta quem ainda não confia em você. Entregue primeiro. Peça no final."},
+    {"tipo": "texto", "rotulo": "Erro 4", "titulo": "Responder comentário só com *“obrigado!”*", "texto": "Cada comentário é uma conversa começando. Responda com uma pergunta e leve pro direct quem pediu alguma coisa."},
+    {"tipo": "lista", "rotulo": "Erro 5", "titulo": "Destaques que *ninguém abre*", "itens": ["Quem eu sou e pra quem é", "Provas: resultados e depoimentos", "Como comprar ou agendar"]},
+    {"tipo": "cta", "titulo": "Salva pra revisar *o seu perfil* hoje", "texto": "E manda pra quem precisa ouvir isso."}
+  ]
+}

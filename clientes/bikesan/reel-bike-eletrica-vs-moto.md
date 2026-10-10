@@ -1,47 +1,50 @@
-# Reel: bike elétrica vs. moto
-Duração ~40 s · Formato: pessoa da loja falando pra câmera + cortes de bike e moto · Objetivo: venda (visita à loja)
+# Reel: bike elétrica × moto, o placar
+Duração ~42 s · Formato: vendedor da Bikesan falando pra câmera + placar na tela que vai atualizando a cada rodada · Objetivo: venda (visita à loja)
 
-> Roteiro adaptado de uma referência (Multibike). As falas foram mantidas quase iguais. Só mudei a ordem de uma frase: o "na moto, isso não é opcional" agora vem logo depois de habilitação/IPVA/emplacamento, que é do que ele fala.
+> Versão própria da Bikesan. O tema é o mesmo da referência (bike elétrica vale mais que moto), mas a estrutura, o gancho e as falas são novos: o vídeo vira uma disputa de 4 rodadas com placar.
 
 ## Gancho escolhido
-Fala: "Hoje eu vou te provar por que ter uma bike elétrica é melhor do que uma moto." | Tela: BIKE ELÉTRICA × MOTO | Imagem: tela dividida, de um lado a moto parada no trânsito e do outro a bike andando na ciclovia
-Por quê: é o gancho do roteiro original. A tela dividida mostra a comparação antes da explicação, e quem tem moto ou pensa em comprar uma fica pra ver.
-Alternativas: 1) "Você não precisa de uma moto." (tensão)  2) "Quanto você gastou de gasolina esse mês?" (pergunta que dói)
+Fala: "Não compra moto antes de ver esse placar." | Tela: BIKE ELÉTRICA 0 × 0 MOTO | Imagem: vendedor segurando um capacete de moto numa mão e apoiando a outra numa bike elétrica
+Por quê: o placar cria uma disputa, e quem começa a ver quer saber o resultado final. Isso segura o público até o fim, onde está o CTA.
+Alternativas: 1) "Quanto sua moto te custa por mês, sem contar a parcela?" (pergunta que dói)  2) "Sete da manhã, trânsito parado, e você de moto no meio dos carros." (cena com detalhe)
 
 ## Roteiro
 | # | Tempo | Na tela (imagem/ação) | Texto na tela | Fala |
 |---|-------|-----------------------|---------------|------|
-| 1 | 0–4 s | Tela dividida: moto no trânsito × bike na ciclovia → corta pra pessoa na loja, ao lado de uma bike | BIKE ELÉTRICA × MOTO | "Hoje eu vou te provar por que ter uma bike elétrica é melhor do que uma moto." |
-| 2 | 4–8 s | Moto passando entre carros, trânsito pesado | MOTO: MAIS RISCO NA VIA | "Com a moto, você anda pelas vias com maior risco de acidente." |
-| 3 | 8–12 s | Bike elétrica andando tranquila na ciclovia | BIKE: CICLOVIA | "Já com a bike elétrica, você anda pelas ciclovias com mais segurança." |
-| 4 | 12–17 s | Pessoa na loja contando nos dedos; cada item aparece riscado na tela | ~~HABILITAÇÃO~~ ~~IPVA~~ ~~PLACA~~ | "Sem habilitação, sem precisar pagar IPVA e sem emplacamento. Na moto, isso não é opcional." |
-| 5 | 17–20 s | Cliente saindo da loja já pedalando a bike | COMPRA HOJE, ANDA HOJE | "Aqui, você compra hoje e anda hoje." |
-| 6 | 20–22 s | Volta pra pessoa, mais perto da câmera, tom de quem vai contar um segredo | E o bolso? | "E por mais que sua moto seja econômica…" |
-| 7 | 22–27 s | Bomba de gasolina / painel da moto → bike na tomada carregando | GASOLINA DO MÊS = PARCELA DA BIKE | "o que você gasta de combustível no mês paga a parcela da sua bike elétrica." |
-| 8 | 27–31 s | Cortes rápidos de peças de moto: troca de óleo, embreagem, oficina | ÓLEO · EMBREAGEM · MECÂNICA · ELÉTRICA | "A moto tem óleo, embreagem, parte mecânica e parte elétrica." |
-| 9 | 31–34 s | Mecânico da Bikesan fazendo revisão rápida na bike | BIKE: UMA REVISÃO E PRONTO | "Na bike, uma simples revisão resolve." |
-| 10 | 34–40 s | Fachada da Bikesan / pessoa apontando pra bike na loja | Bikesan · endereço ou link na bio | "Pra garantir a sua é muito mais simples: procure a Bikesan mais próxima de você." |
+| 1 | 0–3 s | Vendedor com capacete de moto numa mão, a outra apoiada na bike elétrica | BIKE ELÉTRICA 0 × 0 MOTO | "Não compra moto antes de ver esse placar." |
+| 2 | 3–5 s | Vendedor larga o capacete no balcão | 4 RODADAS | "Bike elétrica contra moto. Quatro rodadas." |
+| 3 | 5–11 s | Mão mostrando carteira de habilitação, placa de moto, boleto → corta pra bike, sem nada disso | RODADA 1 · PAPELADA → placar 1 × 0 | "Primeira: papelada. Moto pede habilitação, placa e IPVA todo ano. Bike elétrica não pede nada disso." |
+| 4 | 11–16 s | Moto espremida entre carros e ônibus → bike andando solta na ciclovia | RODADA 2 · CAMINHO → placar 2 × 0 | "Segunda: por onde você anda. A moto disputa espaço com carro e ônibus. A bike vai pela ciclovia, longe deles." |
+| 5 | 16–19 s | Moto parando no posto, bomba rodando | RODADA 3 · BOLSO | "Terceira: o bolso. A moto vive no posto." |
+| 6 | 19–23 s | Bike carregando numa tomada comum de casa | GASOLINA DO MÊS = PARCELA DA BIKE → placar 3 × 0 | "A bike carrega na tomada de casa, e o que iria de gasolina no mês paga a parcela dela." |
+| 7 | 23–26 s | Volta pro vendedor, mais perto da câmera, tom de segredo | A rodada que ninguém conta… | "Agora, a rodada que ninguém conta antes de comprar." |
+| 8 | 26–31 s | Cortes rápidos: troca de óleo, vela, embreagem, oficina de moto → mecânico da Bikesan fazendo revisão na bike | RODADA 4 · MANUTENÇÃO → placar 4 × 0 | "Manutenção. Moto é óleo, vela, embreagem, kit relação… Na bike, uma revisão simples e pronto." |
+| 9 | 31–36 s | Placar final grande na tela; cliente saindo da loja pedalando | 4 × 0 · SAI PEDALANDO HOJE | "Quatro a zero. E você ainda sai da loja pedalando no mesmo dia." |
+| 10 | 36–42 s | Fachada da Bikesan / vendedor apontando pras bikes na loja | Bikesan · endereço ou link na bio | "Passa na Bikesan e escolhe a sua." |
 
 ## Trilha
-Batida eletrônica urbana, animada, ~105 BPM. Fica baixa nas falas, corta por 1 s no "E o bolso?" (cena 6) e volta mais forte na comparação de gastos.
+Batida eletrônica com clima de competição, ~110 BPM. Um som curto de "ponto" (apito ou placar virando) a cada rodada ganha. A música corta no "Agora, a rodada que ninguém conta" (cena 7) e volta mais forte no 4 × 0.
 Pra usar áudio em alta: ao escolher o áudio do Reel no Instagram, procure os marcados com a seta de tendência.
 
 ## Capa
-"Bike elétrica ou moto?" · quadro: a tela dividida da cena 1 (moto no trânsito × bike na ciclovia)
+"Bike elétrica 4 × 0 moto" · quadro: o placar final da cena 9, com o vendedor ao lado da bike
 
 ## CTA
-"Procure a Bikesan mais próxima de você." Se a Bikesan tiver uma loja só, troque por "Vem pra Bikesan" e coloque o endereço na tela.
+"Passa na Bikesan e escolhe a sua." (coloque o endereço na tela ou confirme que ele está na bio)
 
 ## Checklist de gravação
-- Externas antes: moto no trânsito, bike na ciclovia, bike carregando na tomada, revisão na oficina da loja. Use moto de alguém da equipe ou banco de imagens, nunca de cliente sem autorização.
-- Fala na loja: celular na altura do peito, luz de frente (porta ou janela) e uma bike aparecendo no quadro.
-- Antes de postar, confirme dois pontos: (1) os modelos que aparecem são bicicleta elétrica ou autopropelido dentro da regra do Contran (até 32 km/h), porque só assim valem "sem habilitação, sem IPVA, sem placa" e o uso da ciclovia (ciclomotor exige habilitação e placa); (2) a parcela da bike na loja fica mesmo na faixa do gasto mensal de combustível de uma moto.
+- Placar sempre no mesmo lugar, no topo da tela, longe da legenda e dos botões do Instagram (lado direito e rodapé).
+- Externas antes: moto no trânsito, moto no posto, bike na ciclovia, bike carregando na tomada, revisão na oficina da loja. Use moto de alguém da equipe ou banco de imagens, nunca de cliente sem autorização.
+- Fala na loja: celular na altura do peito, luz de frente (porta ou janela) e bikes aparecendo no fundo.
+- Antes de postar, confirme três coisas: (1) os modelos que aparecem são bicicleta elétrica ou autopropelido dentro da regra do Contran (até 32 km/h), porque só assim valem "sem habilitação, placa e IPVA" e o uso da ciclovia; (2) a parcela da bike fica mesmo na faixa do gasto mensal de gasolina de uma moto; (3) tem estoque pra cumprir o "sai pedalando no mesmo dia".
 - Grave cada fala 2 vezes e ligue a legenda automática (muita gente assiste no mudo).
 
 ## Fala completa (pra ler no teleprompter)
-Hoje eu vou te provar por que ter uma bike elétrica é melhor do que uma moto.
-Com a moto, você anda pelas vias com maior risco de acidente. Já com a bike elétrica, você anda pelas ciclovias com mais segurança.
-Sem habilitação, sem precisar pagar IPVA e sem emplacamento. Na moto, isso não é opcional. Aqui, você compra hoje e anda hoje.
-E por mais que sua moto seja econômica, o que você gasta de combustível no mês paga a parcela da sua bike elétrica.
-A moto tem óleo, embreagem, parte mecânica e parte elétrica. Na bike, uma simples revisão resolve.
-Pra garantir a sua é muito mais simples: procure a Bikesan mais próxima de você.
+Não compra moto antes de ver esse placar.
+Bike elétrica contra moto. Quatro rodadas.
+Primeira: papelada. Moto pede habilitação, placa e IPVA todo ano. Bike elétrica não pede nada disso.
+Segunda: por onde você anda. A moto disputa espaço com carro e ônibus. A bike vai pela ciclovia, longe deles.
+Terceira: o bolso. A moto vive no posto. A bike carrega na tomada de casa, e o que iria de gasolina no mês paga a parcela dela.
+Agora, a rodada que ninguém conta antes de comprar. Manutenção. Moto é óleo, vela, embreagem, kit relação… Na bike, uma revisão simples e pronto.
+Quatro a zero. E você ainda sai da loja pedalando no mesmo dia.
+Passa na Bikesan e escolhe a sua.

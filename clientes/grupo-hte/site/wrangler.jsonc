@@ -2,7 +2,5 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "hte-heat-exchange",
   "compatibility_date": "2026-10-09",
-  "assets": {
-    "directory": "./public"
-  }
+  "pages_build_output_dir": "./public"
 }

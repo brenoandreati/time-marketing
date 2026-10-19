@@ -37,7 +37,7 @@
   --hot-light: #ff6a83;
   --cold: #1d4ed8;
   --cold-light: #86a6ff;
-  --heat: linear-gradient(90deg, #1d4ed8 0%, #6e3db4 38%, #b02a78 68%, #e0173f 100%);
+  --heat: linear-gradient(90deg, #0e59e8 0%, #742fed 45%, #b5328b 70%, #ee343a 100%);
 
   --on-ink: #e8edf6;
   --on-ink-muted: #9ca8c1;
@@ -312,33 +312,17 @@ a {
   min-height: var(--topbar-h);
 }
 
+/* Logo oficial: o "HTE" leva o degradê da marca, o "Heat Exchange" segue a cor do texto */
 .brand {
   display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  line-height: 1;
-  color: var(--ink);
-  text-decoration: none;
+  flex: none;
+  color: #0e0e0e;
 }
 
-.brand__mark {
-  font-size: 1.85rem;
-  font-weight: 820;
-  font-stretch: 125%;
-  letter-spacing: 0.02em;
-}
-
-.brand__e {
-  color: var(--hot);
-}
-
-.brand__sub {
-  margin-top: 4px;
-  font-family: var(--mono);
-  font-size: 0.56rem;
-  font-weight: 500;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
+.brand__logo {
+  width: 104px;
+  height: auto;
+  aspect-ratio: 2000 / 1076;
 }
 
 .nav {
@@ -1203,8 +1187,8 @@ a {
   color: #fff;
 }
 
-.brand--light .brand__e {
-  color: var(--hot-light);
+.brand--light .brand__logo {
+  width: 132px;
 }
 
 .footer__nav {

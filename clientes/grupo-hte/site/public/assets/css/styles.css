@@ -439,7 +439,7 @@ a {
 
 .hero__title {
   margin-top: 1.4rem;
-  font-size: clamp(2.1rem, 1.2rem + 2.9vw, 3.6rem);
+  font-size: clamp(2rem, 1.15rem + 2.6vw, 3.3rem);
   font-weight: 780;
   font-stretch: 116%;
   line-height: 1.02;
@@ -893,6 +893,9 @@ a {
 
 .products,
 .valves,
+.instruments,
+.steamline,
+.maker__note,
 .maker > .link-arrow {
   grid-column: 1 / -1;
 }
@@ -982,6 +985,252 @@ a {
   text-anchor: middle;
 }
 
+/* Índice das marcas */
+
+.makers-index {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.makers-index__item {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  column-gap: 0.9rem;
+  align-items: center;
+  padding: 1.1rem 1.15rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.makers-index__item:hover {
+  border-color: var(--ink);
+  transform: translateY(-2px);
+}
+
+.makers-index__glyph {
+  grid-row: 1 / 3;
+  width: 44px;
+  height: 44px;
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke 0.2s ease;
+}
+
+.makers-index__item:hover .makers-index__glyph {
+  stroke: var(--hot);
+}
+
+.makers-index__tag {
+  fill: var(--ink);
+  stroke: none;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  font-weight: 500;
+  text-anchor: middle;
+}
+
+.makers-index__name {
+  font-size: 1.08rem;
+  font-weight: 740;
+  font-stretch: 115%;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.makers-index__field {
+  margin-top: 0.2rem;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  line-height: 1.4;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--slate);
+}
+
+.maker__name--long {
+  font-size: clamp(2.1rem, 1.2rem + 3.2vw, 3.8rem);
+}
+
+.inline-link {
+  color: var(--ink);
+  font-weight: 650;
+  text-decoration-color: var(--hot);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.inline-link:hover {
+  color: var(--hot);
+}
+
+.maker__note {
+  margin-top: -1rem;
+  max-width: 62em;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  line-height: 1.6;
+  color: var(--slate);
+}
+
+/* Endress+Hauser: etiquetas ISA */
+
+.instruments {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.instrument {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  min-height: 80px;
+  padding: 0.85rem 1rem;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.instrument__tag {
+  flex: none;
+  width: 48px;
+  height: 48px;
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.6;
+}
+
+.instrument__tag text {
+  fill: var(--ink);
+  stroke: none;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 500;
+  text-anchor: middle;
+}
+
+.instrument__name {
+  font-weight: 600;
+  font-size: 0.98rem;
+  line-height: 1.25;
+}
+
+/* Spirax Sarco: linha de vapor */
+
+.steamline {
+  padding: 1.75rem 1.25rem 1.25rem;
+  background: #f5f7f9;
+  border-radius: 8px;
+}
+
+.steamline__nodes {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  padding: 0;
+  list-style: none;
+}
+
+.node {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  padding-inline: 0.25rem;
+  text-align: center;
+}
+
+.node__icon {
+  position: relative;
+  z-index: 1;
+  flex: none;
+  width: 56px;
+  height: 56px;
+  padding: 5px;
+  background: var(--paper);
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.node__solid {
+  fill: var(--ink);
+  stroke: none;
+}
+
+.node__dash {
+  stroke-dasharray: 3 3;
+}
+
+.node__name {
+  font-size: 0.84rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+/* Conector até o item anterior: vapor (quente), vapor depois da redutora (mais espaçado) e condensado (frio) */
+.node + .node::before {
+  content: "";
+  position: absolute;
+  top: 26.5px;
+  left: calc(-50% + 28px);
+  right: calc(50% + 28px);
+  height: 3px;
+  background: repeating-linear-gradient(90deg, var(--hot) 0 8px, transparent 8px 14px) 0 0 / 14px 3px;
+  animation: steam-x 0.6s linear infinite;
+}
+
+.node + .node--lp::before {
+  background-image: repeating-linear-gradient(90deg, var(--hot) 0 6px, transparent 6px 20px);
+  background-size: 20px 3px;
+  animation-name: steam-x-lp;
+}
+
+.node + .node--cond::before {
+  background-image: repeating-linear-gradient(90deg, var(--cold) 0 8px, transparent 8px 14px);
+  animation-duration: 1.1s;
+}
+
+@keyframes steam-x {
+  to {
+    background-position: 14px 0;
+  }
+}
+
+@keyframes steam-x-lp {
+  to {
+    background-position: 20px 0;
+  }
+}
+
+.steamline__caption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.25rem;
+  margin-top: 1.5rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--slate);
+}
+
 /* Serviços */
 
 .works {
@@ -1033,25 +1282,249 @@ a {
   background: var(--hot-light);
 }
 
-.services {
+/* Calibração e manutenção: transmissor em 3D */
+
+.lab,
+.skid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 2rem clamp(2rem, 5vw, 4rem);
+  align-items: center;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  background: var(--ink-raised);
+  border: 1px solid var(--ink-line);
+  border-radius: 12px;
+}
+
+.lab {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.lab__stage {
+  position: relative;
+  aspect-ratio: 1 / 1.04;
+  overflow: hidden;
+  border-radius: 10px;
+  background:
+    radial-gradient(60% 50% at 50% 40%, rgba(14, 89, 232, 0.3), transparent 72%),
+    radial-gradient(45% 35% at 28% 72%, rgba(238, 52, 58, 0.16), transparent 70%),
+    #0a1531;
+}
+
+.lab__poster,
+.lab__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.lab__poster {
+  object-fit: cover;
+  transition: opacity 0.6s ease;
+}
+
+.lab__canvas {
+  cursor: grab;
+}
+
+.lab__canvas:active {
+  cursor: grabbing;
+}
+
+.lab__stage.is-ready .lab__poster {
+  opacity: 0;
+}
+
+.lab__label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-flex;
+  align-items: center;
+  --lead: 64px;
+  translate: 0 -50%;
+  padding-left: calc(var(--lead) + 10px);
+  background: linear-gradient(var(--on-ink-muted), var(--on-ink-muted)) 0 50% / var(--lead) 1px no-repeat;
+  text-shadow: 0 1px 8px rgba(10, 21, 49, 0.9);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--on-ink);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lab__label::before {
+  content: "";
+  position: absolute;
+  left: -3.5px;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  margin-top: -3.5px;
+  border-radius: 50%;
+  background: var(--hot-light);
+  box-shadow: 0 0 0 4px rgba(255, 106, 131, 0.2);
+}
+
+/* A linha-guia leva a legenda para fora da silhueta do instrumento */
+.lab__label--housing {
+  --lead: 116px;
+}
+
+.lab__label--left {
+  translate: -100% -50%;
+  padding-left: 0;
+  padding-right: calc(var(--lead) + 10px);
+  background-position: 100% 50%;
+}
+
+.lab__label--left::before {
+  left: auto;
+  right: -3.5px;
+}
+
+.lab__stage.is-ready .lab__label {
+  opacity: 1;
+}
+
+.lab__stage.is-ready .lab__label.is-hidden {
+  opacity: 0;
+}
+
+.lab__hint {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--ink-line);
+  border-radius: 999px;
+  background: rgba(13, 26, 58, 0.6);
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--on-ink-muted);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.lab__stage.is-ready .lab__hint {
+  opacity: 1;
+}
+
+.lab__stage.is-touched .lab__hint {
+  opacity: 0;
+}
+
+.lab__kicker {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--hot-light);
+}
+
+.lab__title {
+  margin-top: 0.6rem;
+  font-size: clamp(1.6rem, 1.1rem + 1.5vw, 2.2rem);
+  font-weight: 760;
+  font-stretch: 120%;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: #fff;
+  text-wrap: balance;
+}
+
+.lab__lead {
+  margin-top: 1rem;
+  font-size: 1.06rem;
+  color: var(--on-ink-muted);
+}
+
+.lab__item {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--ink-line);
+}
+
+.lab__item-title {
+  font-size: 1.12rem;
+  font-weight: 700;
+  font-stretch: 112%;
+  color: #fff;
+}
+
+.lab__item p {
+  margin-top: 0.4rem;
+  color: var(--on-ink-muted);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
   padding: 0;
   list-style: none;
 }
 
-.service {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 2rem 1.75rem 1.75rem;
-  background: var(--ink-raised);
+.tags li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.75rem 0.3rem 0.3rem;
   border: 1px solid var(--ink-line);
-  border-radius: 8px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 550;
 }
 
-.service__title {
+.tags__code {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 1.4px solid var(--cold-light);
+  border-radius: 50%;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.lab__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.btn--line-light {
+  border-color: rgba(255, 255, 255, 0.45);
+  color: #fff;
+}
+
+.btn--line-light:hover {
+  background: #fff;
+  color: var(--ink);
+}
+
+/* Skids: esquema P&ID */
+
+.skid {
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+  margin-top: 1rem;
+}
+
+.skid__title {
   font-size: 1.45rem;
   font-weight: 740;
   font-stretch: 120%;
@@ -1060,14 +1533,100 @@ a {
   color: #fff;
 }
 
-.service__text {
+.skid__text {
   margin-top: 0.75rem;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
   color: var(--on-ink-muted);
 }
 
-.service .link-arrow {
-  margin-top: auto;
+.skid__scroll {
+  overflow-x: auto;
+}
+
+.skid__diagram {
+  width: 100%;
+  min-width: 520px;
+  height: auto;
+}
+
+.skid__frame {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.28);
+  stroke-width: 1.5;
+  stroke-dasharray: 8 6;
+}
+
+.skid__label {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  fill: var(--on-ink-muted);
+}
+
+.skid__label--panel {
+  text-anchor: middle;
+  fill: var(--on-ink);
+}
+
+.skid__panel {
+  fill: rgba(255, 255, 255, 0.04);
+  stroke: rgba(255, 255, 255, 0.55);
+  stroke-width: 1.4;
+}
+
+.skid__signal {
+  fill: none;
+  stroke: var(--cold-light);
+  stroke-width: 1.3;
+  stroke-dasharray: 4 4;
+}
+
+.skid__pipe,
+.skid__flow {
+  fill: none;
+  stroke-width: 2.2;
+}
+
+.skid__pipe {
+  stroke: rgba(255, 255, 255, 0.7);
+}
+
+.skid__flow {
+  stroke: var(--hot-light);
+  stroke-dasharray: 10 22;
+  animation: flow-skid 1.3s linear infinite;
+}
+
+@keyframes flow-skid {
+  to {
+    stroke-dashoffset: -32;
+  }
+}
+
+.skid__symbol {
+  fill: var(--ink-raised);
+  stroke: #fff;
+  stroke-width: 1.6;
+  stroke-linejoin: round;
+}
+
+.skid__tag {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  text-anchor: middle;
+  fill: #fff;
+  stroke: none;
+}
+
+.skid__caption {
+  margin-top: 0.75rem;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--on-ink-muted);
 }
 
 /* Segmentos */
@@ -1396,6 +1955,123 @@ a {
 
   .contact__copy .btn {
     width: 100%;
+  }
+}
+
+@media (max-width: 960px) {
+  .makers-index {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lab,
+  .skid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .lab__stage {
+    aspect-ratio: auto;
+    height: clamp(360px, 92vw, 540px);
+  }
+
+  .steamline__nodes {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .node {
+    flex-direction: row;
+    gap: 1rem;
+    min-height: 76px;
+    padding: 10px 0;
+    text-align: left;
+  }
+
+  .node + .node::before {
+    top: -10px;
+    left: 26.5px;
+    right: auto;
+    width: 3px;
+    height: 20px;
+    background: repeating-linear-gradient(180deg, var(--hot) 0 8px, transparent 8px 14px) 0 0 / 3px 14px;
+    animation-name: steam-y;
+  }
+
+  .node + .node--lp::before {
+    background-image: repeating-linear-gradient(180deg, var(--hot) 0 6px, transparent 6px 20px);
+    background-size: 3px 20px;
+    animation-name: steam-y-lp;
+  }
+
+  .node + .node--cond::before {
+    background-image: repeating-linear-gradient(180deg, var(--cold) 0 8px, transparent 8px 14px);
+  }
+
+  .node__name {
+    font-size: 0.95rem;
+  }
+}
+
+@keyframes steam-y {
+  to {
+    background-position: 0 14px;
+  }
+}
+
+@keyframes steam-y-lp {
+  to {
+    background-position: 0 20px;
+  }
+}
+
+@media (max-width: 720px) {
+  .instruments {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .makers-index {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .instrument {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.85rem 0.9rem 1rem;
+  }
+
+  .maker__note {
+    margin-top: -0.5rem;
+  }
+
+  .lab__actions .btn {
+    width: 100%;
+  }
+
+  .lab__label {
+    --lead: 36px;
+    max-width: calc(var(--lead) + 10px + 6.5em);
+    font-size: 0.6rem;
+    line-height: 1.35;
+    letter-spacing: 0.04em;
+    white-space: normal;
+  }
+
+  .lab__label--housing {
+    --lead: 62px;
+  }
+
+  .makers-index__item {
+    padding: 0.85rem 1rem;
+  }
+
+  .skid__scroll {
+    -webkit-mask-image: linear-gradient(90deg, #000 82%, transparent);
+    mask-image: linear-gradient(90deg, #000 82%, transparent);
+  }
+
+  .skid__diagram {
+    min-width: 600px;
   }
 }
 

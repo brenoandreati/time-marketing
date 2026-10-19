@@ -1,0 +1,13 @@
+{
+  "name": "hte-heat-exchange-site",
+  "private": true,
+  "scripts": {
+    "build:3d": "esbuild src/instrument3d.js --bundle --minify --format=esm --target=es2020 --outfile=public/assets/js/instrument3d.js"
+  },
+  "dependencies": {
+    "three": "0.180.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.10"
+  }
+}

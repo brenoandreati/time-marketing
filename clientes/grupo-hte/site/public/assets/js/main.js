@@ -66,4 +66,21 @@
   document.querySelectorAll("[data-year]").forEach((el) => {
     el.textContent = new Date().getFullYear();
   });
+
+  // Transmissor 3D: só baixa o Three.js quando a seção está perto da tela.
+  // Sem WebGL (ou sem JS), fica a imagem estática do mesmo modelo.
+  const stage = document.querySelector("[data-stage]");
+  if (stage && "IntersectionObserver" in window) {
+    const lazy = new IntersectionObserver(
+      (entries) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+        lazy.disconnect();
+        import("./instrument3d.js")
+          .then((module) => module.mount(stage))
+          .catch(() => {});
+      },
+      { rootMargin: "600px 0px" }
+    );
+    lazy.observe(stage);
+  }
 })();

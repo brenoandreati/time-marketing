@@ -1,4 +1,4 @@
-# Reel: Prazer, KGR Auto Mecânica
+# Reel: Apresentação KGR Auto Mecânica
 Duração ~52 s · Formato: dono falando pra câmera + cenas da oficina · Objetivo: apresentar a oficina e gerar contato no WhatsApp
 
 > Assumido: quem fala é o dono (ou o mecânico-chefe) e o vídeo fica fixado no perfil. Se ninguém quiser aparecer, as falas funcionam como narração em off sobre as mesmas cenas.
@@ -12,8 +12,8 @@ Alternativas: 1) "Peça trocada no chute é o conserto mais caro que existe." (t
 | # | Tempo | Na tela (imagem/ação) | Texto na tela | Fala |
 |---|-------|-----------------------|---------------|------|
 | 1 | 0–3 s | Close no painel: luz da injeção acesa, som do motor falhando | TROCOU PEÇA E NÃO RESOLVEU? | "Trocou peça, pagou caro e o defeito continuou?" |
-| 2 | 3–8 s | Corte seco: dono de frente, uniforme da KGR, carro no elevador atrás | KGR AUTO MECÂNICA · VILA VELHA-ES | "Isso tem nome: peça trocada no chute. Prazer, KGR Auto Mecânica." |
-| 3 | 8–14 s | Mão conectando o scanner no carro → tela do tablet com os dados | PRIMEIRO, O DIAGNÓSTICO | "Aqui o conserto começa no diagnóstico. Primeiro a gente acha o defeito, depois troca a peça." |
+| 2 | 3–8 s | Corte seco: dono de frente, uniforme da KGR, carro no elevador atrás. Pausa curta antes do "Era o diagnóstico." | O PROBLEMA NÃO ERA A PEÇA | "Então o problema não era a peça. Era o diagnóstico." |
+| 3 | 8–14 s | Dono conecta o scanner no carro → tela do tablet com os dados | KGR AUTO MECÂNICA · VILA VELHA-ES | "Aqui na KGR Auto Mecânica, a gente acha o defeito primeiro. A peça vem depois." |
 | 4 | 14–22 s | Montagem, um corte a cada ~2 s: troca de óleo · suspensão no elevador · injeção (bico/scanner) · bloco do motor aberto | REVISÃO → SUSPENSÃO → INJEÇÃO ELETRÔNICA → MOTOR (um por corte) | "Revisão, suspensão, injeção eletrônica e motor em geral. Do básico ao serviço pesado." |
 | 5 | 22–25 s | Dono larga a ferramenta e chega mais perto da câmera | NEM TODA OFICINA FAZ ISSO… | "Só que tem um serviço que nem toda oficina faz." |
 | 6 | 25–34 s | Módulo de injeção aberto na bancada; close na placa, multímetro, ferro de solda | REPARO EM MÓDULO DE INJEÇÃO | "Reparo em módulo de injeção. Aquele defeito em que mandam trocar o módulo inteiro, muitas vezes a gente resolve aqui na bancada." |
@@ -24,14 +24,14 @@ Alternativas: 1) "Peça trocada no chute é o conserto mais caro que existe." (t
 ## Trilha
 Rock ou eletrônica instrumental com batida marcada, ~110–120 BPM, clima de garagem.
 - 0–3 s: sem música, só o motor falhando.
-- A música entra no corte do "Prazer, KGR".
+- A música entra no "Era o diagnóstico." e ganha força quando o nome da KGR aparece.
 - Cena 4: cada corte cai na batida, com o som da própria oficina por cima (parafusadeira, elevador, motor).
 - Cena 5 (virada): a música corta seco e volta quando o módulo aparece na bancada.
 - Cena 9: a música para e fica só o motor ligando redondo.
 Sempre bem baixa sob a voz. Pra usar áudio em alta: ao escolher o áudio do Reel no Instagram, procure os marcados com a seta de tendência.
 
 ## Capa
-"Prazer, KGR Auto Mecânica" · quadro: dono de braços cruzados na frente do carro no elevador (cena 2)
+"Conheça a KGR Auto Mecânica" · quadro: dono de braços cruzados na frente do carro no elevador (cena 2)
 Fixe o Reel no perfil no lugar de um dos 3 fixados de hoje: é o primeiro vídeo que quem chega no perfil deve ver.
 
 ## CTA

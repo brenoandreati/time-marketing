@@ -76,7 +76,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--azul)}
 .etapas button{min-height:56px;border-radius:14px;border:2px solid var(--c);background:transparent;color:var(--txt);font-weight:800;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px}
 .etapas button.on{background:var(--c);color:#fff}
 .etapas button.on::before{content:"✓"}
-.seg{display:flex;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:4px;gap:4px;margin-bottom:14px}
+.seg{display:grid;grid-template-columns:1fr 1fr;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:4px;gap:4px;margin-bottom:14px}
 .seg button{flex:1;min-height:44px;border:0;border-radius:10px;background:transparent;font-weight:700;font-size:14px;color:var(--soft);cursor:pointer}
 .seg button.on{background:var(--azul);color:#fff}
 .cardi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px;margin-bottom:10px}
@@ -88,6 +88,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--azul)}
 /* ideias */
 .filtros{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
 .filtros select{padding:10px 32px 10px 12px;font-size:15px}
+ul.regras{margin:0;padding:0 0 0 18px;font-size:14px;color:var(--soft)}ul.regras li{margin-bottom:8px}ul.regras b{color:var(--txt)}
 .chk{display:flex;align-items:center;gap:10px;font-weight:700;font-size:14px;color:var(--soft);margin:6px 0 14px;cursor:pointer}
 .chk input{width:22px;height:22px;accent-color:var(--azul)}
 .ideia{display:block;width:100%;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:8px;cursor:pointer}
@@ -137,7 +138,7 @@ const ETAPAS = [
   ["postado", "Postado", "#22C55E"],
 ];
 const ETAPA = Object.fromEntries(ETAPAS.map(([k, n, c]) => [k, { nome: n, cor: c }]));
-const FORMATOS = [["talking", "Talking head"], ["tela", "Tela"], ["carrossel", "Carrossel"]];
+const FORMATOS = [["talking", "Talking head"], ["td", "Tela dividida"], ["nm", "Narração com motion"], ["carrossel", "Carrossel"]];
 const FORMATO = Object.fromEntries(FORMATOS);
 const FUNIS = ["Topo", "Meio", "Fundo"];
 const CENARIOS = ["Mesa com notebook", "Estúdio", "Carro parado", "Escritório", "Celular na mão", "Gravação de tela"];
@@ -336,7 +337,7 @@ function vPost(p) {
     out += campo("entrega", "Entrega");
     out += campo("fechamento", "Fechamento + CTA");
   }
-  out += campo("naTela", "Na tela", "Textos que aparecem no vídeo");
+  out += campo("naTela", "Na tela e motion", "Textos e animações que aparecem no vídeo");
   out += campo("legenda", "Legenda do post");
   out += datalist("lSerie", "serie") + datalist("lPilar", "pilar");
   out += `<button class="btn perigo full" style="margin-top:20px" data-a="apagarPost">Apagar post</button>`;
@@ -365,6 +366,12 @@ function vMais() {
   <p class="soft" style="font-size:14px;margin:0 0 10px">Cole uma ideia por linha (só o gancho). Depois você pode abrir cada uma e preencher pilar, funil e série.</p>
   <textarea id="colarIdeias" placeholder="Uma ideia por linha"></textarea>
   <button class="btn full" style="margin-top:10px" data-a="colarIdeias">Adicionar ao banco de ideias</button>
+  <div class="secao">Regras de todo post</div>
+  <ul class="regras"><li>Gancho direto no tema, sem "oi, gente" nem apresentação.</li><li>Fala corrida de 40 a 60 s. Cortes e motion ficam para a edição.</li><li>Onde aparecer "(X)", é número que só você tem: preencha antes de gravar.</li><li>Cliente só aparece com autorização, e sem nome se ele não liberar.</li><li>Natal e domingos: só stories. De 28 a 31/12, recesso ou repost dos que mais performaram.</li></ul>
+  <div class="secao">Os 3 formatos</div>
+  <ul class="regras"><li><b>Talking head:</b> você em tela cheia, legenda em frase curta, palavra-chave em destaque. Para opinião, recado, mito, POV, isso ou aquilo.</li><li><b>Tela dividida:</b> você em cima, motion embaixo explicando. Para passo a passo, comparação, tour de sistema, antes e depois.</li><li><b>Narração com motion:</b> seu rosto no gancho e no fechamento; no meio, sua voz sobre o motion. Para prompt digitado, fluxo em etapas, case com números.</li></ul>
+  <div class="secao">Biblioteca de motion</div>
+  <ul class="regras"><li><b>Lower third:</b> nome da série no começo.</li><li><b>Número animado:</b> contador subindo para números reais.</li><li><b>Lista:</b> itens entrando um por um.</li><li><b>Passos:</b> etapas numeradas, a atual acesa em azul.</li><li><b>Comparação:</b> duas colunas, a escolhida acende.</li><li><b>Prompt digitado:</b> texto aparecendo letra por letra, pausa de 3 s no fim.</li><li><b>Carimbo:</b> MITO ou VERDADE batendo na tela.</li><li><b>Chamada final:</b> palavra do CTA grande (SISTEMA, MANUAL, EDIÇÃO, CONTEXTO).</li></ul>
   <div class="secao">Backup</div>
   <p class="soft" style="font-size:14px;margin:0 0 10px">O backup é um arquivo com todos os seus posts e ideias. Baixe de vez em quando e guarde no Drive.</p>
   <div class="pilha"><a class="btn pri full" href="/api/backup" download>Baixar backup</a>

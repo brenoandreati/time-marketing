@@ -1,6 +1,6 @@
 # Planejamento de conteúdo · 23 a 29/11 · Abertura: por que IA agora
 
-Quem eu sou, o que a IA já faz por um negócio pequeno e uma Black Friday sem correria.
+Quem eu sou e o que a IA já faz por um negócio pequeno, do zero.
 
 Mesmo público e regras do mês de dezembro (ver planejamento-30-11-a-27-12.md). Domingo 29/11: só stories.
 
@@ -56,22 +56,23 @@ Talking head · 40 a 60 s · IA no dia a dia · Topo · Estúdio
 
 **Legenda:** A IA erra e fala com a mesma confiança de quando acerta. Ótima para rascunho, mas preço, prazo e regra você confere. Salva para lembrar. #mitoouverdade #ia #chatgpt #dicas
 
-### Terça 24/11 · PROMPT DO DIA · Oferta de Black Friday com IA
+### Terça 24/11 · PROMPT DO DIA · O prompt para responder "tá caro"
 Gravação de tela · 45 a 60 s · Prompt pronto · Meio · Gravação de tela
 
-**Gancho:** Este prompt monta a sua oferta de Black Friday sem cara de desespero.
+**Gancho:** O cliente disse "tá caro"? Este prompt te ajuda a responder sem dar desconto.
 
 **Roteiro:**
-- A Black Friday é sexta, dia 27. Ainda dá tempo.
-- Prompt na tela: "Sou dono de [negócio]. Vou fazer esta oferta de Black Friday: [produto, desconto real, até quando]. Meu cliente é [quem]. Escreva 3 versões: um post para o feed, um texto curto para story e uma mensagem para a lista do WhatsApp. Tom: [o seu]. Não invente desconto nem prazo."
-- Comparativo: "tudo com desconto, corre!" (parece desespero) x oferta clara com produto, desconto e prazo (passa confiança).
-- Virada: "Um pedido só e você tem o feed, o story e o WhatsApp da semana."
+- Identificação: a vontade é baixar o preço na hora para não perder a venda.
+- Prompt na tela: "Sou dono de [negócio]. Um cliente achou caro [produto ou serviço], que custa [valor]. O que está incluso: [lista]. Escreva 3 respostas curtas e educadas, sem oferecer desconto: uma mostrando o que está incluso, uma explicando a diferença para uma opção mais barata e uma oferecendo uma versão menor, se fizer sentido."
+- Mostra as 3 respostas aparecendo.
+- Comparativo: dar desconto na hora (você perde margem e o cliente aprende a pedir) x mostrar o valor (o cliente entende o que está comprando).
+- Virada: "Quem responde 'tá caro' com desconto ensina o cliente a sempre pedir desconto."
 
-**CTA:** Pausa, tira print e monta a sua hoje.
+**CTA:** Pausa, tira print e usa na próxima vez que ouvir "tá caro".
 
-**Na tela:** Prompt digitado. As 3 versões aparecendo. Destaque em "Não invente desconto nem prazo".
+**Na tela:** Prompt digitado. As 3 respostas aparecendo em balões. Destaque em "sem oferecer desconto".
 
-**Legenda:** Black Friday é sexta. Um pedido para a IA e você tem post, story e mensagem para o WhatsApp, com oferta clara e sem cara de desespero. O prompt está no vídeo. #blackfriday #promptdodia #ia #vendas
+**Legenda:** "Tá caro" não precisa virar desconto. A IA te ajuda a mostrar o valor com 3 respostas educadas. O prompt está no vídeo, é só pausar. #promptdodia #vendas #ia #empreendedor
 
 ### Quarta 25/11 · ANTES E DEPOIS · Mensagem de boas-vindas do WhatsApp
 Tela dividida · 30 a 45 s · Vendas e atendimento · Topo · Mesa com notebook
@@ -164,22 +165,24 @@ Gravação de tela · 45 a 60 s · Vendas e atendimento · Meio · Gravação de
 
 **Legenda:** Antes do cliente difícil aparecer, treina com a IA. Ela faz o papel do cliente e depois te avalia. Salva e testa com a sua equipe. #atendimento #treinamento #ia #empreendedor
 
-### Sexta 27/11 · BLACK FRIDAY · Black Friday hoje e nada postado?
-Talking head · 30 a 45 s · Prompt pronto · Topo · Celular na mão
+### Sexta 27/11 · IA NO CELULAR · Use IA falando, sem digitar nada
+Talking head · 30 a 45 s · IA no dia a dia · Topo · Celular na mão
 
-**Gancho:** Hoje é Black Friday e você ainda não postou nada? Respira.
+**Gancho:** Não gosta de digitar? Dá para usar IA só falando.
 
 **Roteiro:**
-- Identificação: o dia chegou e a correria de sempre também.
-- O plano rápido: 1) escolhe uma oferta só, com desconto real; 2) usa o prompt de terça para gerar post, story e mensagem; 3) manda a mensagem para a sua lista de clientes antes do almoço.
-- Comparativo: postar dez promoções correndo x uma oferta clara, bem comunicada.
-- Virada: "Uma oferta bem feita vende mais do que dez jogadas na correria."
+- Identificação: muita gente desiste da IA porque acha chato escrever pedido grande no celular.
+- Como fazer: abre o aplicativo do ChatGPT ou do Gemini e toca no modo de voz.
+- Fala como se fosse com um funcionário: "Me ajuda a responder uma cliente que quer saber se a gente entrega no sábado."
+- Mostra a IA respondendo em voz alta.
+- Comparativo: digitar no celular com o dedão x falar enquanto faz outra coisa.
+- Virada: "Se você sabe mandar áudio no WhatsApp, você sabe usar IA."
 
-**CTA:** O prompt está no meu vídeo de terça. Segue e corre lá.
+**CTA:** Testa hoje e me conta o que você pediu.
 
-**Na tela:** Relógio no canto. Passos 1, 2, 3 acendendo.
+**Na tela:** Tela do celular com o modo de voz ativo. Frase final em destaque.
 
-**Legenda:** Black Friday hoje e nada postado? Uma oferta, um prompt e uma mensagem para a lista de clientes. O prompt está no vídeo de terça. #blackfriday #ia #vendas #pequenosnegocios
+**Legenda:** Se você sabe mandar áudio no WhatsApp, você sabe usar IA. Abre o app, toca no modo de voz e fala como falaria com um funcionário. Testa hoje. #ia #chatgpt #celular #empreendedor
 
 ### Sexta 27/11 · PROMPT DO DIA · Peça isso para a IA antes de decidir
 Gravação de tela · 45 a 60 s · Prompt pronto · Meio · Gravação de tela

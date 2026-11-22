@@ -14,102 +14,112 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#03081B;--card:#0A1330;--card2:#101C44;--line:#1C2A5A;--azul:#1B43F3;--txt:#F4F3F8;--soft:#9AA3C4;--erro:#FF8A8A;color-scheme:dark}
+:root{--bg:#03081B;--card:#0A1330;--card2:#111C40;--line:#18244D;--azul:#1B43F3;--txt:#F4F3F8;--soft:#8C95B5;--erro:#FF8A8A;color-scheme:dark}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;min-width:0}
-html,body{margin:0;background:var(--bg);color:var(--txt);font:500 16px/1.45 Montserrat,system-ui,sans-serif}
-body{padding-bottom:calc(78px + env(safe-area-inset-bottom));overflow-x:clip}
+html,body{margin:0;background:var(--bg);color:var(--txt);font:500 16px/1.5 Montserrat,system-ui,sans-serif}
+body{padding-bottom:calc(84px + env(safe-area-inset-bottom));overflow-x:clip}
 button,input,select,textarea{font:inherit;color:inherit}
-header.top{position:sticky;top:0;z-index:5;background:rgba(3,8,27,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:calc(10px + env(safe-area-inset-top)) 16px 10px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line)}
-.logo{font-weight:900;font-size:24px;letter-spacing:-1.5px;line-height:1}.logo b{color:var(--azul);font-weight:900}
-header h1{font-size:18px;font-weight:800;margin:0;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.st{font-size:12px;color:var(--soft);font-weight:700;white-space:nowrap}.st.erro{color:var(--erro)}
-.voltar{background:none;border:0;padding:6px 8px 6px 0;font-weight:800;font-size:16px;color:var(--txt);display:flex;align-items:center;gap:4px;cursor:pointer}
-main{padding:16px;max-width:720px;margin:0 auto}
-nav.baixo{position:fixed;bottom:0;left:0;right:0;display:flex;background:#050C24;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom);z-index:6}
-nav.baixo button{flex:1;background:none;border:0;color:var(--soft);font-weight:700;font-size:12px;padding:10px 4px 9px;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer}
-nav.baixo button svg{width:24px;height:24px}
+header.top{position:sticky;top:0;z-index:5;background:rgba(3,8,27,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:calc(12px + env(safe-area-inset-top)) 20px 12px;display:flex;align-items:center;gap:12px}
+.logo{font-weight:900;font-size:22px;letter-spacing:-1.5px;line-height:1}.logo b{color:var(--azul);font-weight:900}
+header h1{font-size:17px;font-weight:800;margin:0;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.st{font-size:12px;color:var(--soft);font-weight:600;white-space:nowrap}.st.erro{color:var(--erro)}
+.voltar{background:none;border:0;padding:6px 8px 6px 0;font-weight:700;font-size:16px;color:var(--txt);cursor:pointer;flex:1;text-align:left}
+main{padding:8px 20px 24px;max-width:680px;margin:0 auto}
+nav.baixo{position:fixed;bottom:0;left:0;right:0;display:flex;background:rgba(5,12,36,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom);z-index:6}
+nav.baixo button{flex:1;background:none;border:0;color:var(--soft);font-weight:700;font-size:11px;padding:10px 4px 8px;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer}
+nav.baixo button svg{width:22px;height:22px}
 nav.baixo button.on{color:var(--txt)}nav.baixo button.on svg{color:var(--azul)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 18px;border-radius:14px;border:1px solid var(--line);background:var(--card2);color:var(--txt);font-weight:700;font-size:15px;cursor:pointer;text-decoration:none;text-align:center}
+.acoes{position:fixed;bottom:0;left:0;right:0;display:flex;gap:10px;padding:10px 20px calc(10px + env(safe-area-inset-bottom));background:rgba(5,12,36,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line);z-index:6}
+.acoes .btn{flex:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 18px;border-radius:14px;border:0;background:var(--card2);color:var(--txt);font-weight:700;font-size:15px;cursor:pointer;text-decoration:none;text-align:center}
 .btn:active{transform:scale(.98)}
-.btn.pri{background:var(--azul);border-color:var(--azul)}
+.btn.pri{background:var(--azul)}
 .btn.full{width:100%}
-.btn.perigo{color:var(--erro);border-color:#4a1c2c;background:transparent}
-.btn.peq{min-height:40px;padding:0 12px;font-size:14px;border-radius:12px}
+.btn.perigo{color:var(--erro);background:transparent}
+.btn.peq{min-height:40px;padding:0 14px;font-size:14px;border-radius:12px}
 .linha{display:flex;gap:10px}.linha>*{flex:1}
 .pilha>*+*{margin-top:10px}
 .soft{color:var(--soft)}
 small{font-size:13px}
-.vazio{color:var(--soft);font-size:14px;margin:0;padding:12px 14px;border:1px dashed var(--line);border-radius:14px}
-.aviso{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;font-size:14px;color:var(--soft);margin-bottom:16px}
+.vazio{color:var(--soft);font-size:14px;margin:0;padding:4px 0 2px}
+.aviso{background:var(--card);border-radius:16px;padding:16px;font-size:14px;color:var(--soft);margin-bottom:16px}
 .aviso b{color:var(--txt)}
+.secao{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--soft);margin:28px 0 10px}
 
 /* semana */
-.semnav{display:flex;align-items:center;gap:10px;margin-bottom:12px}
-.semnav .btn{min-width:50px;padding:0;font-size:22px}
-.semtit{flex:1;text-align:center}.semtit b{display:block;font-size:18px;font-weight:800}.semtit small{color:var(--soft);font-weight:700}
-.legenda{display:flex;flex-wrap:wrap;gap:6px 12px;margin:0 0 18px;font-size:12px;color:var(--soft);font-weight:700}
-.legenda span{display:inline-flex;align-items:center;gap:5px}.legenda i{width:10px;height:10px;border-radius:3px;display:inline-block}
-.dia{margin-bottom:20px}
-.dia h3{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--soft);margin:0 0 8px;display:flex;align-items:center;justify-content:space-between;gap:8px}
-.dia.hoje h3 span{color:var(--txt)}.dia.hoje h3 span::after{content:"hoje";margin-left:8px;background:var(--azul);color:#fff;border-radius:6px;padding:2px 6px;font-size:10px}
-.dia h3 button{background:none;border:1px solid var(--line);border-radius:10px;color:var(--txt);font-weight:700;font-size:13px;padding:6px 10px;text-transform:none;letter-spacing:0;cursor:pointer}
-.post{display:flex;gap:8px;margin-bottom:8px}
-.pcorpo{flex:1;display:flex;gap:12px;align-items:stretch;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;text-align:left;cursor:pointer}
-.faixa{width:6px;border-radius:6px;flex:none}
-.ptxt{display:flex;flex-direction:column;gap:6px;flex:1}
-.ptxt b{font-weight:700;font-size:15px;line-height:1.3}
-.meta{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--soft);font-weight:700;align-items:center}
-.etq{color:var(--c);border:1px solid var(--c);border-radius:999px;padding:1px 8px}
-.mover{width:50px;flex:none;background:var(--card);border:1px solid var(--line);border-radius:14px;color:var(--soft);cursor:pointer;display:flex;align-items:center;justify-content:center}
-.mover svg{width:22px;height:22px}
+.semnav{display:flex;align-items:center;gap:8px;margin:4px 0 20px}
+.semnav button{width:44px;height:44px;border-radius:12px;border:0;background:var(--card);color:var(--txt);font-size:20px;cursor:pointer}
+.semtit{flex:1;text-align:center}.semtit b{display:block;font-size:20px;font-weight:800}.semtit small{color:var(--soft);font-weight:600}
+.dia{margin-bottom:22px}
+.dia h3{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--soft);margin:0 0 8px;display:flex;align-items:center;justify-content:space-between}
+.dia.hoje h3 span{color:var(--azul)}
+.dia h3 button{background:none;border:0;color:var(--soft);font-size:22px;line-height:1;padding:2px 4px;cursor:pointer}
+.post{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;background:var(--card);border:0;border-radius:14px;padding:14px 16px;margin-bottom:8px;cursor:pointer}
+.ponto{width:10px;height:10px;border-radius:50%;flex:none;margin-top:6px}
+.ptxt{flex:1;display:flex;flex-direction:column;gap:4px}
+.ptxt b{font-weight:700;font-size:15px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.meta{font-size:12px;color:var(--soft);font-weight:600}
+
+/* post */
+.titulo-post{width:100%;background:none;border:0;outline:none;font-size:22px;font-weight:800;line-height:1.3;padding:0;resize:none;overflow:hidden;color:var(--txt)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 16px}
+.chip-b{display:inline-flex;align-items:center;gap:7px;border:0;border-radius:999px;background:var(--card);padding:8px 14px;font-size:13px;font-weight:700;color:var(--txt);cursor:pointer}
+.chip-b i{width:9px;height:9px;border-radius:50%;display:inline-block}
+.bloco{background:var(--card);border-radius:18px;padding:16px 18px;margin-bottom:12px}
+.bloco .rot{display:flex;align-items:center;justify-content:space-between;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--soft);margin-bottom:8px}
+.bloco .rot small{text-transform:none;letter-spacing:0;font-weight:600;font-size:12px}
+.bloco.g .rot{color:var(--azul)}
+.bloco textarea,.bloco input{width:100%;background:transparent;border:0;outline:none;padding:0;resize:none;overflow:hidden;color:var(--txt);font-size:16px;line-height:1.6;min-height:28px}
+.bloco.g textarea{font-size:19px;font-weight:700;line-height:1.4}
+.bloco .mini{display:flex;gap:6px}
+.bloco .mini button{width:34px;height:30px;border-radius:9px;border:0;background:var(--card2);color:var(--soft);cursor:pointer;font-weight:800}
+details.dobra{background:var(--card);border-radius:18px;margin-bottom:12px}
+details.dobra summary{list-style:none;cursor:pointer;padding:16px 18px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--soft);display:flex;justify-content:space-between}
+details.dobra summary::-webkit-details-marker{display:none}
+details.dobra summary::after{content:"+";font-size:18px;line-height:1}
+details.dobra[open] summary::after{content:"−"}
+details.dobra .dentro{padding:0 18px 16px}
+details.dobra textarea.livre{width:100%;background:transparent;border:0;outline:none;padding:0;resize:none;overflow:hidden;color:var(--txt);font-size:15px;line-height:1.6}
 
 /* formularios */
 label.campo{display:block;margin-bottom:14px}
-label.campo>span{display:block;font-size:13px;font-weight:800;color:var(--soft);margin:0 0 6px;text-transform:uppercase;letter-spacing:.05em}
-input[type=text],input[type=password],input[type=date],select,textarea{width:100%;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:16px;color:var(--txt);outline:none;-webkit-appearance:none;appearance:none}
-input[type=date]{min-height:50px}
-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239AA3C4' stroke-width='2' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+label.campo>span{display:block;font-size:11px;font-weight:800;color:var(--soft);margin:0 0 6px;text-transform:uppercase;letter-spacing:.1em}
+input[type=text],input[type=password],input[type=date],select,textarea{width:100%;background:var(--card2);border:1px solid transparent;border-radius:12px;padding:12px 14px;font-size:16px;color:var(--txt);outline:none;-webkit-appearance:none;appearance:none}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238C95B5' stroke-width='2' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
 textarea{resize:none;min-height:84px;line-height:1.5;overflow:hidden}
 input:focus,select:focus,textarea:focus{border-color:var(--azul)}
-.secao{font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--azul);margin:26px 0 12px}
-.etapas{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
-.etapas button{min-height:56px;border-radius:14px;border:2px solid var(--c);background:transparent;color:var(--txt);font-weight:800;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px}
-.etapas button.on{background:var(--c);color:#fff}
-.etapas button.on::before{content:"✓"}
-.seg{display:grid;grid-template-columns:1fr 1fr;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:4px;gap:4px;margin-bottom:14px}
-.seg button{flex:1;min-height:44px;border:0;border-radius:10px;background:transparent;font-weight:700;font-size:14px;color:var(--soft);cursor:pointer}
+.bloco textarea:focus,.bloco input:focus,details.dobra textarea.livre:focus,.titulo-post:focus{border:0}
+.seg{display:grid;grid-template-columns:1fr 1fr;background:var(--card2);border-radius:14px;padding:4px;gap:4px;margin-bottom:14px}
+.seg button{min-height:42px;border:0;border-radius:10px;background:transparent;font-weight:700;font-size:13px;color:var(--soft);cursor:pointer}
 .seg button.on{background:var(--azul);color:#fff}
-.cardi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px;margin-bottom:10px}
-.cardi .cab{display:flex;align-items:center;gap:6px;margin-bottom:8px;font-weight:800;font-size:13px;color:var(--soft)}
-.cardi .cab span{flex:1}
-.cardi .cab button{width:40px;height:36px;border-radius:10px;border:1px solid var(--line);background:var(--card2);cursor:pointer;font-weight:800}
-.cardi textarea{background:var(--bg)}
+.lista-etapas button{display:flex;align-items:center;gap:12px;width:100%;min-height:54px;border:0;border-radius:14px;background:var(--card);margin-bottom:8px;padding:0 16px;font-weight:700;font-size:16px;color:var(--txt);cursor:pointer}
+.lista-etapas button i{width:12px;height:12px;border-radius:50%}
+.lista-etapas button.on{outline:2px solid var(--azul)}
+ul.regras{margin:0;padding:0 0 0 18px;font-size:14px;color:var(--soft)}ul.regras li{margin-bottom:8px}ul.regras b{color:var(--txt)}
 
 /* ideias */
 .filtros{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
 .filtros select{padding:10px 32px 10px 12px;font-size:15px}
-ul.regras{margin:0;padding:0 0 0 18px;font-size:14px;color:var(--soft)}ul.regras li{margin-bottom:8px}ul.regras b{color:var(--txt)}
-.chk{display:flex;align-items:center;gap:10px;font-weight:700;font-size:14px;color:var(--soft);margin:6px 0 14px;cursor:pointer}
+.chk{display:flex;align-items:center;gap:10px;font-weight:600;font-size:14px;color:var(--soft);margin:6px 0 14px;cursor:pointer}
 .chk input{width:22px;height:22px;accent-color:var(--azul)}
-.ideia{display:block;width:100%;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:8px;cursor:pointer}
-.ideia b{display:block;font-weight:700;font-size:15px;line-height:1.35;margin-bottom:8px}
+.ideia{display:block;width:100%;text-align:left;background:var(--card);border:0;border-radius:14px;padding:14px 16px;margin-bottom:8px;cursor:pointer}
+.ideia b{display:block;font-weight:700;font-size:15px;line-height:1.35;margin-bottom:6px}
 .ideia.usada{opacity:.5}
-.chip{border:1px solid var(--line);border-radius:999px;padding:1px 8px}
-.chip.u{border-color:#22C55E;color:#22C55E}
+.chip{margin-right:8px}.chip.u{color:#22C55E}
 
-/* folha (painel que sobe) */
+/* folha */
 .folha{position:fixed;inset:0;z-index:20;display:none}
 .folha.on{display:block}
 .folha .fundo{position:absolute;inset:0;background:rgba(0,0,0,.6)}
-.folha .caixa{position:absolute;left:0;right:0;bottom:0;max-height:88vh;overflow:auto;background:#081133;border-top:1px solid var(--line);border-radius:22px 22px 0 0;padding:22px 16px calc(20px + env(safe-area-inset-bottom));max-width:720px;margin:0 auto}
+.folha .caixa{position:absolute;left:0;right:0;bottom:0;max-height:88vh;overflow:auto;background:#081133;border-radius:22px 22px 0 0;padding:24px 20px calc(20px + env(safe-area-inset-bottom));max-width:680px;margin:0 auto}
 .folha h2{font-size:20px;font-weight:800;margin:0 0 6px}
 .folha p{margin:0 0 14px}
 .dias{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:10px}
 .dias .btn{min-height:46px;font-size:14px}
-.subt{grid-column:1/-1;font-size:12px;font-weight:800;color:var(--soft);text-transform:uppercase;letter-spacing:.06em;margin-top:6px}
+.subt{grid-column:1/-1;font-size:11px;font-weight:800;color:var(--soft);text-transform:uppercase;letter-spacing:.1em;margin-top:6px}
 ul.mov{padding:0;margin:0 0 16px;list-style:none}
-ul.mov li{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:6px;font-size:14px}
-ul.mov li small{display:block;color:var(--soft);font-weight:700}
+ul.mov li{background:var(--card);border-radius:12px;padding:10px 12px;margin-bottom:6px;font-size:14px}
+ul.mov li small{display:block;color:var(--soft);font-weight:600}
 
 .toast{position:fixed;left:50%;top:calc(64px + env(safe-area-inset-top));transform:translateX(-50%) translateY(-20px);background:var(--txt);color:var(--bg);font-weight:800;font-size:14px;padding:12px 18px;border-radius:999px;opacity:0;transition:.25s;z-index:30;pointer-events:none;white-space:nowrap}
 .toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
@@ -162,7 +172,7 @@ const nomeDia = (s) => DIAS[(parse(s).getDay() + 6) % 7];
 
 /* ---------- estado ---------- */
 const S = { ideias: {}, posts: {}, versao: -1 };
-const view = { tela: "semana", semana: segunda(hoje()), postId: null, filtros: { pilar: "", funil: "", serie: "", usadas: false } };
+const view = { tela: "semana", semana: segunda(hoje()), postId: null, abertos: new Set(), filtros: { pilar: "", funil: "", serie: "", usadas: false } };
 let entrou = false;
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const novoId = () => (crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(36) + Math.random().toString(36).slice(2));
@@ -260,9 +270,10 @@ const valores = (k) => [...new Set([...Object.values(S.ideias), ...Object.values
 const datalist = (id, k) => `<datalist id="${id}">${valores(k).map((v) => `<option value="${esc(v)}">`).join("")}</datalist>`;
 const opcoes = (lista, atual, vazio) => `<option value="">${vazio}</option>` + [...new Set([...lista, ...(atual && !lista.includes(atual) ? [atual] : [])])].map((v) => `<option ${v === atual ? "selected" : ""}>${esc(v)}</option>`).join("");
 
+const roteiroDe = (p) => (p.roteiro !== undefined ? p.roteiro : [p.contexto, p.entrega].filter((s) => s && s.trim()).join("\n"));
 function textoRoteiro(p) {
   if (p.formato === "carrossel") return (p.cards || []).map((c, i) => `Card ${i + 1}\n${c}`).join("\n\n");
-  return [p.gancho, p.contexto, p.entrega, p.fechamento].filter((s) => s && s.trim()).join("\n\n");
+  return [p.gancho, roteiroDe(p), p.fechamento].filter((s) => s && s.trim()).join("\n\n");
 }
 
 /* ---------- telas ---------- */
@@ -271,76 +282,75 @@ function ir(tela, extra) { Object.assign(view, { tela }, extra || {}); fecharFol
 function render() {
   if (!entrou) return;
   const t = view.tela;
-  let corpo, cab;
+  let corpo, cab, baixo;
   if (t === "post") {
     const p = S.posts[view.postId];
     if (!p) { view.tela = "semana"; return render(); }
-    cab = `<button class="voltar" data-a="voltar">‹ Voltar</button><h1></h1><span class="st" id="st">Salvo</span>`;
+    cab = `<button class="voltar" data-a="voltar">‹ Semana</button><span class="st" id="st">Salvo</span>`;
     corpo = vPost(p);
+    baixo = `<div class="acoes"><button class="btn pri" data-a="copiarRoteiro">Copiar roteiro</button><button class="btn" data-a="copiarLegenda">Copiar legenda</button></div>`;
   } else {
-    const nomes = { semana: "Semana", ideias: "Banco de ideias", mais: "Mais" };
+    const nomes = { semana: "Semana", ideias: "Ideias", mais: "Mais" };
     cab = `<div class="logo">A<b>V</b></div><h1>${nomes[t]}</h1><span class="st" id="st"></span>`;
     corpo = t === "semana" ? vSemana() : t === "ideias" ? vIdeias() : vMais();
+    baixo = `<nav class="baixo">${[["semana", "Semana"], ["ideias", "Ideias"], ["mais", "Mais"]]
+      .map(([k, n]) => `<button class="${t === k ? "on" : ""}" data-a="nav" data-v="${k}">${ICONES[k]}${n}</button>`).join("")}</nav>`;
   }
-  const nav = [["semana", "Semana"], ["ideias", "Ideias"], ["mais", "Mais"]]
-    .map(([k, n]) => `<button class="${t === k || (t === "post" && k === "semana") ? "on" : ""}" data-a="nav" data-v="${k}">${ICONES[k]}${n}</button>`).join("");
-  document.getElementById("app").innerHTML = `<header class="top">${cab}</header><main>${corpo}</main><nav class="baixo">${nav}</nav>`;
+  document.getElementById("app").innerHTML = `<header class="top">${cab}</header><main>${corpo}</main>${baixo}`;
   crescer();
   if (fila.size || filaApagar.size) status("Salvando...");
 }
 
 function cardPost(p) {
   const e = ETAPA[p.etapa] || ETAPA.ideia;
-  const extra = [FORMATO[p.formato], p.serie].filter(Boolean).map((x) => `<span>${esc(x)}</span>`).join("");
-  return `<div class="post"><button class="pcorpo" data-a="abrir" data-id="${p.id}"><span class="faixa" style="background:${e.cor}"></span><span class="ptxt"><b>${esc(titulo(p))}</b><span class="meta"><span class="etq" style="--c:${e.cor}">${e.nome}</span>${extra}</span></span></button><button class="mover" data-a="mover" data-id="${p.id}" aria-label="Mudar o dia">${ICONES.mover}</button></div>`;
+  const meta = [e.nome, FORMATO[p.formato]].filter(Boolean).join(" · ");
+  return `<button class="post" data-a="abrir" data-id="${p.id}"><span class="ponto" style="background:${e.cor}"></span><span class="ptxt"><b>${esc(titulo(p))}</b><span class="meta">${esc(meta)}</span></span></button>`;
 }
 
 function vSemana() {
   const ini = view.semana, fim = addDias(ini, 6), h = hoje(), atual = segunda(h);
   const rot = ini === atual ? "Esta semana" : ini === addDias(atual, 7) ? "Próxima semana" : ini === addDias(atual, -7) ? "Semana passada" : "";
   const posts = Object.values(S.posts);
-  let out = `<div class="semnav"><button class="btn" data-a="semana" data-v="-7" aria-label="Semana anterior">‹</button><div class="semtit"><b>${curto(ini)} a ${curto(fim)}</b><small>${rot || "&nbsp;"}</small></div><button class="btn" data-a="semana" data-v="7" aria-label="Próxima semana">›</button></div>`;
-  if (ini !== atual) out += `<button class="btn peq full" style="margin-bottom:12px" data-a="semanaHoje">Voltar pra esta semana</button>`;
-  out += `<div class="legenda">${ETAPAS.map(([, n, c]) => `<span><i style="background:${c}"></i>${n}</span>`).join("")}</div>`;
+  let out = `<div class="semnav"><button data-a="semana" data-v="-7" aria-label="Semana anterior">‹</button><div class="semtit"><b>${curto(ini)} a ${curto(fim)}</b><small>${rot || '<a href="#" data-a="semanaHoje" style="color:var(--azul);text-decoration:none">Voltar pra hoje</a>'}</small></div><button data-a="semana" data-v="7" aria-label="Próxima semana">›</button></div>`;
   for (let i = 0; i < 7; i++) {
     const d = addDias(ini, i);
     const lista = posts.filter((p) => p.data === d).sort(ordenar);
-    out += `<section class="dia ${d === h ? "hoje" : ""}"><h3><span>${DIAS[i]} ${curto(d)}</span><button data-a="novoPost" data-dia="${d}">+ post</button></h3>${lista.map(cardPost).join("") || '<p class="vazio">Nada neste dia</p>'}</section>`;
+    out += `<section class="dia ${d === h ? "hoje" : ""}"><h3><span>${DIAS[i]} ${curto(d)}</span><button data-a="novoPost" data-dia="${d}" aria-label="Novo post">+</button></h3>${lista.map(cardPost).join("") || '<p class="vazio">Nada planejado</p>'}</section>`;
   }
   const semData = posts.filter((p) => !p.data && p.etapa !== "postado").sort(ordenar);
-  out += `<section class="dia"><h3><span>Sem data</span><button data-a="novoPost" data-dia="">+ post</button></h3>${semData.map(cardPost).join("") || '<p class="vazio">Nenhum post esperando data</p>'}</section>`;
-  out += `<button class="btn pri full" data-a="fecharSemana">Fechar semana</button><p class="soft" style="font-size:13px;margin:10px 4px 0">Fechar semana: o que ainda não foi gravado (Ideia e Roteiro pronto) passa para a semana seguinte, no mesmo dia da semana.</p>`;
+  if (semData.length) out += `<section class="dia"><h3><span>Sem data</span></h3>${semData.map(cardPost).join("")}</section>`;
+  out += `<button class="btn full" style="margin-top:8px" data-a="fecharSemana">Fechar semana</button><p class="soft" style="font-size:13px;margin:10px 2px 0">O que ainda não foi gravado passa para a semana seguinte.</p>`;
   return out;
 }
 
 function vPost(p) {
-  const car = p.formato === "carrossel";
-  const campo = (k, rot, ph) => `<label class="campo"><span>${rot}</span><textarea data-campo="${k}" placeholder="${ph || ""}">${esc(p[k])}</textarea></label>`;
-  let out = `<div class="secao" style="margin-top:4px">Etapa</div><div class="etapas">${ETAPAS.map(([k, n, c]) => `<button style="--c:${c}" class="${p.etapa === k ? "on" : ""}" data-a="etapa" data-v="${k}">${n}</button>`).join("")}</div>`;
-  out += `<div class="secao">Quando</div><div class="linha" style="align-items:center"><input type="date" data-campo="data" value="${esc(p.data || "")}" aria-label="Data do post"><button class="btn" style="flex:0 0 auto" data-a="semData">Sem data</button></div>`;
-  out += `<p class="soft" style="font-size:13px;margin:6px 2px 0">${p.data ? nomeDia(p.data) + ", " + curto(p.data) : "Ainda sem dia marcado"}</p>`;
-  out += `<div class="linha" style="margin-top:16px"><button class="btn pri" data-a="copiarRoteiro">Copiar roteiro</button><button class="btn" data-a="copiarLegenda">Copiar legenda</button></div>`;
-  out += `<div class="secao">Roteiro</div>`;
-  out += `<label class="campo"><span>Título</span><input type="text" data-campo="titulo" value="${esc(p.titulo)}" placeholder="Nome curto pra achar o post"></label>`;
-  out += `<label class="campo"><span>Formato</span></label><div class="seg">${FORMATOS.map(([k, n]) => `<button class="${p.formato === k ? "on" : ""}" data-a="formato" data-v="${k}">${n}</button>`).join("")}</div>`;
-  out += `<div class="linha"><label class="campo"><span>Série</span><input type="text" list="lSerie" data-campo="serie" value="${esc(p.serie)}"></label><label class="campo"><span>Pilar</span><input type="text" list="lPilar" data-campo="pilar" value="${esc(p.pilar)}"></label></div>`;
-  out += `<div class="linha"><label class="campo"><span>Funil</span><select data-campo="funil">${opcoes(FUNIS, p.funil, "Escolher")}</select></label><label class="campo"><span>Duração</span><input type="text" data-campo="duracao" value="${esc(p.duracao)}" placeholder="ex.: 30 s"></label></div>`;
-  out += `<label class="campo"><span>Cenário</span><select data-campo="cenario">${opcoes(CENARIOS, p.cenario, "Escolher cenário")}</select></label>`;
-  if (car) {
+  const e = ETAPA[p.etapa] || ETAPA.ideia;
+  const idx = ETAPAS.findIndex(([k]) => k === p.etapa);
+  const prox = ETAPAS[idx + 1];
+  const area = (k, ph, cls) => `<textarea class="${cls || ""}" data-campo="${k}" placeholder="${ph}" rows="1">${esc(k === "roteiro" ? roteiroDe(p) : p[k])}</textarea>`;
+  const aberto = (k) => (view.abertos.has(k) ? "open" : "");
+  let out = `<textarea class="titulo-post" data-campo="titulo" placeholder="Título do post" rows="1">${esc(p.titulo)}</textarea>`;
+  out += `<div class="chips"><button class="chip-b" data-a="etapaFolha"><i style="background:${e.cor}"></i>${e.nome}</button><button class="chip-b" data-a="mover" data-id="${p.id}">${p.data ? nomeDia(p.data).slice(0, 3) + " " + curto(p.data) : "Sem data"}</button>${p.duracao ? `<span class="chip-b" style="cursor:default;color:var(--soft)">${esc(FORMATO[p.formato] || "")} · ${esc(p.duracao)}</span>` : ""}</div>`;
+  if (prox) out += `<button class="btn full" style="margin-bottom:16px;background:transparent;border:1.5px solid ${prox[2]}" data-a="avancar">Marcar como ${prox[1].toLowerCase()}</button>`;
+  if (p.formato === "carrossel") {
     const cards = p.cards || [];
-    out += `<div class="secao">Cards do carrossel</div>`;
-    out += cards.map((c, i) => `<div class="cardi"><div class="cab"><span>Card ${i + 1}</span><button data-a="cardSobe" data-i="${i}" aria-label="Subir">↑</button><button data-a="cardDesce" data-i="${i}" aria-label="Descer">↓</button><button data-a="cardTira" data-i="${i}" aria-label="Apagar card">✕</button></div><textarea data-card="${i}" placeholder="Texto do card">${esc(c)}</textarea></div>`).join("");
-    out += `<button class="btn full" data-a="cardNovo">+ Adicionar card</button><div style="height:14px"></div>`;
+    out += cards.map((c, i) => `<section class="bloco"><div class="rot"><span>Card ${i + 1}</span><span class="mini"><button data-a="cardSobe" data-i="${i}" aria-label="Subir">↑</button><button data-a="cardDesce" data-i="${i}" aria-label="Descer">↓</button><button data-a="cardTira" data-i="${i}" aria-label="Apagar card">✕</button></span></div><textarea data-card="${i}" placeholder="Texto do card" rows="1">${esc(c)}</textarea></section>`).join("");
+    out += `<button class="btn full" style="margin-bottom:12px" data-a="cardNovo">+ Adicionar card</button>`;
   } else {
-    out += campo("gancho", "Gancho", "Os 3 primeiros segundos");
-    out += campo("contexto", "Contexto");
-    out += campo("entrega", "Entrega");
-    out += campo("fechamento", "Fechamento + CTA");
+    out += `<section class="bloco g"><div class="rot">Gancho</div>${area("gancho", "A primeira frase do vídeo")}</section>`;
+    out += `<section class="bloco"><div class="rot"><span>Roteiro</span><small>o que você vai falar</small></div>${area("roteiro", "Os pontos que você vai falar")}</section>`;
+    out += `<section class="bloco"><div class="rot">CTA</div>${area("fechamento", "O que a pessoa deve fazer no fim")}</section>`;
   }
-  out += campo("naTela", "Na tela e motion", "Textos e animações que aparecem no vídeo");
-  out += campo("legenda", "Legenda do post");
-  out += datalist("lSerie", "serie") + datalist("lPilar", "pilar");
-  out += `<button class="btn perigo full" style="margin-top:20px" data-a="apagarPost">Apagar post</button>`;
+  out += `<section class="bloco"><div class="rot">Legenda do post</div>${area("legenda", "Texto da legenda")}</section>`;
+  out += `<details class="dobra" data-sec="tela" ${aberto("tela")}><summary>Na tela e edição</summary><div class="dentro"><textarea class="livre" data-campo="naTela" placeholder="Textos, cartões e motion" rows="1">${esc(p.naTela)}</textarea></div></details>`;
+  out += `<details class="dobra" data-sec="det" ${aberto("det")}><summary>Detalhes</summary><div class="dentro">
+    <div class="seg">${FORMATOS.map(([k, n]) => `<button class="${p.formato === k ? "on" : ""}" data-a="formato" data-v="${k}">${n}</button>`).join("")}</div>
+    <div class="linha"><label class="campo"><span>Série</span><input type="text" list="lSerie" data-campo="serie" value="${esc(p.serie)}"></label><label class="campo"><span>Pilar</span><input type="text" list="lPilar" data-campo="pilar" value="${esc(p.pilar)}"></label></div>
+    <div class="linha"><label class="campo"><span>Funil</span><select data-campo="funil">${opcoes(FUNIS, p.funil, "Escolher")}</select></label><label class="campo"><span>Duração</span><input type="text" data-campo="duracao" value="${esc(p.duracao)}"></label></div>
+    <label class="campo"><span>Cenário</span><select data-campo="cenario">${opcoes(CENARIOS, p.cenario, "Escolher cenário")}</select></label>
+    ${datalist("lSerie", "serie")}${datalist("lPilar", "pilar")}
+  </div></details>`;
+  out += `<button class="btn perigo full" style="margin-top:8px" data-a="apagarPost">Apagar post</button>`;
   return out;
 }
 
@@ -383,7 +393,7 @@ function vMais() {
 
 /* ---------- folhas ---------- */
 function folhaMover(id) {
-  const p = S.posts[id], base = view.semana;
+  const p = S.posts[id], base = p.data ? segunda(p.data) : view.semana;
   let h = `<h2>Mudar o dia</h2><p class="soft">${esc(titulo(p))}</p><div class="dias">`;
   for (let i = 0; i < 14; i++) {
     const d = addDias(base, i);
@@ -410,7 +420,7 @@ function folhaIdeia(id) {
 
 /* ---------- ações ---------- */
 function novoPost(base) {
-  const p = Object.assign({ id: novoId(), criado: Date.now(), titulo: "", serie: "", pilar: "", funil: "", duracao: "", cenario: "", formato: "talking", gancho: "", contexto: "", entrega: "", fechamento: "", naTela: "", legenda: "", cards: [], etapa: "ideia", data: null }, base);
+  const p = Object.assign({ id: novoId(), criado: Date.now(), titulo: "", serie: "", pilar: "", funil: "", duracao: "", cenario: "", formato: "talking", gancho: "", roteiro: "", fechamento: "", naTela: "", legenda: "", cards: [], etapa: "ideia", data: null }, base);
   S.posts[p.id] = p;
   salvar("post", p, true);
   ir("post", { postId: p.id });
@@ -431,6 +441,11 @@ const A = {
     toast(p.data ? "Movido para " + nomeDia(p.data).toLowerCase() + ", " + curto(p.data) : "Post ficou sem data");
   },
   fecharFolha,
+  etapaFolha: () => {
+    const p = postAtual();
+    abrirFolha(`<h2>Etapa</h2><div class="lista-etapas">${ETAPAS.map(([k, n, c]) => `<button class="${p.etapa === k ? "on" : ""}" data-a="etapa" data-v="${k}"><i style="background:${c}"></i>${n}</button>`).join("")}</div>`);
+  },
+  avancar: () => { const p = postAtual(); const i = ETAPAS.findIndex(([k]) => k === p.etapa); if (ETAPAS[i + 1]) A.etapa({ v: ETAPAS[i + 1][0] }); },
   fecharSemana: () => {
     const ini = view.semana, fim = addDias(ini, 6);
     const lista = Object.values(S.posts).filter((p) => p.data && p.data >= ini && p.data <= fim && (p.etapa === "ideia" || p.etapa === "roteiro")).sort((a, b) => a.data.localeCompare(b.data));
@@ -449,7 +464,7 @@ const A = {
       <div class="pilha"><button class="btn pri full" data-a="irProxima">Ver a semana seguinte</button><button class="btn full" data-a="fecharFolha">Ficar aqui</button></div>`);
   },
   irProxima: () => { view.semana = addDias(view.semana, 7); fecharFolha(); render(); window.scrollTo(0, 0); },
-  etapa: (d) => { const p = postAtual(); p.etapa = d.v; salvar("post", p, true); render(); toast("Etapa: " + ETAPA[d.v].nome); },
+  etapa: (d) => { const p = postAtual(); p.etapa = d.v; salvar("post", p, true); fecharFolha(); render(); toast(ETAPA[d.v].nome); },
   formato: (d) => { const p = postAtual(); p.formato = d.v; if (d.v === "carrossel" && !(p.cards || []).length) p.cards = ["", ""]; salvar("post", p); render(); },
   semData: () => { const p = postAtual(); p.data = null; salvar("post", p, true); render(); toast("Post ficou sem data"); },
   copiarRoteiro: () => copiar(textoRoteiro(postAtual()), "Roteiro copiado"),
@@ -496,12 +511,17 @@ document.addEventListener("input", (e) => {
   const el = e.target;
   if (view.tela === "post" && (el.dataset.campo || el.dataset.card !== undefined)) {
     const p = postAtual(); if (!p) return;
+    if (el.dataset.campo === "roteiro" && p.roteiro === undefined) { delete p.contexto; delete p.entrega; }
     if (el.dataset.campo) p[el.dataset.campo] = el.dataset.campo === "data" ? el.value || null : el.value;
     else { p.cards = p.cards || []; p.cards[+el.dataset.card] = el.value; }
     if (el.tagName === "TEXTAREA") crescer(el);
     salvar("post", p);
   } else if (el.tagName === "TEXTAREA") crescer(el);
 });
+document.addEventListener("toggle", (e) => {
+  const d = e.target;
+  if (d.dataset && d.dataset.sec) { d.open ? view.abertos.add(d.dataset.sec) : view.abertos.delete(d.dataset.sec); crescer(); }
+}, true);
 document.addEventListener("change", (e) => {
   const el = e.target;
   if (el.dataset.filtro) { view.filtros[el.dataset.filtro] = el.type === "checkbox" ? el.checked : el.value; render(); }

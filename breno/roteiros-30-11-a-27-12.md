@@ -1,6 +1,6 @@
 # Roteiros-guia · 30/11 a 27/12
 
-Norte do que falar em cada vídeo, não texto para decorar. O gancho é a única frase para dizer do jeito que está; o resto são os pontos para você falar com as suas palavras. Onde aparece (X), preencha com o seu número antes de gravar.
+Norte do que falar em cada vídeo, não texto para decorar. Cada vídeo traz um comparativo, um passo a passo ou regra prática, um exemplo e a virada. O gancho é a única frase para dizer do jeito que está; o resto são os pontos para você falar com as suas palavras. Onde aparece (X), preencha com o seu número antes de gravar.
 
 
 ## Semana 1
@@ -12,16 +12,17 @@ Talking head · Editar · Topo
 
 **Contexto:**
 - Mostra o problema: o vídeo abre com você respirando, ajeitando o celular, esperando para falar.
-- Gatilho: quem está rolando o feed não espera. Decide em um piscar se fica.
+- Por que importa: o Instagram mostra quantas pessoas pularam seu Reel logo no começo. Silêncio no início é convite para pular.
 - Frase forte: "Você gravou um conteúdo bom e perdeu a pessoa antes da primeira palavra."
 
 **Entrega:**
-- A regra: a primeira palavra entra no primeiro frame. Nada antes dela.
-- Na mão: corta tudo até o começo da fala, sem dó.
-- Virada: "Só que tem um cuidado." Corte colado demais come a primeira sílaba. Corta no silêncio, nunca em cima da palavra.
-- No meu sistema a IA faz isso sozinha, porque sabe o tempo exato de cada palavra.
+- Comparativo na tela: Vídeo A começa com "então, gente...". Vídeo B começa direto na ideia. Mesmo conteúdo, só o B segura.
+- Os 3 silêncios que matam o começo: 1) respiração e preparo; 2) palavra de aquecimento ("então", "bom", "oi"); 3) olhar para baixo antes de olhar na câmera.
+- Como cortar certo: corta até logo antes da primeira sílaba. Se a palavra começa com P, T ou C, deixa um respiro mínimo para o som não estalar.
+- Erro comum: cortar o silêncio e deixar a música entrar atrasada. Começo é voz, e a música já tocando por baixo.
+- Virada: "Não é só cortar o silêncio. É começar pela frase mais forte." Se a primeira frase é fraca, começa na segunda.
 
-**Fechamento + CTA:** Primeira palavra no primeiro frame. Salva e confere o começo do seu próximo vídeo.
+**Fechamento + CTA:** Abre seu último Reel e conta quanto tempo até a primeira palavra. Salva esse para conferir sempre.
 
 **Na tela e motion:** barra de tempo com o silêncio em vermelho  
   
@@ -36,13 +37,14 @@ Tela dividida · Editar · Meio
 **Gancho:** Como a IA descobre qual take é de qual roteiro, mesmo com 170 arquivos na pasta.
 
 **Contexto:**
-- Cena: gravação do mês feita, abro a pasta e são 170 arquivos com nome de câmera. IMG, IMG, IMG.
-- Dor: antes era assistir um por um, anotar e arrastar. Uma tarde inteira só para separar.
+- Cena: gravação feita, abro a pasta e são 170 arquivos com nome de câmera. IMG, IMG, IMG.
+- Dor: separar na mão é assistir cada take inteiro, anotar e renomear. Uma tarde só para organizar, antes de editar qualquer coisa.
 
 **Entrega:**
-- Passo 1: a IA transcreve cada take, palavra por palavra, com o tempo de cada uma.
-- Passo 2: compara a fala de cada take com os roteiros da semana.
-- Passo 3: onde a fala bate, ela liga o take ao roteiro certo.
+- Comparativo: Na mão: assiste tudo, decide no olho, cansa e erra. Com transcrição: lê o texto, procura a frase, liga em segundos.
+- Como funciona: 1) a IA transcreve cada take com o tempo de cada palavra; 2) compara as primeiras frases de cada take com os roteiros; 3) quando tem várias tentativas da mesma frase, fica a que tem a frase inteira e o olhar na câmera.
+- Exemplo: o take começa com "Toda edição com IA começa num arquivo..." e bate com o roteiro "O arquivo que toda edição com IA precisa".
+- Erro comum: improvisar demais. Quanto mais a fala foge do roteiro, mais difícil ligar. O gancho igual ao roteiro já ajuda muito.
 - Virada: "O segredo não é a IA ser esperta. É o roteiro estar escrito." Sem roteiro, ela não tem com o que comparar.
 
 **Fechamento + CTA:** Você grava, a IA separa. Segue para ver o próximo passo da esteira.
@@ -64,9 +66,10 @@ Talking head · Editar · Topo
 - Identificação: muita gente nem começa porque acha que precisa de assinatura cara todo mês.
 
 **Entrega:**
-- Mito. A base da edição com IA é a transcrição, e ela pode ser de graça.
-- Eu uso o Whisper, rodando no meu computador. Sem mensalidade.
-- Virada: "O que custa caro não é a ferramenta. É não ter regra." Ferramenta cara sem regra entrega vídeo genérico.
+- Mito. A base da edição com IA é a transcrição com o tempo de cada palavra.
+- Comparativo: Transcrição paga na nuvem x Whisper no computador. Custo: mensalidade ou por minuto x zero. Privacidade: o arquivo sobe para um servidor x fica no seu computador. Velocidade: rápida x depende do seu computador.
+- Honestidade que gera confiança: se o seu computador é fraco e o volume é grande, pagar pode valer a pena. Mas não é requisito.
+- Virada: "O que custa caro não é a ferramenta. É não ter regra." Ferramenta cara sem regra entrega vídeo genérico igual ao de todo mundo.
 
 **Fechamento + CTA:** Mito. Ferramenta cara não é requisito, regra clara é. Segue para o próximo mito.
 
@@ -87,9 +90,11 @@ Narração com motion · Editar · Meio
 - Frase forte: "Quando todas as palavras brilham, nenhuma chama atenção."
 
 **Entrega:**
+- Comparativo com uma frase real: "A IA só edita bem se souber o tempo de cada palavra." Destaque sem critério: IA. Destaque com critério: tempo. É a palavra que carrega a ideia.
 - Prompt na tela (digitado): "Para cada frase desta transcrição, escolha uma única palavra para destacar na legenda: a que carrega o sentido da frase. Nunca artigo, preposição ou conectivo. Se a frase tiver número, destaque o número. Devolva a frase e a palavra, uma por linha."
-- Explica o critério: uma palavra por frase, a que carrega o sentido.
-- Virada: "E se tiver número, o número ganha." O olho para em número.
+- As 3 regras do prompt: uma palavra só; nunca palavra vazia; número sempre ganha, porque o olho para em número.
+- Erro comum: pintar 3 palavras na mesma frase. O olho não sabe para onde ir.
+- Dica: destaque na cor da marca, o resto da legenda em branco.
 
 **Fechamento + CTA:** Pausa, tira print do prompt e testa na sua próxima legenda.
 
@@ -107,12 +112,12 @@ Talking head · Bastidores · Topo
 
 **Contexto:**
 - Encena: lê a mensagem no celular com cara de quem já sabe o que vem.
-- Identificação: todo editor já sentiu o estômago gelar com essa frase. Reabrir projeto, achar a versão, exportar de novo.
+- Identificação: todo editor já sentiu o estômago gelar com essa frase. Reabrir projeto, achar a versão certa, exportar e mandar de novo.
 
 **Entrega:**
 - Virada: "Por isso meu editor nunca entrega vídeo fechado."
-- O sistema edita tudo, mas deixa o projeto aberto com prévia. Ajuste vira mudar uma linha, não refazer o vídeo.
-- Só exporto depois que a prévia foi aprovada.
+- Comparativo: Fluxo antigo: exporta, cliente pede ajuste, reabre tudo, exporta de novo. Fluxo novo: prévia aberta, cliente comenta, muda uma linha, exporta uma vez só.
+- Para quem ainda não tem sistema: manda a prévia em baixa resolução com a palavra PRÉVIA na tela, e combina por escrito quantas rodadas de ajuste entram no preço.
 
 **Fechamento + CTA:** Marca aqui o editor que já recebeu uma ajustadinha às 23h.
 
@@ -133,10 +138,11 @@ Tela dividida · Editar · Meio
 - Dor: legenda errada cansa o olho, e a pessoa sai sem saber por quê.
 
 **Entrega:**
-- Palavra por palavra: vídeo rápido, frase de impacto, humor. Prende o olho em cada palavra.
-- Frase curta: vídeo que ensina, passo a passo. A pessoa lê no ritmo dela e entende.
+- Comparativo lado a lado. Palavra por palavra: ritmo rápido; melhor para gancho, humor e frase de impacto; risco de cansar em vídeo longo. Frase curta: ritmo calmo; melhor para tutorial e explicação; risco de ficar parada se tiver texto demais.
+- Regra da frase curta: no máximo 2 linhas, cortando onde a fala respira.
+- Posição: acima da área dos botões do Reels e fora do rosto. Embaixo demais, a interface cobre.
+- Pode misturar: gancho palavra por palavra para prender, o resto em frase curta para entender.
 - Virada: o teste simples. "Se a pessoa precisa entender, frase curta. Se precisa sentir, palavra por palavra."
-- No meu sistema, o padrão é frase curta com uma palavra em destaque.
 
 **Fechamento + CTA:** Salva para escolher a legenda certa no próximo vídeo.
 
@@ -157,7 +163,8 @@ Narração com motion · Bastidores · Fundo
 - Contexto: um cliente gravou o material de 13 Reels numa manhã só. Na mão, isso seria (X) dias de edição.
 
 **Entrega:**
-- Narração sobre os passos: gravação por cenário; a IA transcreve os 170 takes; liga cada take ao roteiro; fica o take com olhar na câmera e frase inteira; corta silêncio e voz de bastidor; legenda e cartões no padrão da marca; prévia aberta.
+- Comparativo antes x depois, etapa por etapa. Separar takes: assistir tudo x IA lê a transcrição. Cortar: no olho, na timeline x pelo tempo de cada palavra. Legenda: digitar e ajustar x automática no padrão da marca. Aprovação: eu x eu. Essa não muda.
+- Os passos (narração sobre o motion): gravação por cenário; transcrição dos 170 takes; cada take ligado ao roteiro; fica o take com olhar na câmera e frase inteira; corte de silêncio e voz de bastidor; legenda e cartões no padrão; prévia aberta.
 - Virada: "E quem aprova no fim? Eu. Nenhum vídeo sai sem eu assistir."
 - Prova: não é promessa, é o fluxo que roda aqui toda semana.
 
@@ -176,15 +183,15 @@ Talking head · Negócio · Topo
 **Gancho:** Isso ou aquilo de editor. Rodada 3. Responde sem pensar.
 
 **Contexto:**
-- Alguém lê as perguntas fora da câmera. Você responde rápido, sem explicar. Respostas abaixo são sugestão: troque pelas suas.
+- Alguém lê as perguntas fora da câmera. Você responde rápido e dá o porquê em até 5 palavras. Respostas abaixo são sugestão: troque pelas suas.
 
 **Entrega:**
-- Legenda palavra por palavra ou frase curta? Frase curta.
-- Zoom em toda frase ou só na ênfase? Só na ênfase.
-- Corte seco ou transição? Corte seco.
-- Música alta ou bem baixinha? Baixinha, a voz manda.
-- Legenda toda colorida ou uma palavra em cor? Uma palavra.
-- Última: vídeo perfeito ou vídeo postado? Postado.
+- Legenda palavra por palavra ou frase curta? Frase curta. A pessoa entende.
+- Zoom em toda frase ou só na ênfase? Só na ênfase. Zoom em tudo vira ruído.
+- Corte seco ou transição? Corte seco. Transição chama atenção para a edição.
+- Música alta ou bem baixinha? Baixinha. Quem manda é a voz.
+- Legenda toda colorida ou uma palavra em cor? Uma palavra. Senão nada se destaca.
+- Última: vídeo perfeito ou vídeo postado? Postado. Perfeito na gaveta não ensina ninguém.
 
 **Fechamento + CTA:** Qual você responderia diferente? Comenta o número da pergunta.
 
@@ -205,9 +212,10 @@ Tela dividida · Sistemas · Meio
 - Medo comum: perder o controle e postar algo errado na conta do cliente.
 
 **Entrega:**
+- Comparativo: Editor automático de botão x meu fluxo. Controle: nenhum x total. Padrão: o do aplicativo x o do manual da marca. Ajuste: refaz tudo x muda uma linha. Erro: vai para o ar x eu pego antes.
 - Tour do AV Editor (lista entrando): corta silêncio, escolhe o take, legenda em frase curta, palavra em destaque, cartões, título de abertura.
+- Por que deixar aberto: trocar a palavra destacada, trocar um take ou mudar um cartão leva segundos, sem refazer o vídeo.
 - Virada: "Tudo isso fica aberto. Eu vejo a prévia, mexo no que quiser e só exporto quando eu mando."
-- Por quê: a IA faz o braçal, a decisão é minha.
 
 **Fechamento + CTA:** IA editando, você decidindo. Segue para ver o sistema por dentro.
 
@@ -228,8 +236,9 @@ Talking head · Editar · Topo
 - Dor: frase lida aparece no olho. Quem assiste sente, e a confiança cai.
 
 **Entrega:**
-- A regra: frase que você precisou ler não entra no vídeo.
-- A ideia dela vira cartão na tela: número, lista, nome difícil.
+- Comparativo: Regravar: cinco tentativas, olhar perdido, energia caindo. Cartão: uma frase sua olhando na câmera, e a informação aparece clara na tela.
+- O que vira cartão: número, lista com mais de 3 itens, nome difícil, passo a passo, citação.
+- O que nunca vira cartão: o gancho, a sua opinião e o pedido do final. Isso é olho no olho.
 - Virada: "Você não precisa decorar tudo. Só o que é seu: a opinião. O dado vai pro cartão."
 
 **Fechamento + CTA:** Na próxima gravação, para de regravar e anota: isso vira cartão. Salva esse.
@@ -251,9 +260,10 @@ Talking head · Editar · Meio
 - Gatilho: um erro desses e a confiança do cliente vai embora.
 
 **Entrega:**
-- 1. Aprovar o vídeo. Quem decide se ficou bom sou eu.
-- 2. Exportar sem prévia. Eu assisto antes, sempre.
-- 3. Nome e número na legenda. Eu confiro letra por letra.
+- 1. Aprovar o vídeo. Eu assisto duas vezes: com som e no mudo, que é como a maioria assiste.
+- 2. Exportar sem prévia. Prévia primeiro, sempre. Exportar é a última coisa.
+- 3. Nome e número na legenda. Confiro contra o roteiro, não contra a memória.
+- Comparativo: O que a IA faz melhor que eu: repetição, velocidade, seguir padrão. O que eu faço melhor: gosto, contexto do cliente e responsabilidade.
 - Virada: "A terceira é a que mais pega." Um nome errado na legenda o cliente lembra mais do que de 10 vídeos bons.
 
 **Fechamento + CTA:** IA no braçal, você no que importa. Manda pro editor que confia demais na IA.
@@ -275,8 +285,9 @@ Talking head · Negócio · Fundo
 - Gatilho emocional: você acha que o problema é você. Que precisa ser mais rápida, mais organizada, dormir menos.
 
 **Entrega:**
-- Virada: "O gargalo não é você. É o braçal." Transcrever, separar take, cortar, legendar.
-- Antes de contratar alguém, monta um sistema. Contratar sem sistema é dividir a bagunça com mais uma pessoa.
+- Virada: "O gargalo não é você. É o braçal." Transcrever, separar take, cortar, legendar, organizar.
+- Comparativo: Contratar sem sistema: mais custo fixo, você vira gerente da bagunça e treina tudo pelo WhatsApp. Montar sistema antes: o braçal sai de você, e quando contratar, a pessoa entra num processo pronto.
+- Diagnóstico de uma semana: anota onde vai o seu tempo. Tudo que é repetição com regra clara é candidato a sistema.
 - Com sistema, você volta para o que só você faz: estratégia e relação com o cliente.
 
 **Fechamento + CTA:** Quer montar o seu? Comenta SISTEMA que eu te chamo no direct.
@@ -291,13 +302,13 @@ Ganchos alternativos:
 ### Sábado 05/12 · CARROSSEL · Minha esteira de edição em 10 passos
 Carrossel · Bastidores · Topo
 
-1. Minha esteira de edição com IA em 10 passos. Do take bruto ao vídeo aprovado.
-2. 1. Gravo por cenário, tudo numa manhã. / 2. Subo os takes numa pasta só.
-3. 3. A IA transcreve cada take com o tempo de cada palavra. / 4. Compara a fala com os roteiros e descobre de qual vídeo é cada take.
-4. 5. Fica só o take com olhar na câmera e frase inteira. / 6. Corta o silêncio, sem comer sílaba.
-5. 7. Tira a voz de bastidor. / 8. Frase lida vira cartão na tela.
+1. Minha esteira de edição com IA em 10 passos. E o motivo de cada um.
+2. 1. Gravo por cenário, numa manhã. Menos troca de luz, roupa e enquadramento. / 2. Todos os takes numa pasta só. A IA precisa achar tudo num lugar.
+3. 3. Transcrição com o tempo de cada palavra. É a base de todo o resto. / 4. A fala de cada take é comparada com os roteiros. Cada take acha o seu vídeo.
+4. 5. Só fica o take com olhar na câmera e frase inteira. Take lendo não passa. / 6. Corte no silêncio, nunca em cima da palavra. Nada de sílaba comida.
+5. 7. Voz de bastidor sai. O "pode ir" não chega no post. / 8. Frase lida vira cartão na tela. A informação fica, o olhar perdido sai.
 6. 9. Legenda em frase curta, uma palavra em destaque, cartão longe do rosto. / 10. Prévia aberta, nada exportado.
-7. O último passo é meu: assisto, ajusto e aprovo. Só então exporta.
+7. Na mão x na esteira: separar, cortar, legendar e conferir eram horas de timeline. Hoje o meu trabalho é o último passo: assistir e aprovar.
 8. Quer o checklist com as regras da minha esteira? Comenta EDIÇÃO.
 
 
@@ -314,7 +325,8 @@ Talking head · Fluxo · Topo
 
 **Entrega:**
 - Virada: "Hoje isso não me tira o sono. Tudo isso vira roteiro com um prompt."
-- Transcrevo o áudio, colo na IA e sai roteiro com gancho, contexto e CTA, usando as palavras do próprio cliente.
+- Comparativo: Responder na hora: você trabalha às 23h e decide cansado. Juntar e processar uma vez por dia: tudo vira roteiro de uma vez, com a cabeça fresca.
+- Como eu faço: 1) transcrevo o áudio; 2) colo no prompt; 3) sai roteiro com gancho e CTA nas palavras do cliente, e o que sobrou vira lista de próximos vídeos.
 - O prompt está no meu perfil, no Prompt do Dia "Do áudio bagunçado ao roteiro".
 
 **Fechamento + CTA:** Segue e procura esse prompt no meu perfil.
@@ -333,15 +345,15 @@ Narração com motion · Fluxo · Meio
 
 **Contexto:**
 - Rosto: conteúdo atrasa quando cada etapa depende de você lembrar.
-- Meu fluxo tem 6 etapas, uma depois da outra.
+- Comparativo de abertura: fluxo por dia (pensa, grava, edita e posta no mesmo dia) x fluxo por etapa (cada etapa uma vez por semana).
 
 **Entrega:**
-- 1. Roteiro: escrito antes, com gancho e CTA.
-- 2. Plano por cenário: roteiros agrupados pelo lugar de gravação.
-- 3. Gravação em lote: uma manhã fecha a semana.
-- 4. Drive organizado: nome de arquivo e pasta no padrão.
-- 5. Esteira de edição: a IA faz o braçal.
-- 6. Revisão e agendamento: eu aprovo e agendo.
+- 1. Roteiro escrito antes. Evita gravar sem saber o que falar e regravar.
+- 2. Plano por cenário. Evita trocar de lugar dez vezes na mesma manhã.
+- 3. Gravação em lote. Evita depender de inspiração todo dia.
+- 4. Drive organizado. Evita perder take e mandar arquivo errado.
+- 5. Esteira de edição. Evita horas de timeline no braçal.
+- 6. Revisão e agendamento. Evita postar com erro e postar na correria.
 - Virada: "A etapa que ninguém faz é a 2. E é ela que transforma uma semana de gravação em uma manhã."
 
 **Fechamento + CTA:** Salva e monta o seu na próxima semana.
@@ -364,8 +376,10 @@ Talking head · Fluxo · Topo
 
 **Entrega:**
 - Mito. Uma manhã de gravação por cenário fecha a semana.
-- Como: roteiros prontos antes, plano por cenário, grava tudo de uma vez.
-- Virada: "O que trava não é falta de tempo. É gravar sem plano." Cada troca de cenário é luz, roupa e celular para ajeitar.
+- Comparativo: Gravar todo dia: arrumar luz, roupa e celular todo dia; um dia ruim derruba o post. Gravar em lote: uma arrumação só; a semana pronta antes de começar.
+- Para começar: escolha uma manhã fixa, separe os roteiros por cenário e grave do mais curto para o mais longo.
+- Dica para o feed não parecer o mesmo vídeo: troque a roupa ou o enquadramento entre uma série e outra.
+- Virada: "O que trava não é falta de tempo. É gravar sem plano."
 
 **Fechamento + CTA:** Mito. Uma manhã fecha a semana. Segue para ver como eu planejo.
 
@@ -386,8 +400,9 @@ Narração com motion · Fluxo · Meio
 - Se for na ordem do calendário, vai trocar de lugar a manhã toda.
 
 **Entrega:**
+- Comparativo: Ordem do calendário: segunda mesa, segunda carro, terça mesa de novo. Ordem por cenário: tudo da mesa, depois tudo do carro. Uma arrumação por lugar.
 - Prompt na tela (digitado): "Aqui estão meus roteiros da semana. Agrupe por cenário de gravação (mesa, estúdio, carro, rua, tela). Em cada cenário, coloque os roteiros na ordem de gravação, com o número e o gancho de cada um. Sugira trocar a roupa ou o enquadramento entre séries diferentes."
-- Mostra a lista por cenário surgindo.
+- Exemplo do resultado: Mesa com notebook: roteiros 2, 9 e 11 com fala completa, mais os ganchos curtos de 4, 5 e 10. Estúdio: 3, 8 e 12.
 - Virada: "O detalhe da roupa é o que faz o feed não parecer o mesmo vídeo."
 
 **Fechamento + CTA:** Pausa, tira print e usa no seu próximo dia de gravação.
@@ -409,8 +424,9 @@ Tela dividida · Fluxo · Topo
 - Frase forte: "Se nem você acha o arquivo, imagina a IA."
 
 **Entrega:**
-- Depois: pasta por data, dentro uma pasta por cenário, arquivo com nome que diz o que é.
-- Três regras: data, cenário, nome.
+- Depois: uma pasta por semana; dentro, uma por cenário; e uma pasta FINAIS separada dos brutos.
+- Comparativo com 3 critérios. Você achar o arquivo: procura x abre e está lá. A IA achar o take: chuta x encontra pelo nome. O cliente achar o vídeo final: pergunta no WhatsApp x abre a pasta FINAIS.
+- Erro comum: misturar bruto e final na mesma pasta. É assim que o cliente posta a versão errada.
 - Virada: "Organizar não é frescura. É o que deixa a IA achar o take sozinha."
 
 **Fechamento + CTA:** Amanhã eu mostro o padrão de nome que eu uso. Segue para não perder.
@@ -432,9 +448,11 @@ Tela dividida · Fluxo · Meio
 - Arquivo com nome de câmera não diz de qual dia, cenário ou roteiro ele é.
 
 **Entrega:**
-- Meu padrão (confira com o seu padrão real antes de gravar): data, cenário e número do roteiro. Exemplo na tela: 2026-12-09_mesa_R04.
-- Pastas: uma por semana, dentro uma por cenário.
-- Virada: "Data no começo do nome faz o computador colocar tudo em ordem sozinho."
+- Comparativo na tela: IMG_4821 x 2026-12-09_mesa_R04_t2. O primeiro não diz nada. O segundo diz dia, cenário, roteiro e tentativa.
+- O porquê de cada parte: data no começo coloca tudo em ordem sozinho; cenário agrupa; número do roteiro liga o take ao vídeo; t2 mostra que é a segunda tentativa.
+- Regra de ouro: sem espaço e sem acento no nome. Use hífen ou underline.
+- Confira o exemplo com o padrão que você usa de verdade antes de gravar.
+- Virada: "Trinta segundos renomeando economizam uma tarde procurando."
 
 **Fechamento + CTA:** Salva e renomeia os arquivos da sua próxima gravação nesse padrão.
 
@@ -455,10 +473,10 @@ Talking head · Bastidores · Fundo
 - Antes: postar dependia de editar no dia, e um dia ruim derrubava a semana.
 
 **Entrega:**
+- Comparativo de semana. Sem regra: segunda tudo pendente, post atrasa, qualidade cai na correria. Com regra: segunda tudo pronto, o que faltou vai para a semana seguinte, nada atrasa.
 - A regra: só entra na semana o que já está gravado e editado.
-- O que não ficou pronto não atrasa nada: vai para a semana seguinte.
+- Como eu enxergo isso: cada post tem uma etapa (gravado, editado, agendado) e todo mundo vê a mesma coisa.
 - Virada: "Parece que você posta menos. Na prática, você nunca mais falha."
-- A central mostra tudo com um botão: gravado, editado, agendado.
 
 **Fechamento + CTA:** Quer uma central assim? Comenta SISTEMA que eu te chamo no direct.
 
@@ -475,14 +493,14 @@ Talking head · Negócio · Topo
 **Gancho:** Isso ou aquilo de videomaker. Rodada 4: fluxo.
 
 **Contexto:**
-- Alguém lê as perguntas fora da câmera. Você responde rápido. Respostas abaixo são sugestão: troque pelas suas.
+- Alguém lê as perguntas fora da câmera. Você responde rápido e dá o porquê em até 5 palavras. Respostas abaixo são sugestão: troque pelas suas.
 
 **Entrega:**
-- Roteiro ou improviso? Roteiro.
-- Gravar em lote ou todo dia? Em lote.
-- Drive ou WhatsApp? Drive.
-- Cobrar por vídeo ou por mês? Por mês.
-- Postar quando der ou calendário fechado? Calendário.
+- Roteiro ou improviso? Roteiro. Improviso vira cinco takes.
+- Gravar em lote ou todo dia? Em lote. Uma arrumação só.
+- Drive ou WhatsApp? Drive. WhatsApp comprime o vídeo.
+- Cobrar por vídeo ou por mês? Por mês. Cliente paga constância.
+- Postar quando der ou calendário fechado? Calendário. Quando der vira nunca.
 - Última: atrasar o post ou remanejar? Remanejar.
 
 **Fechamento + CTA:** Qual você responderia diferente? Comenta o número da pergunta.
@@ -501,12 +519,13 @@ Tela dividida · Fluxo · Meio
 
 **Contexto:**
 - O cliente trava na câmera e você acha que é timidez.
-- Virada no começo: muitas vezes é o roteiro. Frase longa, palavra difícil, texto de redação.
+- Muitas vezes é o roteiro: frase longa, palavra difícil, texto de redação.
 
 **Entrega:**
+- Comparativo com a mesma ideia. Roteiro de redação: "A utilização de inteligência artificial no processo de edição proporciona maior agilidade." Roteiro de fala: "A IA edita mais rápido. E eu só aprovo."
 - O modelo: gancho (uma frase), contexto (o problema), entrega (uma ideia só), fechamento (o pedido).
-- Frases curtas, que cabem num fôlego.
-- Escreve como se fala, não como se escreve.
+- 3 regras de escrita: frase que cabe num fôlego; escreve como se fala; marca em negrito a palavra de ênfase.
+- Antes de mandar: lê em voz alta. Onde você tropeçar, o cliente também vai tropeçar.
 - Virada: o teste do fôlego. "Se não dá para falar sem respirar no meio, a frase está longa."
 
 **Fechamento + CTA:** Salva e manda pro cliente que trava na câmera.
@@ -528,6 +547,7 @@ Talking head · Fluxo · Topo
 - Identificação: a vontade é gravar tudo correndo, de qualquer jeito.
 
 **Entrega:**
+- Comparativo rápido na tela: gravar tudo correndo (qualidade cai, você se esgota) x remanejar (semana em pé, nada sai mal feito).
 - Virada: "Eu não atraso. Eu remanejo."
 - Deixa a curiosidade no ar: como, está no próximo vídeo.
 
@@ -550,9 +570,9 @@ Tela dividida · Fluxo · Meio
 - O erro é deixar um vídeo derrubar a semana inteira.
 
 **Entrega:**
-- O que está pronto fica no dia.
-- O que não foi gravado vai para a semana seguinte, no mesmo dia da semana.
-- Mostra a central: um botão "fechar semana" faz isso sozinho e mostra a lista do que foi movido.
+- Comparativo: Atrasar: buraco no feed, correria, vídeo feito de qualquer jeito. Remanejar: o pronto entra, o pendente vai para a semana seguinte, o feed não para.
+- A regra em 3 passos: 1) segunda de manhã, confere o que está gravado e editado; 2) o que não está vai para a semana seguinte, no mesmo dia; 3) se sobrar buraco, entra story ou repost do que mais performou.
+- Mostra a central: o botão "fechar semana" faz isso sozinho e mostra a lista do que foi movido.
 - Virada: "A semana nunca fica refém de um vídeo."
 
 **Fechamento + CTA:** Salva e usa essa regra na sua próxima semana.
@@ -575,8 +595,9 @@ Talking head · Negócio · Fundo
 
 **Entrega:**
 - Virada: "Você não precisa de agência. Precisa de um fluxo em que você só grava."
-- Você grava do seu jeito, com o celular. O sistema edita, legenda e organiza.
-- É o serviço que eu faço: você manda os takes e recebe os vídeos prontos para aprovar.
+- Comparativo: Agência: equipe vai até você, depende da agenda deles, precisa aprender o seu negócio. Você grava e o sistema edita: grava no celular quando quiser, com um checklist, e você já é o especialista no seu negócio.
+- Como funciona o serviço: você recebe os roteiros, grava, manda os takes e recebe os vídeos prontos para aprovar.
+- O que você precisa fazer: só gravar e aprovar. O resto não passa por você.
 
 **Fechamento + CTA:** Quer saber como funciona para o seu negócio? Me chama no direct.
 
@@ -591,11 +612,11 @@ Ganchos alternativos:
 Carrossel · Fluxo · Meio
 
 1. O checklist que eu mando para o cliente antes de gravar. 6 itens que salvam a edição.
-2. 1. Olhar na câmera, não na tela. Take sem olhar não entra.
-3. 2. 1 segundo de silêncio antes de falar. Dá folga para o corte.
-4. 3. Errou? Repete a frase inteira, não só a palavra.
-5. 4. Quem está ajudando fica calado. Voz de bastidor estraga o take.
-6. 5. Celular na altura dos olhos. / 6. Luz de frente, nunca atrás.
+2. 1. Olhar na câmera, não na tela. / Por quê: take sem olhar não entra no vídeo.
+3. 2. 1 segundo de silêncio antes de falar. / Por quê: dá folga para o corte não comer a primeira palavra.
+4. 3. Errou? Repete a frase inteira, não só a palavra. / Por quê: frase remendada não dá para cortar.
+5. 4. Quem está ajudando fica calado. / Por quê: voz de bastidor estraga o take inteiro.
+6. 5. Celular na altura dos olhos. / 6. Luz de frente, nunca atrás. / Por quê: de baixo ou contra a luz, a pessoa some.
 7. Com isso, a IA acha o take certo sozinha e ninguém regrava. Quer o checklist para mandar pro seu cliente? Comenta EDIÇÃO.
 
 
@@ -611,9 +632,10 @@ Tela dividida · Sistemas · Topo
 - Frase forte: "Eu não sei programar. Nenhuma linha de código."
 
 **Entrega:**
+- Comparativo: O que eu achava que precisava: saber código, fazer curso, contratar programador. O que precisou de verdade: explicar o problema, pedir pequeno, testar no celular.
 - Tudo isso saiu de conversa com a IA, em português, um pedido de cada vez.
 - Virada: "A habilidade que importa não é programar. É saber explicar o seu problema."
-- Esta semana eu te mostro como.
+- Esta semana eu te mostro como, passo a passo.
 
 **Fechamento + CTA:** Segue para acompanhar a semana inteira.
 
@@ -631,14 +653,15 @@ Tela dividida · Sistemas · Meio
 
 **Contexto:**
 - Sem manual, a IA edita do jeito dela: genérico, igual a todo mundo.
-- Com manual, ela edita do seu jeito, toda vez.
+- Com manual, ela edita do seu jeito, toda vez, sem você repetir.
 
 **Entrega:**
-- 1. Cores: as da marca, em código.
-- 2. Fonte: qual e em que peso.
-- 3. Legenda: frase curta, uma palavra em destaque.
-- 4. Cartões: quando aparecem e onde. Nunca no rosto.
-- 5. O que nunca pode acontecer: cortar a última palavra, voz de bastidor, exportar sem prévia.
+- 1. Cores. Exemplo do meu: fundo azul-marinho, destaque azul, texto branco, em código de cor.
+- 2. Fonte. Exemplo: Montserrat, nos pesos mais fortes.
+- 3. Legenda. Exemplo: frase curta, uma palavra em destaque na cor da marca.
+- 4. Cartões. Exemplo: entram quando eu falo número ou lista, nunca em cima do rosto.
+- 5. O que nunca pode acontecer. Exemplo: cortar a última palavra (deixo 0,7 segundo de folga), voz de bastidor, exportar sem prévia.
+- Comparativo final: IA sem manual = vídeo genérico. IA com manual = vídeo com a sua cara.
 - Virada: "A parte 5 é a mais importante. Cada regra dela nasceu de um erro."
 
 **Fechamento + CTA:** Quer o modelo do meu manual? Comenta MANUAL.
@@ -660,7 +683,9 @@ Talking head · Sistemas · Topo
 
 **Entrega:**
 - Mito. É explicar o problema em português e testar.
-- Eu não sei programar e montei o planejamento, a esteira de edição e um painel de TV para clientes.
+- Comparativo: Programador sem conhecer o seu problema: sabe fazer, mas não sabe o que fazer. Você sem saber código: sabe exatamente o que precisa, e a IA faz.
+- O que você precisa saber: descrever o problema, testar de verdade e dizer o que deu errado.
+- Prova: eu não sei programar e montei o planejamento, a esteira de edição e um painel de TV para clientes.
 - Virada: "Quem mais se dá bem nisso não é o programador. É quem conhece bem o próprio problema."
 
 **Fechamento + CTA:** Mito. Segue que essa semana eu mostro o passo a passo.
@@ -681,8 +706,9 @@ Narração com motion · Sistemas · Meio
 - O erro de quem começa: pedir o sistema inteiro de uma vez.
 
 **Entrega:**
+- Comparativo: Pedido grande: "cria um sistema completo de gestão de conteúdo". Pedido pequeno: só o calendário, com 3 informações por post.
 - Prompt na tela (digitado): "Quero um calendário de conteúdo simples, que eu uso no celular. Só o calendário, nada mais. Cada post tem dia, horário e etapa do funil (topo, meio ou fundo). Mostre a semana de segunda a domingo. Antes de criar, me faça até 3 perguntas."
-- Mostra o calendário surgindo.
+- Os próximos pedidos, um por vez: o botão de etapa; o roteiro dentro do post; o celular e o computador mostrando a mesma coisa.
 - Virada: "O pulo do gato é o final: me faça perguntas antes." A IA para de chutar.
 
 **Fechamento + CTA:** Pausa, tira print e faz seu primeiro pedido hoje.
@@ -703,11 +729,15 @@ Tela dividida · Sistemas · Topo
 - Lado A: "cria um sistema para mim". Resultado genérico, nada a ver com você.
 
 **Entrega:**
-- Lado B: um arquivo de contexto com quem eu sou, o problema, as regras e como vou testar.
-- Mesma IA, resultado completamente diferente.
+- Lado B: um arquivo de contexto. Mostra os pedaços na tela:
+- Quem eu sou: videomaker, não sei programar, uso no celular.
+- O problema: conteúdo espalhado entre WhatsApp, Drive e planilha.
+- As regras: botões grandes, tudo em português, sem custo mensal.
+- Como testar: abrir no celular, criar um post e ver aparecer no computador.
+- Comparativo do resultado: mesma IA. Sem contexto, ela chuta. Com contexto, ela resolve o seu problema.
 - Virada: "A IA não é ruim. Ela só não te conhece."
 
-**Fechamento + CTA:** Sábado eu mostro o que vai nesse arquivo. Segue para não perder.
+**Fechamento + CTA:** Sábado eu mostro o modelo completo desse arquivo. Segue para não perder.
 
 **Na tela e motion:** comparação lado a lado  
   
@@ -726,8 +756,10 @@ Talking head · Sistemas · Meio
 
 **Entrega:**
 - Eu hospedo os meus na Cloudflare, no plano grátis.
+- Comparativo: Servidor pago: mensalidade, configuração, alguém para manter. Plano grátis: zero por mês, sobe com um comando, mas tem limite.
 - O limite: (X) acessos por dia. Confira o número atual no site da Cloudflare antes de gravar.
-- Virada: compara com o seu uso. Para um sistema interno, de você ou de um cliente, (X) por dia é muito.
+- Quando vale pagar: muito acesso por dia ou um cliente grande usando ao mesmo tempo.
+- Virada: compara com o seu uso. Para um sistema interno, seu ou de um cliente, (X) por dia é muito.
 
 **Fechamento + CTA:** Salva para quando for colocar o seu no ar.
 
@@ -747,8 +779,9 @@ Narração com motion · Sistemas · Fundo
 - Rosto: fala o gancho com calma, deixa a palavra mensalidade pesar.
 
 **Entrega:**
-- Painel de TV para comércios: playlists, agendamento, aviso urgente, relatório e app para a TV.
+- O que é: painel de TV para comércios. Playlists, agendamento, aviso urgente, relatório e app para a TV.
 - O comércio liga a TV e o conteúdo roda sozinho, na hora certa.
+- Comparativo: Vender vídeo avulso: recebe uma vez, entrega e acaba, cliente some. Vender sistema: recebe todo mês, o sistema roda sozinho, cliente fica.
 - Se quiser mostrar: (X) comércios usando hoje.
 - Virada: "Eu não vendi um vídeo. Vendi um sistema. E sistema se renova todo mês."
 
@@ -771,6 +804,7 @@ Talking head · Sistemas · Topo
 
 **Entrega:**
 - Virada: "A IA não errou. O pedido que era grande demais."
+- Comparativo na tela: "cria um sistema completo" (tudo pela metade) x "cria só o calendário" (uma parte funcionando).
 - Pede pequeno: uma parte, testa, depois a próxima.
 
 **Fechamento + CTA:** Marca o amigo que pediu tudo de uma vez.
@@ -791,8 +825,9 @@ Talking head · Sistemas · Meio
 - Depois que você automatiza uma coisa, dá vontade de automatizar tudo.
 
 **Entrega:**
-- Coluna IA: transcrever, separar take, cortar, legendar, organizar.
-- Coluna eu: decidir o que ficou bom, aprovar, falar com o cliente.
+- Duas colunas. IA: transcrever, separar take, cortar, legendar, organizar. Eu: decidir o que ficou bom, aprovar, falar com o cliente.
+- O critério para decidir: automatizo o que é repetição e tem regra clara. Não automatizo o que precisa de gosto, contexto ou responsabilidade.
+- Teste rápido: "Se der errado, quem leva a culpa?" Se for eu, eu reviso.
 - Virada: "Se a IA fizer a coluna da direita, o cliente percebe. E vai embora."
 
 **Fechamento + CTA:** Automatiza o braçal, protege o que é seu. Salva esse.
@@ -814,7 +849,8 @@ Narração com motion · Sistemas · Topo
 
 **Entrega:**
 - Relógio da madrugada (narração sobre os passos): baixa os arquivos, transcreve, escolhe o take, corta, legenda.
-- De manhã: café e prévia. Eu só assisto e aprovo.
+- Comparativo da manhã: Antes: café e timeline até o almoço. Depois: café e prévias para assistir e aprovar.
+- O que precisa estar pronto antes de dormir: roteiros escritos, takes na pasta certa e o manual de regras.
 - Virada: "O trabalho chato não sumiu. Só mudou de horário e de dono."
 
 **Fechamento + CTA:** Segue para ver como montar o seu.
@@ -835,8 +871,10 @@ Tela dividida · Sistemas · Meio
 - "Já gravou?" "Gravou qual?" "Manda print." A conversa que comia o meu dia.
 
 **Entrega:**
-- Hoje tem um botão: gravado. Toca no celular e aparece em todos os aparelhos.
+- Comparativo: Antes: mensagem, print, planilha desatualizada, ninguém sabe o que está pronto. Depois: um botão. Toca no celular e aparece em todos os aparelhos.
 - Mostra 2 celulares mudando juntos.
+- A lição que vale para qualquer sistema: o melhor sistema elimina uma pergunta repetida.
+- Exercício: qual é a pergunta que você mais responde por semana? É por ela que o seu primeiro sistema começa.
 - Virada: "Um botão simples acabou com a pergunta mais repetida da semana."
 
 **Fechamento + CTA:** Salva: às vezes o sistema que mais ajuda é o mais simples.
@@ -858,7 +896,8 @@ Talking head · Negócio · Fundo
 
 **Entrega:**
 - Virada: "Quem só filma disputa preço. Quem monta sistema, não."
-- O cliente não compra vídeo. Compra constância, organização e post no ar toda semana.
+- Comparativo: Quem só filma vende diária ou vídeo, concorre com qualquer um com câmera, e o cliente vai embora no fim do projeto. Quem monta sistema vende constância, concorre com pouca gente, e o cliente fica todo mês.
+- O cliente não compra vídeo. Compra post no ar toda semana sem dor de cabeça.
 - Quando você entrega o sistema, sai da comparação de preço.
 
 **Fechamento + CTA:** Quer montar o seu sistema comigo? Link na bio, na mentoria.
@@ -874,11 +913,11 @@ Ganchos alternativos:
 Carrossel · Sistemas · Meio
 
 1. O que eu coloco no contexto antes de pedir um sistema à IA. É a diferença entre bagunça e algo que funciona.
-2. 1. Quem eu sou. O que faço e que não sei programar.
-3. 2. O problema. Em português, como se fosse para um colega.
-4. 3. O que já uso. Planilha, WhatsApp, Drive. A IA precisa saber de onde você parte.
-5. 4. As regras. O que é obrigatório e o que nunca pode acontecer.
-6. 5. Como testar. No celular, com um caso real. / 6. O que me perguntar antes de começar.
+2. 1. Quem eu sou. / Exemplo: "Sou videomaker, não sei programar, uso tudo no celular."
+3. 2. O problema, em português. / Exemplo: "Meu conteúdo está espalhado entre WhatsApp, Drive e planilha."
+4. 3. O que já uso. / Exemplo: "Roteiro no Docs, vídeo no Drive, calendário na planilha."
+5. 4. As regras. / Exemplo: "Botões grandes, tudo em português, sem custo mensal."
+6. 5. Como testar. / Exemplo: "Crio um post no celular e vejo aparecer no computador." / 6. O que me perguntar antes de começar.
 7. Quer o modelo do meu arquivo de contexto? Comenta CONTEXTO.
 
 
@@ -894,7 +933,8 @@ Talking head · Negócio · Topo
 
 **Entrega:**
 - Virada: "IA não substitui o videomaker. Substitui as horas chatas dele."
-- Quem usa entrega mais rápido, com padrão, e sobra tempo para pensar no cliente.
+- Comparativo da mesma semana: Videomaker sem IA: a maior parte do tempo no braçal, pouco tempo para o cliente. Videomaker com IA: o braçal roda sozinho, sobra tempo para ideia, estratégia e venda.
+- O que a IA não tira de você: gosto, relacionamento e decisão.
 - A pergunta não é se a IA vai chegar. É de que lado você vai estar.
 
 **Fechamento + CTA:** Manda pro amigo que ainda tem medo da IA.
@@ -915,9 +955,10 @@ Tela dividida · Negócio · Meio
 - Se a IA corta seu tempo pela metade e você cobra por hora, você acabou de cortar o próprio salário.
 
 **Entrega:**
-- Comparação: por hora x por resultado.
-- Por resultado: vídeos prontos, no padrão, no prazo.
-- Pacote mensal: roteiro, edição e calendário. O cliente paga pela constância.
+- Comparativo: Por hora: quanto mais rápido você fica, menos ganha. Por resultado: quanto mais rápido você fica, mais lucra no mesmo preço.
+- Exemplo: um vídeo levava (X) horas e agora leva metade. Cobrando por hora, você recebe metade. Cobrando por vídeo pronto, recebe o mesmo e ganha tempo.
+- Pacote mensal: roteiro, edição e calendário. O cliente paga pela constância, não pelo minuto.
+- Como apresentar: não fala de horas. Fala do que o cliente recebe no mês.
 - Virada: "A IA não deixou seu trabalho mais barato. Deixou mais lucrativo."
 
 **Fechamento + CTA:** Salva antes de mandar o próximo orçamento.
@@ -939,7 +980,8 @@ Talking head · Negócio · Topo
 
 **Entrega:**
 - Mito. O cliente nunca pagou pelas suas horas na timeline.
-- Ele paga pelo vídeo bom, no prazo, toda semana.
+- Comparativo: O que o cliente vê: vídeo bom, no prazo, no padrão, toda semana. O que ele não vê: quais ferramentas você usou.
+- Pergunta de volta: você paga menos no restaurante porque a cozinha tem forno melhor?
 - Virada: "Você cobra pelo que sabe decidir, não pelo tempo que passou cortando."
 
 **Fechamento + CTA:** Mito. Segue para mais mitos de quem trabalha com vídeo.
@@ -962,6 +1004,7 @@ Tela dividida · Negócio · Meio
 **Entrega:**
 - O que entra: roteiros da semana, plano de gravação por cenário, vídeos editados, calendário na central.
 - Como organizo: tudo numa central que o cliente abre no celular, com o botão gravado.
+- Comparativo: Avulso: você vende todo mês de novo, o cliente compara preço, a renda oscila. Mensal: renda previsível, o cliente cria rotina, a relação dura.
 - Virada: "O que fideliza não é o vídeo. É ele nunca mais perguntar o que posta hoje."
 
 **Fechamento + CTA:** Salva para montar o seu pacote.
@@ -982,7 +1025,12 @@ Narração com motion · Bastidores · Topo
 - Rosto: "Eu não sei programar. Mesmo assim, olha o que saiu esse ano."
 
 **Entrega:**
-- Linha do tempo: esteira de edição, AV Editor, central de planejamento, painel de TV para comércios, manuais para a IA.
+- Linha do tempo, cada um com o problema que resolveu:
+- Esteira de edição: acabou com as horas de timeline.
+- AV Editor: edição no padrão da marca, com prévia aberta.
+- Central de planejamento: acabou com o "já gravou?".
+- Painel de TV para comércios: virou mensalidade.
+- Manuais para a IA: ela edita do meu jeito.
 - Se quiser, o mês de cada um: (X).
 - Virada: "Nenhum desses começou grande. Todos começaram com um pedido pequeno."
 
@@ -1002,11 +1050,12 @@ Talking head · Negócio · Meio
 
 **Contexto:**
 - As 3 decisões abaixo são sugestão: troque pelas suas, com a sua história.
+- Comparativo de abertura: como eu comecei (X) x como eu começaria hoje.
 
 **Entrega:**
-- 1. Montaria o fluxo antes de ter muitos clientes.
-- 2. Cobraria pacote mensal desde o primeiro cliente.
-- 3. Colocaria a IA no braçal desde o primeiro dia.
+- 1. Montaria o fluxo antes de ter muitos clientes. Porque organizar com 10 clientes é muito mais difícil do que com 1.
+- 2. Cobraria pacote mensal desde o primeiro cliente. Porque vídeo avulso te obriga a vender de novo todo mês.
+- 3. Colocaria a IA no braçal desde o primeiro dia. Porque o tempo que sobra é o que faz você crescer.
 - Virada: conta qual delas você aprendeu do jeito difícil.
 
 **Fechamento + CTA:** Manda pro amigo que está começando agora.
@@ -1028,7 +1077,9 @@ Tela dividida · Negócio · Fundo
 
 **Entrega:**
 - O que você leva: transcrição, escolha de take, padrão visual, planejamento e manual para a IA.
+- Comparativo: Curso gravado: você assiste e tenta sozinho. Mentoria: a gente monta junto, no seu caso, e você sai com o sistema funcionando.
 - Formato: (X) encontros, montando junto.
+- Para quem é: videomaker, editor ou social media que já tem clientes e está afogado no braçal.
 - Virada: "Você não sai com um curso. Sai com o sistema funcionando."
 
 **Fechamento + CTA:** Os detalhes estão no link da bio.
@@ -1065,12 +1116,12 @@ Ganchos alternativos:
 Carrossel · Sistemas · Meio
 
 1. 5 sistemas que você pode montar com IA em 2027. Sem saber programar.
-2. 1. Planejamento semanal. Calendário, roteiros e etapa de cada post no celular.
-3. 2. Transcrição com escolha de take. A IA descobre de qual roteiro é cada take.
-4. 3. Manual para a IA. Suas regras de edição, escritas uma vez.
-5. 4. Botão gravado. Marca num aparelho, aparece em todos.
-6. 5. Painel para clientes. O cliente vê o que está pronto sem te perguntar.
-7. Comece por um. Quer conversar sobre o seu? Comenta SISTEMA.
+2. 1. Planejamento semanal. / Resolve: conteúdo espalhado em 3 lugares.
+3. 2. Transcrição com escolha de take. / Resolve: tarde inteira separando arquivo.
+4. 3. Manual para a IA. / Resolve: edição genérica, sem a sua cara.
+5. 4. Botão gravado. / Resolve: o "já gravou?" todo dia.
+6. 5. Painel para clientes. / Resolve: cliente perguntando o que está pronto.
+7. Por onde começar: pelo que mais rouba o seu tempo. Quer conversar sobre o seu? Comenta SISTEMA.
 
 ### Sábado 26/12 · RECADO #6 · Recado para quem quer começar 2027 com um sistema.
 Talking head · Negócio · Fundo
@@ -1082,7 +1133,8 @@ Talking head · Negócio · Fundo
 
 **Entrega:**
 - Virada: "O problema não é força de vontade. É tentar mudar tudo de uma vez."
-- Comece pequeno: um pedido por vez para a IA.
+- Comparativo: Meta grande ("vou organizar tudo") trava na primeira semana. Pedido pequeno ("vou resolver uma coisa") vira hábito.
+- Plano em 3 passos: 1) escolha o problema que mais rouba o seu tempo; 2) peça para a IA só a primeira parte; 3) use por uma semana antes de pedir a próxima.
 - Se quiser fazer isso junto, é o que eu faço na mentoria.
 
 **Fechamento + CTA:** Comenta SISTEMA que eu te chamo para conversar.

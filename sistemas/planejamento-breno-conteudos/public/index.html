@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Planejamento Breno</title>
+<meta name="theme-color" content="#03081B">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Conteúdo AV">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2303081B'/%3E%3Ctext x='32' y='43' font-family='Arial Black,Arial' font-weight='900' font-size='30' text-anchor='middle'%3E%3Ctspan fill='%23F4F3F8'%3EA%3C/tspan%3E%3Ctspan fill='%231B43F3'%3EV%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="/icone.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#03081B;--card:#0A1330;--card2:#101C44;--line:#1C2A5A;--azul:#1B43F3;--txt:#F4F3F8;--soft:#9AA3C4;--erro:#FF8A8A;color-scheme:dark}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;min-width:0}
+html,body{margin:0;background:var(--bg);color:var(--txt);font:500 16px/1.45 Montserrat,system-ui,sans-serif}
+body{padding-bottom:calc(78px + env(safe-area-inset-bottom));overflow-x:clip}
+button,input,select,textarea{font:inherit;color:inherit}
+header.top{position:sticky;top:0;z-index:5;background:rgba(3,8,27,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:calc(10px + env(safe-area-inset-top)) 16px 10px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line)}
+.logo{font-weight:900;font-size:24px;letter-spacing:-1.5px;line-height:1}.logo b{color:var(--azul);font-weight:900}
+header h1{font-size:18px;font-weight:800;margin:0;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.st{font-size:12px;color:var(--soft);font-weight:700;white-space:nowrap}.st.erro{color:var(--erro)}
+.voltar{background:none;border:0;padding:6px 8px 6px 0;font-weight:800;font-size:16px;color:var(--txt);display:flex;align-items:center;gap:4px;cursor:pointer}
+main{padding:16px;max-width:720px;margin:0 auto}
+nav.baixo{position:fixed;bottom:0;left:0;right:0;display:flex;background:#050C24;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom);z-index:6}
+nav.baixo button{flex:1;background:none;border:0;color:var(--soft);font-weight:700;font-size:12px;padding:10px 4px 9px;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer}
+nav.baixo button svg{width:24px;height:24px}
+nav.baixo button.on{color:var(--txt)}nav.baixo button.on svg{color:var(--azul)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 18px;border-radius:14px;border:1px solid var(--line);background:var(--card2);color:var(--txt);font-weight:700;font-size:15px;cursor:pointer;text-decoration:none;text-align:center}
+.btn:active{transform:scale(.98)}
+.btn.pri{background:var(--azul);border-color:var(--azul)}
+.btn.full{width:100%}
+.btn.perigo{color:var(--erro);border-color:#4a1c2c;background:transparent}
+.btn.peq{min-height:40px;padding:0 12px;font-size:14px;border-radius:12px}
+.linha{display:flex;gap:10px}.linha>*{flex:1}
+.pilha>*+*{margin-top:10px}
+.soft{color:var(--soft)}
+small{font-size:13px}
+.vazio{color:var(--soft);font-size:14px;margin:0;padding:12px 14px;border:1px dashed var(--line);border-radius:14px}
+.aviso{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;font-size:14px;color:var(--soft);margin-bottom:16px}
+.aviso b{color:var(--txt)}
+
+/* semana */
+.semnav{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.semnav .btn{min-width:50px;padding:0;font-size:22px}
+.semtit{flex:1;text-align:center}.semtit b{display:block;font-size:18px;font-weight:800}.semtit small{color:var(--soft);font-weight:700}
+.legenda{display:flex;flex-wrap:wrap;gap:6px 12px;margin:0 0 18px;font-size:12px;color:var(--soft);font-weight:700}
+.legenda span{display:inline-flex;align-items:center;gap:5px}.legenda i{width:10px;height:10px;border-radius:3px;display:inline-block}
+.dia{margin-bottom:20px}
+.dia h3{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--soft);margin:0 0 8px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.dia.hoje h3 span{color:var(--txt)}.dia.hoje h3 span::after{content:"hoje";margin-left:8px;background:var(--azul);color:#fff;border-radius:6px;padding:2px 6px;font-size:10px}
+.dia h3 button{background:none;border:1px solid var(--line);border-radius:10px;color:var(--txt);font-weight:700;font-size:13px;padding:6px 10px;text-transform:none;letter-spacing:0;cursor:pointer}
+.post{display:flex;gap:8px;margin-bottom:8px}
+.pcorpo{flex:1;display:flex;gap:12px;align-items:stretch;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;text-align:left;cursor:pointer}
+.faixa{width:6px;border-radius:6px;flex:none}
+.ptxt{display:flex;flex-direction:column;gap:6px;flex:1}
+.ptxt b{font-weight:700;font-size:15px;line-height:1.3}
+.meta{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--soft);font-weight:700;align-items:center}
+.etq{color:var(--c);border:1px solid var(--c);border-radius:999px;padding:1px 8px}
+.mover{width:50px;flex:none;background:var(--card);border:1px solid var(--line);border-radius:14px;color:var(--soft);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.mover svg{width:22px;height:22px}
+
+/* formularios */
+label.campo{display:block;margin-bottom:14px}
+label.campo>span{display:block;font-size:13px;font-weight:800;color:var(--soft);margin:0 0 6px;text-transform:uppercase;letter-spacing:.05em}
+input[type=text],input[type=password],input[type=date],select,textarea{width:100%;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:16px;color:var(--txt);outline:none;-webkit-appearance:none;appearance:none}
+input[type=date]{min-height:50px}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239AA3C4' stroke-width='2' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+textarea{resize:none;min-height:84px;line-height:1.5;overflow:hidden}
+input:focus,select:focus,textarea:focus{border-color:var(--azul)}
+.secao{font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:var(--azul);margin:26px 0 12px}
+.etapas{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+.etapas button{min-height:56px;border-radius:14px;border:2px solid var(--c);background:transparent;color:var(--txt);font-weight:800;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px}
+.etapas button.on{background:var(--c);color:#fff}
+.etapas button.on::before{content:"✓"}
+.seg{display:flex;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:4px;gap:4px;margin-bottom:14px}
+.seg button{flex:1;min-height:44px;border:0;border-radius:10px;background:transparent;font-weight:700;font-size:14px;color:var(--soft);cursor:pointer}
+.seg button.on{background:var(--azul);color:#fff}
+.cardi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px;margin-bottom:10px}
+.cardi .cab{display:flex;align-items:center;gap:6px;margin-bottom:8px;font-weight:800;font-size:13px;color:var(--soft)}
+.cardi .cab span{flex:1}
+.cardi .cab button{width:40px;height:36px;border-radius:10px;border:1px solid var(--line);background:var(--card2);cursor:pointer;font-weight:800}
+.cardi textarea{background:var(--bg)}
+
+/* ideias */
+.filtros{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+.filtros select{padding:10px 32px 10px 12px;font-size:15px}
+.chk{display:flex;align-items:center;gap:10px;font-weight:700;font-size:14px;color:var(--soft);margin:6px 0 14px;cursor:pointer}
+.chk input{width:22px;height:22px;accent-color:var(--azul)}
+.ideia{display:block;width:100%;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:8px;cursor:pointer}
+.ideia b{display:block;font-weight:700;font-size:15px;line-height:1.35;margin-bottom:8px}
+.ideia.usada{opacity:.5}
+.chip{border:1px solid var(--line);border-radius:999px;padding:1px 8px}
+.chip.u{border-color:#22C55E;color:#22C55E}
+
+/* folha (painel que sobe) */
+.folha{position:fixed;inset:0;z-index:20;display:none}
+.folha.on{display:block}
+.folha .fundo{position:absolute;inset:0;background:rgba(0,0,0,.6)}
+.folha .caixa{position:absolute;left:0;right:0;bottom:0;max-height:88vh;overflow:auto;background:#081133;border-top:1px solid var(--line);border-radius:22px 22px 0 0;padding:22px 16px calc(20px + env(safe-area-inset-bottom));max-width:720px;margin:0 auto}
+.folha h2{font-size:20px;font-weight:800;margin:0 0 6px}
+.folha p{margin:0 0 14px}
+.dias{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:10px}
+.dias .btn{min-height:46px;font-size:14px}
+.subt{grid-column:1/-1;font-size:12px;font-weight:800;color:var(--soft);text-transform:uppercase;letter-spacing:.06em;margin-top:6px}
+ul.mov{padding:0;margin:0 0 16px;list-style:none}
+ul.mov li{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:6px;font-size:14px}
+ul.mov li small{display:block;color:var(--soft);font-weight:700}
+
+.toast{position:fixed;left:50%;top:calc(64px + env(safe-area-inset-top));transform:translateX(-50%) translateY(-20px);background:var(--txt);color:var(--bg);font-weight:800;font-size:14px;padding:12px 18px;border-radius:999px;opacity:0;transition:.25s;z-index:30;pointer-events:none;white-space:nowrap}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* login */
+.login{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:24px;max-width:420px;margin:0 auto;gap:14px}
+.login .logo{font-size:64px;letter-spacing:-4px;margin-bottom:6px}
+.login h1{font-size:24px;font-weight:900;margin:0}
+.login p{margin:0 0 10px;color:var(--soft)}
+.erro{color:var(--erro);font-weight:700;font-size:14px;min-height:20px}
+.carregando{min-height:100vh;display:flex;align-items:center;justify-content:center}
+</style>
+</head>
+<body>
+<div id="app"><div class="carregando"><div class="logo" style="font-size:48px">A<b>V</b></div></div></div>
+<div class="folha" id="folha"><div class="fundo" data-a="fecharFolha"></div><div class="caixa" id="folhaCaixa"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+"use strict";
+const ETAPAS = [
+  ["ideia", "Ideia", "#7B84A3"],
+  ["roteiro", "Roteiro pronto", "#8B5CF6"],
+  ["gravado", "Gravado", "#F59E0B"],
+  ["editado", "Editado", "#06B6D4"],
+  ["agendado", "Agendado", "#1B43F3"],
+  ["postado", "Postado", "#22C55E"],
+];
+const ETAPA = Object.fromEntries(ETAPAS.map(([k, n, c]) => [k, { nome: n, cor: c }]));
+const FORMATOS = [["talking", "Talking head"], ["tela", "Tela"], ["carrossel", "Carrossel"]];
+const FORMATO = Object.fromEntries(FORMATOS);
+const FUNIS = ["Topo", "Meio", "Fundo"];
+const CENARIOS = ["Mesa com notebook", "Estúdio", "Carro parado", "Escritório", "Celular na mão", "Gravação de tela"];
+const DIAS = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"];
+const ICONES = {
+  semana: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>',
+  ideias: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/></svg>',
+  mais: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>',
+  mover: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4L3 8l4 4M3 8h13M17 12l4 4-4 4M21 16H8"/></svg>',
+};
+
+/* ---------- datas ---------- */
+const pad = (n) => String(n).padStart(2, "0");
+const ymd = (d) => d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
+const parse = (s) => { const [y, m, d] = s.split("-").map(Number); return new Date(y, m - 1, d); };
+const hoje = () => ymd(new Date());
+const addDias = (s, n) => { const d = parse(s); d.setDate(d.getDate() + n); return ymd(d); };
+const segunda = (s) => { const d = parse(s); d.setDate(d.getDate() - ((d.getDay() + 6) % 7)); return ymd(d); };
+const curto = (s) => { const d = parse(s); return pad(d.getDate()) + "/" + pad(d.getMonth() + 1); };
+const nomeDia = (s) => DIAS[(parse(s).getDay() + 6) % 7];
+
+/* ---------- estado ---------- */
+const S = { ideias: {}, posts: {}, versao: -1 };
+const view = { tela: "semana", semana: segunda(hoje()), postId: null, filtros: { pilar: "", funil: "", serie: "", usadas: false } };
+let entrou = false;
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const novoId = () => (crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(36) + Math.random().toString(36).slice(2));
+const titulo = (p) => (p.titulo || "").trim() || (p.gancho || "").trim() || (p.formato === "carrossel" && (p.cards || [])[0]) || "Post sem título";
+const ordenar = (a, b) => (a.criado || 0) - (b.criado || 0);
+
+function guardarCache() { try { localStorage.setItem("cache-conteudo", JSON.stringify({ ideias: S.ideias, posts: S.posts })); } catch (e) {} }
+function lerCache() { try { const c = JSON.parse(localStorage.getItem("cache-conteudo") || "null"); if (c) { S.ideias = c.ideias || {}; S.posts = c.posts || {}; return true; } } catch (e) {} return false; }
+
+/* ---------- servidor ---------- */
+async function api(url, corpo) {
+  const op = corpo === undefined ? { credentials: "same-origin", cache: "no-store" } : { method: "POST", credentials: "same-origin", headers: { "content-type": "application/json" }, body: JSON.stringify(corpo) };
+  const r = await fetch(url, op);
+  if (r.status === 401 && url !== "/api/login") { entrou = false; telaLogin(); throw new Error("login"); }
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) throw Object.assign(new Error(j.erro || "erro"), { status: r.status });
+  return j;
+}
+
+const fila = new Map();
+const filaApagar = new Set();
+let timerSalvar = null;
+function status(txt, erro) { const el = document.getElementById("st"); if (el) { el.textContent = txt; el.classList.toggle("erro", !!erro); } }
+function salvar(tipo, obj, ja) {
+  obj.atualizado = Date.now();
+  fila.set(obj.id, { id: obj.id, tipo, dados: obj });
+  guardarCache();
+  status("Salvando...");
+  clearTimeout(timerSalvar);
+  timerSalvar = setTimeout(enviar, ja ? 0 : 700);
+}
+function apagar(tipo, id) {
+  delete (tipo === "ideia" ? S.ideias : S.posts)[id];
+  fila.delete(id);
+  filaApagar.add(id);
+  guardarCache();
+  clearTimeout(timerSalvar);
+  timerSalvar = setTimeout(enviar, 0);
+}
+async function enviar() {
+  if (!fila.size && !filaApagar.size) return;
+  const itens = [...fila.values()], ap = [...filaApagar];
+  fila.clear(); filaApagar.clear();
+  try {
+    const r = await api("/api/salvar", { itens, apagar: ap });
+    const outroAparelho = r.antes !== S.versao;
+    S.versao = r.versao;
+    if (!fila.size && !filaApagar.size) status("Salvo");
+    if (outroAparelho) checar(true);
+  } catch (e) {
+    for (const it of itens) if (!fila.has(it.id)) fila.set(it.id, it);
+    for (const id of ap) filaApagar.add(id);
+    if (e.message !== "login") { status("Sem conexão, tentando...", true); clearTimeout(timerSalvar); timerSalvar = setTimeout(enviar, 4000); }
+  }
+}
+function aplicar(r) {
+  const ideias = {}, posts = {};
+  for (const it of r.itens) (it.tipo === "ideia" ? ideias : posts)[it.id] = it.dados;
+  for (const [id, it] of fila) (it.tipo === "ideia" ? ideias : posts)[id] = it.dados;
+  for (const id of filaApagar) { delete ideias[id]; delete posts[id]; }
+  S.ideias = ideias; S.posts = posts; S.versao = r.versao;
+  guardarCache();
+}
+const digitando = () => { const a = document.activeElement; return a && /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName); };
+async function checar(forcar) {
+  if (!entrou || document.hidden) return;
+  if (!forcar && (fila.size || filaApagar.size)) return;
+  try {
+    const v = await api("/api/versao");
+    if (forcar || v.versao !== S.versao) {
+      aplicar(await api("/api/dados"));
+      if (!digitando()) render();
+    }
+  } catch (e) {}
+}
+setInterval(checar, 8000);
+document.addEventListener("visibilitychange", () => { if (!document.hidden) checar(); else enviar(); });
+window.addEventListener("pagehide", enviar);
+
+/* ---------- ajuda ---------- */
+function toast(t) { const el = document.getElementById("toast"); el.textContent = t; el.classList.add("on"); clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove("on"), 1800); }
+async function copiar(txt, aviso) {
+  if (!txt.trim()) { toast("Não tem nada pra copiar ainda"); return; }
+  try { await navigator.clipboard.writeText(txt); }
+  catch (e) { const t = document.createElement("textarea"); t.value = txt; document.body.appendChild(t); t.select(); document.execCommand("copy"); t.remove(); }
+  toast(aviso);
+}
+function abrirFolha(html) { document.getElementById("folhaCaixa").innerHTML = html; document.getElementById("folha").classList.add("on"); crescer(); }
+function fecharFolha() { document.getElementById("folha").classList.remove("on"); }
+function crescer(el) {
+  const lista = el ? [el] : document.querySelectorAll("textarea");
+  for (const t of lista) { t.style.height = "auto"; t.style.height = t.scrollHeight + 2 + "px"; }
+}
+const valores = (k) => [...new Set([...Object.values(S.ideias), ...Object.values(S.posts)].map((x) => (x[k] || "").trim()).filter(Boolean))].sort((a, b) => a.localeCompare(b, "pt-BR"));
+const datalist = (id, k) => `<datalist id="${id}">${valores(k).map((v) => `<option value="${esc(v)}">`).join("")}</datalist>`;
+const opcoes = (lista, atual, vazio) => `<option value="">${vazio}</option>` + [...new Set([...lista, ...(atual && !lista.includes(atual) ? [atual] : [])])].map((v) => `<option ${v === atual ? "selected" : ""}>${esc(v)}</option>`).join("");
+
+function textoRoteiro(p) {
+  if (p.formato === "carrossel") return (p.cards || []).map((c, i) => `Card ${i + 1}\n${c}`).join("\n\n");
+  return [p.gancho, p.contexto, p.entrega, p.fechamento].filter((s) => s && s.trim()).join("\n\n");
+}
+
+/* ---------- telas ---------- */
+function ir(tela, extra) { Object.assign(view, { tela }, extra || {}); fecharFolha(); render(); window.scrollTo(0, 0); }
+
+function render() {
+  if (!entrou) return;
+  const t = view.tela;
+  let corpo, cab;
+  if (t === "post") {
+    const p = S.posts[view.postId];
+    if (!p) { view.tela = "semana"; return render(); }
+    cab = `<button class="voltar" data-a="voltar">‹ Voltar</button><h1></h1><span class="st" id="st">Salvo</span>`;
+    corpo = vPost(p);
+  } else {
+    const nomes = { semana: "Semana", ideias: "Banco de ideias", mais: "Mais" };
+    cab = `<div class="logo">A<b>V</b></div><h1>${nomes[t]}</h1><span class="st" id="st"></span>`;
+    corpo = t === "semana" ? vSemana() : t === "ideias" ? vIdeias() : vMais();
+  }
+  const nav = [["semana", "Semana"], ["ideias", "Ideias"], ["mais", "Mais"]]
+    .map(([k, n]) => `<button class="${t === k || (t === "post" && k === "semana") ? "on" : ""}" data-a="nav" data-v="${k}">${ICONES[k]}${n}</button>`).join("");
+  document.getElementById("app").innerHTML = `<header class="top">${cab}</header><main>${corpo}</main><nav class="baixo">${nav}</nav>`;
+  crescer();
+  if (fila.size || filaApagar.size) status("Salvando...");
+}
+
+function cardPost(p) {
+  const e = ETAPA[p.etapa] || ETAPA.ideia;
+  const extra = [FORMATO[p.formato], p.serie].filter(Boolean).map((x) => `<span>${esc(x)}</span>`).join("");
+  return `<div class="post"><button class="pcorpo" data-a="abrir" data-id="${p.id}"><span class="faixa" style="background:${e.cor}"></span><span class="ptxt"><b>${esc(titulo(p))}</b><span class="meta"><span class="etq" style="--c:${e.cor}">${e.nome}</span>${extra}</span></span></button><button class="mover" data-a="mover" data-id="${p.id}" aria-label="Mudar o dia">${ICONES.mover}</button></div>`;
+}
+
+function vSemana() {
+  const ini = view.semana, fim = addDias(ini, 6), h = hoje(), atual = segunda(h);
+  const rot = ini === atual ? "Esta semana" : ini === addDias(atual, 7) ? "Próxima semana" : ini === addDias(atual, -7) ? "Semana passada" : "";
+  const posts = Object.values(S.posts);
+  let out = `<div class="semnav"><button class="btn" data-a="semana" data-v="-7" aria-label="Semana anterior">‹</button><div class="semtit"><b>${curto(ini)} a ${curto(fim)}</b><small>${rot || "&nbsp;"}</small></div><button class="btn" data-a="semana" data-v="7" aria-label="Próxima semana">›</button></div>`;
+  if (ini !== atual) out += `<button class="btn peq full" style="margin-bottom:12px" data-a="semanaHoje">Voltar pra esta semana</button>`;
+  out += `<div class="legenda">${ETAPAS.map(([, n, c]) => `<span><i style="background:${c}"></i>${n}</span>`).join("")}</div>`;
+  for (let i = 0; i < 7; i++) {
+    const d = addDias(ini, i);
+    const lista = posts.filter((p) => p.data === d).sort(ordenar);
+    out += `<section class="dia ${d === h ? "hoje" : ""}"><h3><span>${DIAS[i]} ${curto(d)}</span><button data-a="novoPost" data-dia="${d}">+ post</button></h3>${lista.map(cardPost).join("") || '<p class="vazio">Nada neste dia</p>'}</section>`;
+  }
+  const semData = posts.filter((p) => !p.data && p.etapa !== "postado").sort(ordenar);
+  out += `<section class="dia"><h3><span>Sem data</span><button data-a="novoPost" data-dia="">+ post</button></h3>${semData.map(cardPost).join("") || '<p class="vazio">Nenhum post esperando data</p>'}</section>`;
+  out += `<button class="btn pri full" data-a="fecharSemana">Fechar semana</button><p class="soft" style="font-size:13px;margin:10px 4px 0">Fechar semana: o que ainda não foi gravado (Ideia e Roteiro pronto) passa para a semana seguinte, no mesmo dia da semana.</p>`;
+  return out;
+}
+
+function vPost(p) {
+  const car = p.formato === "carrossel";
+  const campo = (k, rot, ph) => `<label class="campo"><span>${rot}</span><textarea data-campo="${k}" placeholder="${ph || ""}">${esc(p[k])}</textarea></label>`;
+  let out = `<div class="secao" style="margin-top:4px">Etapa</div><div class="etapas">${ETAPAS.map(([k, n, c]) => `<button style="--c:${c}" class="${p.etapa === k ? "on" : ""}" data-a="etapa" data-v="${k}">${n}</button>`).join("")}</div>`;
+  out += `<div class="secao">Quando</div><div class="linha" style="align-items:center"><input type="date" data-campo="data" value="${esc(p.data || "")}" aria-label="Data do post"><button class="btn" style="flex:0 0 auto" data-a="semData">Sem data</button></div>`;
+  out += `<p class="soft" style="font-size:13px;margin:6px 2px 0">${p.data ? nomeDia(p.data) + ", " + curto(p.data) : "Ainda sem dia marcado"}</p>`;
+  out += `<div class="linha" style="margin-top:16px"><button class="btn pri" data-a="copiarRoteiro">Copiar roteiro</button><button class="btn" data-a="copiarLegenda">Copiar legenda</button></div>`;
+  out += `<div class="secao">Roteiro</div>`;
+  out += `<label class="campo"><span>Título</span><input type="text" data-campo="titulo" value="${esc(p.titulo)}" placeholder="Nome curto pra achar o post"></label>`;
+  out += `<label class="campo"><span>Formato</span></label><div class="seg">${FORMATOS.map(([k, n]) => `<button class="${p.formato === k ? "on" : ""}" data-a="formato" data-v="${k}">${n}</button>`).join("")}</div>`;
+  out += `<div class="linha"><label class="campo"><span>Série</span><input type="text" list="lSerie" data-campo="serie" value="${esc(p.serie)}"></label><label class="campo"><span>Pilar</span><input type="text" list="lPilar" data-campo="pilar" value="${esc(p.pilar)}"></label></div>`;
+  out += `<div class="linha"><label class="campo"><span>Funil</span><select data-campo="funil">${opcoes(FUNIS, p.funil, "Escolher")}</select></label><label class="campo"><span>Duração</span><input type="text" data-campo="duracao" value="${esc(p.duracao)}" placeholder="ex.: 30 s"></label></div>`;
+  out += `<label class="campo"><span>Cenário</span><select data-campo="cenario">${opcoes(CENARIOS, p.cenario, "Escolher cenário")}</select></label>`;
+  if (car) {
+    const cards = p.cards || [];
+    out += `<div class="secao">Cards do carrossel</div>`;
+    out += cards.map((c, i) => `<div class="cardi"><div class="cab"><span>Card ${i + 1}</span><button data-a="cardSobe" data-i="${i}" aria-label="Subir">↑</button><button data-a="cardDesce" data-i="${i}" aria-label="Descer">↓</button><button data-a="cardTira" data-i="${i}" aria-label="Apagar card">✕</button></div><textarea data-card="${i}" placeholder="Texto do card">${esc(c)}</textarea></div>`).join("");
+    out += `<button class="btn full" data-a="cardNovo">+ Adicionar card</button><div style="height:14px"></div>`;
+  } else {
+    out += campo("gancho", "Gancho", "Os 3 primeiros segundos");
+    out += campo("contexto", "Contexto");
+    out += campo("entrega", "Entrega");
+    out += campo("fechamento", "Fechamento + CTA");
+  }
+  out += campo("naTela", "Na tela", "Textos que aparecem no vídeo");
+  out += campo("legenda", "Legenda do post");
+  out += datalist("lSerie", "serie") + datalist("lPilar", "pilar");
+  out += `<button class="btn perigo full" style="margin-top:20px" data-a="apagarPost">Apagar post</button>`;
+  return out;
+}
+
+function vIdeias() {
+  const f = view.filtros, todas = Object.values(S.ideias);
+  const lista = todas.filter((i) => (f.usadas || !i.usada) && (!f.pilar || i.pilar === f.pilar) && (!f.funil || i.funil === f.funil) && (!f.serie || i.serie === f.serie)).sort(ordenar);
+  const sel = (k, vazio, extra) => `<select data-filtro="${k}" aria-label="${vazio}">${opcoes([...new Set([...(extra || []), ...valores(k)])], f[k], vazio)}</select>`;
+  let out = `<button class="btn pri full" data-a="novaIdeia" style="margin-bottom:14px">+ Nova ideia</button>`;
+  if (!todas.length) {
+    return out + `<div class="aviso"><b>Seu banco de ideias está vazio.</b><br>Toque em "Nova ideia" pra anotar uma, ou use "Colar várias ideias" na aba Mais. Quando você mandar o guia, as 60 ideias entram aqui.</div>`;
+  }
+  out += `<div class="filtros">${sel("pilar", "Todos os pilares")}${sel("funil", "Todo o funil", FUNIS)}<span style="grid-column:1/-1">${sel("serie", "Todas as séries")}</span></div>`;
+  out += `<label class="chk"><input type="checkbox" data-filtro="usadas" ${f.usadas ? "checked" : ""}> Mostrar ideias já usadas</label>`;
+  out += `<p class="soft" style="font-size:13px;font-weight:700;margin:0 0 10px">${lista.length} ${lista.length === 1 ? "ideia" : "ideias"}</p>`;
+  out += lista.map((i) => `<button class="ideia ${i.usada ? "usada" : ""}" data-a="abrirIdeia" data-id="${i.id}"><b>${esc(i.gancho || "Ideia sem gancho")}</b><span class="meta">${[i.pilar, i.funil, i.serie].filter(Boolean).map((x) => `<span class="chip">${esc(x)}</span>`).join("")}${i.usada ? '<span class="chip u">Usada</span>' : ""}</span></button>`).join("") || '<p class="vazio">Nenhuma ideia com esses filtros</p>';
+  return out;
+}
+
+function vMais() {
+  const np = Object.keys(S.posts).length, ni = Object.keys(S.ideias).length;
+  return `<div class="aviso">Você tem <b>${np} ${np === 1 ? "post" : "posts"}</b> e <b>${ni} ${ni === 1 ? "ideia" : "ideias"}</b> guardados. Tudo sincroniza sozinho entre celular e computador.</div>
+  <div class="secao" style="margin-top:4px">Colar várias ideias</div>
+  <p class="soft" style="font-size:14px;margin:0 0 10px">Cole uma ideia por linha (só o gancho). Depois você pode abrir cada uma e preencher pilar, funil e série.</p>
+  <textarea id="colarIdeias" placeholder="Uma ideia por linha"></textarea>
+  <button class="btn full" style="margin-top:10px" data-a="colarIdeias">Adicionar ao banco de ideias</button>
+  <div class="secao">Backup</div>
+  <p class="soft" style="font-size:14px;margin:0 0 10px">O backup é um arquivo com todos os seus posts e ideias. Baixe de vez em quando e guarde no Drive.</p>
+  <div class="pilha"><a class="btn pri full" href="/api/backup" download>Baixar backup</a>
+  <label class="btn full">Restaurar um backup<input type="file" accept="application/json,.json" id="arqBackup" hidden></label></div>
+  <div class="secao">Acesso</div>
+  <button class="btn perigo full" data-a="sair">Sair deste aparelho</button>
+  <p class="soft" style="font-size:12px;margin:24px 0 0;text-align:center">Planejamento Breno Conteúdos</p>`;
+}
+
+/* ---------- folhas ---------- */
+function folhaMover(id) {
+  const p = S.posts[id], base = view.semana;
+  let h = `<h2>Mudar o dia</h2><p class="soft">${esc(titulo(p))}</p><div class="dias">`;
+  for (let i = 0; i < 14; i++) {
+    const d = addDias(base, i);
+    if (i === 7) h += `<div class="subt">Semana seguinte</div>`;
+    h += `<button class="btn ${p.data === d ? "pri" : ""}" data-a="moverPara" data-id="${id}" data-dia="${d}">${DIAS[i % 7].slice(0, 3)} ${curto(d)}</button>`;
+  }
+  h += `</div><button class="btn full" data-a="moverPara" data-id="${id}" data-dia="">Tirar da semana (sem data)</button>`;
+  abrirFolha(h);
+}
+function folhaIdeia(id) {
+  const i = id ? S.ideias[id] : { gancho: "", pilar: "", funil: "", serie: "" };
+  let h = `<h2>${id ? "Ideia" : "Nova ideia"}</h2>
+  <label class="campo"><span>Gancho</span><textarea id="iGancho" placeholder="A frase que abre o vídeo">${esc(i.gancho)}</textarea></label>
+  <div class="linha"><label class="campo"><span>Pilar</span><input type="text" id="iPilar" list="lPilarI" value="${esc(i.pilar)}"></label>
+  <label class="campo"><span>Funil</span><select id="iFunil">${opcoes(FUNIS, i.funil, "Escolher")}</select></label></div>
+  <label class="campo"><span>Série</span><input type="text" id="iSerie" list="lSerieI" value="${esc(i.serie)}"></label>
+  ${datalist("lPilarI", "pilar")}${datalist("lSerieI", "serie")}
+  <div class="pilha"><button class="btn pri full" data-a="salvarIdeia" data-id="${id || ""}">Salvar</button>`;
+  if (id) h += `<button class="btn full" data-a="ideiaPost" data-id="${id}">Transformar em post</button>
+  <button class="btn full" data-a="ideiaUsada" data-id="${id}">${i.usada ? "Voltar para não usada" : "Marcar como usada"}</button>
+  <button class="btn perigo full" data-a="apagarIdeia" data-id="${id}">Apagar ideia</button>`;
+  abrirFolha(h + "</div>");
+}
+
+/* ---------- ações ---------- */
+function novoPost(base) {
+  const p = Object.assign({ id: novoId(), criado: Date.now(), titulo: "", serie: "", pilar: "", funil: "", duracao: "", cenario: "", formato: "talking", gancho: "", contexto: "", entrega: "", fechamento: "", naTela: "", legenda: "", cards: [], etapa: "ideia", data: null }, base);
+  S.posts[p.id] = p;
+  salvar("post", p, true);
+  ir("post", { postId: p.id });
+}
+const postAtual = () => S.posts[view.postId];
+function mexerCard(fn) { const p = postAtual(); p.cards = p.cards || []; fn(p.cards); salvar("post", p); render(); }
+
+const A = {
+  nav: (d) => ir(d.v),
+  voltar: () => ir("semana"),
+  semana: (d) => { view.semana = addDias(view.semana, +d.v); render(); },
+  semanaHoje: () => { view.semana = segunda(hoje()); render(); },
+  abrir: (d) => ir("post", { postId: d.id }),
+  novoPost: (d) => novoPost({ data: d.dia || null }),
+  mover: (d) => folhaMover(d.id),
+  moverPara: (d) => {
+    const p = S.posts[d.id]; p.data = d.dia || null; salvar("post", p, true); fecharFolha(); render();
+    toast(p.data ? "Movido para " + nomeDia(p.data).toLowerCase() + ", " + curto(p.data) : "Post ficou sem data");
+  },
+  fecharFolha,
+  fecharSemana: () => {
+    const ini = view.semana, fim = addDias(ini, 6);
+    const lista = Object.values(S.posts).filter((p) => p.data && p.data >= ini && p.data <= fim && (p.etapa === "ideia" || p.etapa === "roteiro")).sort((a, b) => a.data.localeCompare(b.data));
+    if (!lista.length) return abrirFolha(`<h2>Semana em dia</h2><p class="soft">Tudo que está nesta semana já foi gravado. Nada precisa mudar de semana.</p><button class="btn pri full" data-a="fecharFolha">Ok</button>`);
+    abrirFolha(`<h2>Fechar semana</h2><p class="soft">${lista.length === 1 ? "Este post ainda não foi gravado e vai" : "Estes " + lista.length + " posts ainda não foram gravados e vão"} para a semana seguinte:</p>
+      <ul class="mov">${lista.map((p) => `<li>${esc(titulo(p))}<small>${nomeDia(p.data)} ${curto(p.data)} para ${curto(addDias(p.data, 7))}</small></li>`).join("")}</ul>
+      <div class="pilha"><button class="btn pri full" data-a="confirmarFechar">Mover para a semana seguinte</button><button class="btn full" data-a="fecharFolha">Cancelar</button></div>`);
+  },
+  confirmarFechar: () => {
+    const ini = view.semana, fim = addDias(ini, 6);
+    const lista = Object.values(S.posts).filter((p) => p.data && p.data >= ini && p.data <= fim && (p.etapa === "ideia" || p.etapa === "roteiro")).sort((a, b) => a.data.localeCompare(b.data));
+    const feitos = lista.map((p) => { const de = p.data; p.data = addDias(p.data, 7); salvar("post", p, true); return { t: titulo(p), de, para: p.data }; });
+    render();
+    abrirFolha(`<h2>Semana fechada</h2><p class="soft">${feitos.length === 1 ? "Foi movido 1 post" : "Foram movidos " + feitos.length + " posts"}:</p>
+      <ul class="mov">${feitos.map((f) => `<li>${esc(f.t)}<small>${nomeDia(f.de)} ${curto(f.de)} para ${curto(f.para)}</small></li>`).join("")}</ul>
+      <div class="pilha"><button class="btn pri full" data-a="irProxima">Ver a semana seguinte</button><button class="btn full" data-a="fecharFolha">Ficar aqui</button></div>`);
+  },
+  irProxima: () => { view.semana = addDias(view.semana, 7); fecharFolha(); render(); window.scrollTo(0, 0); },
+  etapa: (d) => { const p = postAtual(); p.etapa = d.v; salvar("post", p, true); render(); toast("Etapa: " + ETAPA[d.v].nome); },
+  formato: (d) => { const p = postAtual(); p.formato = d.v; if (d.v === "carrossel" && !(p.cards || []).length) p.cards = ["", ""]; salvar("post", p); render(); },
+  semData: () => { const p = postAtual(); p.data = null; salvar("post", p, true); render(); toast("Post ficou sem data"); },
+  copiarRoteiro: () => copiar(textoRoteiro(postAtual()), "Roteiro copiado"),
+  copiarLegenda: () => copiar(postAtual().legenda || "", "Legenda copiada"),
+  cardNovo: () => mexerCard((c) => c.push("")),
+  cardTira: (d) => { if (confirm("Apagar o card " + (+d.i + 1) + "?")) mexerCard((c) => c.splice(+d.i, 1)); },
+  cardSobe: (d) => { const i = +d.i; if (i > 0) mexerCard((c) => ([c[i - 1], c[i]] = [c[i], c[i - 1]])); },
+  cardDesce: (d) => { const i = +d.i; mexerCard((c) => { if (i < c.length - 1) [c[i + 1], c[i]] = [c[i], c[i + 1]]; }); },
+  apagarPost: () => { if (confirm("Apagar este post? Não dá pra desfazer.")) { apagar("post", view.postId); ir("semana"); toast("Post apagado"); } },
+  novaIdeia: () => folhaIdeia(null),
+  abrirIdeia: (d) => folhaIdeia(d.id),
+  salvarIdeia: (d) => {
+    const gancho = document.getElementById("iGancho").value.trim();
+    if (!gancho) { toast("Escreva o gancho"); return; }
+    const i = d.id ? S.ideias[d.id] : { id: novoId(), criado: Date.now(), usada: false };
+    Object.assign(i, { gancho, pilar: document.getElementById("iPilar").value.trim(), funil: document.getElementById("iFunil").value, serie: document.getElementById("iSerie").value.trim() });
+    S.ideias[i.id] = i; salvar("ideia", i, true); fecharFolha(); render(); toast("Ideia salva");
+  },
+  ideiaUsada: (d) => { const i = S.ideias[d.id]; i.usada = !i.usada; salvar("ideia", i, true); fecharFolha(); render(); toast(i.usada ? "Marcada como usada" : "Voltou para não usada"); },
+  ideiaPost: (d) => {
+    const i = S.ideias[d.id]; i.usada = true; salvar("ideia", i, true);
+    novoPost({ gancho: i.gancho, pilar: i.pilar, funil: i.funil, serie: i.serie, ideiaId: i.id });
+    toast("Post criado a partir da ideia");
+  },
+  apagarIdeia: (d) => { if (confirm("Apagar esta ideia?")) { apagar("ideia", d.id); fecharFolha(); render(); toast("Ideia apagada"); } },
+  colarIdeias: () => {
+    const el = document.getElementById("colarIdeias");
+    const linhas = el.value.split("\n").map((l) => l.replace(/^\s*(\d+[.)]|[-*•])\s*/, "").trim()).filter(Boolean);
+    if (!linhas.length) { toast("Cole pelo menos uma ideia"); return; }
+    let t = Date.now();
+    for (const g of linhas) { const i = { id: novoId(), criado: t++, gancho: g, pilar: "", funil: "", serie: "", usada: false }; S.ideias[i.id] = i; salvar("ideia", i, true); }
+    el.value = ""; render(); toast(linhas.length + (linhas.length === 1 ? " ideia adicionada" : " ideias adicionadas"));
+  },
+  sair: async () => { if (!confirm("Sair deste aparelho?")) return; await enviar(); await api("/api/sair", {}).catch(() => {}); try { localStorage.removeItem("cache-conteudo"); } catch (e) {} entrou = false; telaLogin(); },
+};
+
+document.addEventListener("click", (e) => {
+  const b = e.target.closest("[data-a]");
+  if (!b || !A[b.dataset.a]) return;
+  e.preventDefault();
+  A[b.dataset.a](b.dataset, b);
+});
+document.addEventListener("input", (e) => {
+  const el = e.target;
+  if (view.tela === "post" && (el.dataset.campo || el.dataset.card !== undefined)) {
+    const p = postAtual(); if (!p) return;
+    if (el.dataset.campo) p[el.dataset.campo] = el.dataset.campo === "data" ? el.value || null : el.value;
+    else { p.cards = p.cards || []; p.cards[+el.dataset.card] = el.value; }
+    if (el.tagName === "TEXTAREA") crescer(el);
+    salvar("post", p);
+  } else if (el.tagName === "TEXTAREA") crescer(el);
+});
+document.addEventListener("change", (e) => {
+  const el = e.target;
+  if (el.dataset.filtro) { view.filtros[el.dataset.filtro] = el.type === "checkbox" ? el.checked : el.value; render(); }
+  if (view.tela === "post" && el.dataset.campo === "data") render();
+  if (el.id === "arqBackup" && el.files[0]) {
+    const leitor = new FileReader();
+    leitor.onload = async () => {
+      let d; try { d = JSON.parse(leitor.result); } catch (err) { toast("Esse arquivo não é um backup"); return; }
+      if (!Array.isArray(d.itens)) { toast("Esse arquivo não é um backup"); return; }
+      if (!confirm("Restaurar este backup troca TODOS os dados atuais pelos do arquivo (" + d.itens.length + " itens). Continuar?")) return;
+      try { await enviar(); await api("/api/restaurar", { itens: d.itens }); aplicar(await api("/api/dados")); render(); toast("Backup restaurado"); }
+      catch (err) { toast("Não deu pra restaurar. Tente de novo."); }
+    };
+    leitor.readAsText(el.files[0]);
+    el.value = "";
+  }
+});
+
+/* ---------- login e início ---------- */
+function telaLogin() {
+  fecharFolha();
+  document.getElementById("app").innerHTML = `<form class="login" id="fLogin"><div class="logo">A<b>V</b></div><h1>Planejamento de conteúdo</h1><p>Digite sua senha pra entrar.</p>
+  <input type="password" id="senha" placeholder="Senha" autocomplete="current-password" required>
+  <div class="erro" id="erroLogin"></div><button class="btn pri full" type="submit">Entrar</button></form>`;
+  document.getElementById("fLogin").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const er = document.getElementById("erroLogin"); er.textContent = "";
+    try { await api("/api/login", { senha: document.getElementById("senha").value }); await iniciar(); }
+    catch (err) { er.textContent = err.status === 401 ? "Senha errada. Tente de novo." : "Sem conexão. Tente de novo."; }
+  });
+}
+async function iniciar() {
+  try {
+    aplicar(await api("/api/dados"));
+    entrou = true; render();
+  } catch (e) {
+    if (e.message === "login") return;
+    if (lerCache()) { entrou = true; render(); status("Sem conexão", true); }
+    else document.getElementById("app").innerHTML = `<div class="login"><div class="logo">A<b>V</b></div><p>Sem conexão com a internet. Tente de novo daqui a pouco.</p><button class="btn pri full" onclick="location.reload()">Tentar de novo</button></div>`;
+  }
+}
+iniciar();
+</script>
+</body>
+</html>

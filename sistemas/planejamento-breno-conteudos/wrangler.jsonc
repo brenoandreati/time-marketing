@@ -1,0 +1,15 @@
+{
+  "name": "planejamento-breno-conteudos",
+  "main": "src/index.js",
+  "compatibility_date": "2026-11-01",
+  "account_id": "c7692f549ea764de8cb3822715354691",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  },
+  "durable_objects": {
+    "bindings": [{ "name": "BANCO", "class_name": "Banco" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Banco"] }]
+}

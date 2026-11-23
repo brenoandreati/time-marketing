@@ -29,6 +29,7 @@ header p{margin:4px 0 0;color:var(--muted)}
 .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
 .stat b{display:block;font:600 1.7rem/1 "Cormorant Garamond",serif}
 .stat span{color:var(--muted);font-size:12.5px}
+.bar[hidden]{display:none}
 .bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
 .bar input,.bar select{flex:1 1 160px;min-width:0;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font:14px Inter}
 .btn{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:9px 14px;border-radius:10px;font:500 13.5px Inter;cursor:pointer;white-space:nowrap}
@@ -48,6 +49,21 @@ header p{margin:4px 0 0;color:var(--muted)}
 .icon{border:0;background:none;color:var(--muted);cursor:pointer;font-size:15px;padding:4px 6px;border-radius:6px}
 .icon:hover{background:var(--accent-soft);color:var(--ink)}
 .icon.after-on{color:var(--accent)}
+.prog{height:6px;background:var(--line);border-radius:99px;overflow:hidden;margin-top:8px}
+.prog i{display:block;height:100%;background:var(--ok)}
+.forn{border-top:1px solid var(--line);padding:14px}
+.forn:first-child{border-top:0}
+.fhead{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.fval{text-align:right;font-size:12.5px;color:var(--muted)}
+.fval b{display:block;font-size:15px;color:var(--ink)}
+.parc{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:8px 0 0;font-size:14px}
+.parc input{width:18px;height:18px;accent-color:var(--ok);margin:0}
+.parc.pago .pd{text-decoration:line-through;color:var(--muted)}
+.parc small{display:block;color:var(--muted);font-size:12px}
+.parc .v{font-variant-numeric:tabular-nums;font-weight:500}
+.prow{display:grid;grid-template-columns:1fr 90px 1fr auto;gap:6px;margin-top:6px}
+.prow input{padding:7px 8px}
+@media (max-width:560px){ .prow{grid-template-columns:1fr 1fr} }
 .empty{padding:40px 16px;text-align:center;color:var(--muted)}
 .foot{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:22px}
 dialog{border:1px solid var(--line);border-radius:16px;background:var(--card);color:var(--ink);padding:20px;width:min(440px,calc(100vw - 32px))}
@@ -65,17 +81,18 @@ dialog .end{display:flex;gap:8px;justify-content:flex-end;margin-top:18px}
 <div class="wrap">
   <header>
     <h1>Nosso Casamento</h1>
-    <p>Lista de convidados</p>
+    <p>Convidados, after e pagamentos</p>
   </header>
 
   <nav class="tabs">
     <button data-tab="convidados" class="on">Convidados</button>
-    <button data-tab="after">After (dia seguinte)</button>
+    <button data-tab="after">After</button>
+    <button data-tab="pagamentos">Pagamentos</button>
   </nav>
 
   <section class="stats" id="stats"></section>
 
-  <div class="bar">
+  <div class="bar" id="barConv">
     <input id="busca" type="search" placeholder="Buscar pelo nome…">
     <select id="fStatus">
       <option value="">Todos os status</option>
@@ -90,6 +107,15 @@ dialog .end{display:flex;gap:8px;justify-content:flex-end;margin-top:18px}
       <option value="ambos">Dos dois</option>
     </select>
     <button class="btn primary" id="novo">+ Adicionar</button>
+  </div>
+
+  <div class="bar" id="barPag" hidden>
+    <select id="fPag">
+      <option value="">Todos os fornecedores</option>
+      <option value="falta">Com pagamento pendente</option>
+      <option value="quitado">Quitados</option>
+    </select>
+    <button class="btn primary" id="novoForn">+ Fornecedor</button>
   </div>
 
   <div class="list" id="lista"></div>
@@ -111,7 +137,7 @@ dialog .end{display:flex;gap:8px;justify-content:flex-end;margin-top:18px}
       <div><label>Lado</label>
         <select name="lado"><option value="noiva">Noiva</option><option value="noivo">Noivo</option><option value="ambos">Dos dois</option></select></div>
       <div><label>Grupo</label>
-        <select name="grupo"><option>Família</option><option>Amigos</option><option>Trabalho</option><option>Outros</option></select></div>
+        <select name="grupo"><option>Família</option><option>Amigos</option><option>Padrinhos</option><option>Trabalho</option><option>Outros</option></select></div>
     </div>
     <div class="two">
       <div><label>Acompanhantes</label><input name="acompanhantes" type="number" min="0" value="0"></div>
@@ -123,6 +149,27 @@ dialog .end{display:flex;gap:8px;justify-content:flex-end;margin-top:18px}
     <div class="end">
       <button type="button" class="btn" id="excluir" style="margin-right:auto;color:var(--no)">Excluir</button>
       <button type="button" class="btn" id="cancelar">Cancelar</button>
+      <button type="submit" class="btn primary">Salvar</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="dlgF">
+  <form method="dialog" id="formF">
+    <h3 id="dlgFTitulo">Fornecedor</h3>
+    <label>Nome</label>
+    <input name="nome" required autocomplete="off">
+    <label>Valor total do contrato (R$)</label>
+    <input name="total" inputmode="decimal" placeholder="Deixe vazio se ainda não sabe">
+    <label>Observação</label>
+    <input name="obs" autocomplete="off">
+    <label>Pagamentos (descrição · valor · quando)</label>
+    <div id="parcelas"></div>
+    <button type="button" class="btn" id="addParc" style="margin-top:8px">+ Pagamento</button>
+    <div class="hint">Marque como pago direto na lista, clicando na caixinha.</div>
+    <div class="end">
+      <button type="button" class="btn" id="excluirF" style="margin-right:auto;color:var(--no)">Excluir</button>
+      <button type="button" class="btn" id="cancelarF">Cancelar</button>
       <button type="submit" class="btn primary">Salvar</button>
     </div>
   </form>
@@ -156,8 +203,21 @@ function carregar(){
       st[t].push(limpa({...p,id}));
     }
   }
+  st.fornecedores = st.fornecedores || [];
+  for(const f of (seed.fornecedores||[])){
+    if(st.removidos.includes(f.id) || st.fornecedores.some(x=>x.id===f.id)) continue;
+    st.fornecedores.push(limpaF(f));
+  }
   return st;
 }
+function limpaF(f){
+  const num = v => { if(v===null||v===undefined||v==='') return null; const n=typeof v==='number'?v:parseFloat(String(v).replace(/[^\d,.-]/g,'').replace(/\.(?=\d{3}(\D|$))/g,'').replace(',','.')); return isNaN(n)?null:n; };
+  return { id:f.id||uid(), nome:(f.nome||'').trim(), total:num(f.total), obs:f.obs||'',
+    parcelas:(f.parcelas||[]).map(p=>({ id:p.id||uid(), descricao:p.descricao||'', valor:num(p.valor)||0, quando:p.quando||'', pago:!!p.pago, pagoEm:p.pagoEm||'' })) };
+}
+const brl = v => (v||0).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+const totalF = f => f.total ?? f.parcelas.reduce((a,p)=>a+p.valor,0);
+const pagoF = f => f.parcelas.filter(p=>p.pago).reduce((a,p)=>a+p.valor,0);
 let S = carregar();
 function salvar(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} render(); }
 
@@ -165,6 +225,8 @@ let aba = 'convidados', editando = null;
 const $ = id => document.getElementById(id);
 
 function render(){
+  $('barConv').hidden = aba==='pagamentos'; $('barPag').hidden = aba!=='pagamentos';
+  if(aba==='pagamentos') return renderPag();
   const lista = S[aba];
   const pessoas = p => 1 + p.acompanhantes;
   const soma = f => lista.filter(f).reduce((a,p)=>a+pessoas(p),0);
@@ -197,16 +259,53 @@ function render(){
     </div>`).join('')
     : `<div class="empty">${lista.length ? 'Ninguém encontrado com esses filtros.' : (aba==='after' ? 'A lista do after ainda está vazia.' : 'A lista de convidados ainda está vazia.')}</div>`;
 }
+function renderPag(){
+  const F=S.fornecedores;
+  const contratado=F.reduce((a,f)=>a+totalF(f),0), pago=F.reduce((a,f)=>a+pagoF(f),0);
+  const indef=F.filter(f=>f.total===null).length;
+  $('stats').innerHTML=[
+    [brl(contratado),'total contratado'+(indef?` (${indef} sem valor total)`:'')],
+    [brl(pago),'já pago'],
+    [brl(contratado-pago),'falta pagar'],
+    [F.filter(f=>totalF(f)>0&&pagoF(f)>=totalF(f)).length+' de '+F.length,'fornecedores quitados'],
+  ].map(([n,l])=>`<div class="stat"><b>${n}</b><span>${l}</span></div>`).join('');
+  const fp=$('fPag').value;
+  const vis=F.filter(f=>{const q=totalF(f)>0&&pagoF(f)>=totalF(f); return !fp||(fp==='quitado'?q:!q);});
+  $('lista').innerHTML = vis.length ? vis.map(f=>{
+    const t=totalF(f), p=pagoF(f), pct=t?Math.min(100,p/t*100):0;
+    const semParc = t - f.parcelas.reduce((a,x)=>a+x.valor,0);
+    return `<div class="forn">
+      <div class="fhead">
+        <div><div class="name">${esc(f.nome)} <button class="icon" title="Editar" data-editf="${f.id}">✎</button></div>
+          ${f.obs?`<div class="meta">${esc(f.obs)}</div>`:''}</div>
+        <div class="fval"><b>${f.total===null&&!t?'A definir':brl(t)}${f.total===null&&t?'*':''}</b>pago ${brl(p)} · falta ${brl(t-p)}</div>
+      </div>
+      <div class="prog"><i style="width:${pct}%"></i></div>
+      ${f.parcelas.map(x=>`<label class="parc ${x.pago?'pago':''}">
+        <input type="checkbox" data-pf="${f.id}" data-pp="${x.id}" ${x.pago?'checked':''}>
+        <span class="pd">${esc(x.descricao||'Pagamento')}<small>${x.pago?'Pago'+(x.pagoEm?' em '+x.pagoEm:''):esc(x.quando||'')}</small></span>
+        <span class="v">${brl(x.valor)}</span></label>`).join('')}
+      ${semParc>0.009?`<div class="meta" style="margin-top:8px">${brl(semParc)} do contrato ainda sem pagamento cadastrado</div>`:''}
+      ${f.total===null?`<div class="meta" style="margin-top:8px">${t?'* soma dos pagamentos cadastrados; o valor total não foi informado':'Edite para colocar o valor quando souber'}</div>`:''}
+    </div>`;}).join('')
+    : `<div class="empty">${F.length?'Nenhum fornecedor com esse filtro.':'Nenhum fornecedor cadastrado.'}</div>`;
+}
 function esc(s){ return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
 
 document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{
   aba=b.dataset.tab; document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===b)); render();
 });
-['busca','fStatus','fLado'].forEach(id=>$(id).oninput=render);
+['busca','fStatus','fLado','fPag'].forEach(id=>$(id).oninput=render);
 
+$('lista').onchange = e=>{
+  const c=e.target; if(!c.dataset.pf) return;
+  const p=S.fornecedores.find(f=>f.id===c.dataset.pf).parcelas.find(x=>x.id===c.dataset.pp);
+  p.pago=c.checked; p.pagoEm=c.checked?new Date().toLocaleDateString('pt-BR'):''; salvar();
+};
 $('lista').onclick = e=>{
   const t = e.target.closest('button'); if(!t) return;
   if(t.dataset.status){ const p=S[aba].find(x=>x.id===t.dataset.status); p.status=PROX[p.status]; salvar(); }
+  if(t.dataset.editf){ abrirF(S.fornecedores.find(x=>x.id===t.dataset.editf)); return; }
   if(t.dataset.edit){ abrir(S[aba].find(x=>x.id===t.dataset.edit)); }
   if(t.dataset.after){
     const p=S.convidados.find(x=>x.id===t.dataset.after);
@@ -239,14 +338,53 @@ $('form').onsubmit=e=>{
 $('excluir').onclick=()=>{
   if(!editando || !confirm(`Excluir ${editando.nome} desta lista?`)) return;
   S[aba]=S[aba].filter(x=>x!==editando);
-  if(editando.id.startsWith('s-')) S.removidos.push(editando.id);
+  if(window.SEED && (SEED[aba]||[]).some(x=>x.id===editando.id)) S.removidos.push(editando.id);
   $('dlg').close(); salvar();
+};
+
+let editF=null;
+function linhaParc(p={}){
+  const d=document.createElement('div'); d.className='prow'; d.dataset.id=p.id||''; d.dataset.pago=p.pago?'1':''; d.dataset.pagoEm=p.pagoEm||'';
+  d.innerHTML=`<input placeholder="Ex.: Entrada" value="${esc(p.descricao||'')}"><input placeholder="R$" inputmode="decimal" value="${p.valor!=null?String(p.valor).replace('.',','):''}"><input placeholder="Quando pagar" value="${esc(p.quando||'')}"><button type="button" class="icon" title="Remover">✕</button>`;
+  d.querySelector('button').onclick=()=>d.remove();
+  $('parcelas').append(d);
+}
+function abrirF(f){
+  editF=f||null; const fm=$('formF'); fm.reset(); $('parcelas').innerHTML='';
+  $('dlgFTitulo').textContent=f?'Editar fornecedor':'Novo fornecedor';
+  $('excluirF').style.display=f?'':'none';
+  if(f){ fm.elements.nome.value=f.nome; fm.elements.total.value=f.total!=null?String(f.total).replace('.',','):''; fm.elements.obs.value=f.obs; f.parcelas.forEach(linhaParc); }
+  else linhaParc({descricao:'Entrada'});
+  $('dlgF').showModal(); fm.elements.nome.focus();
+}
+$('novoForn').onclick=()=>abrirF();
+$('addParc').onclick=()=>linhaParc();
+$('cancelarF').onclick=()=>$('dlgF').close();
+$('formF').onsubmit=()=>{
+  const fm=$('formF');
+  const parcelas=[...$('parcelas').children].map(r=>{const [a,b,c]=r.querySelectorAll('input');
+    return {id:r.dataset.id||undefined,descricao:a.value,valor:b.value,quando:c.value,pago:!!r.dataset.pago,pagoEm:r.dataset.pagoEm};}).filter(p=>p.descricao||p.valor);
+  const novo=limpaF({id:editF?.id,nome:fm.elements.nome.value,total:fm.elements.total.value,obs:fm.elements.obs.value,parcelas});
+  if(editF) Object.assign(editF,novo); else S.fornecedores.push(novo);
+  salvar();
+};
+$('excluirF').onclick=()=>{
+  if(!editF||!confirm(`Excluir ${editF.nome}?`)) return;
+  S.fornecedores=S.fornecedores.filter(x=>x!==editF);
+  if(editF.id.startsWith('f-')) S.removidos.push(editF.id);
+  $('dlgF').close(); salvar();
 };
 
 function baixar(nome, conteudo, tipo){
   const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([conteudo],{type:tipo})); a.download=nome; a.click();
 }
 $('csv').onclick=()=>{
+  if(aba==='pagamentos'){
+    const linhas=[['Fornecedor','Pagamento','Quando','Valor','Situação','Pago em']];
+    S.fornecedores.forEach(f=>{ if(!f.parcelas.length) linhas.push([f.nome,'','','','Valor a definir','']);
+      f.parcelas.forEach(p=>linhas.push([f.nome,p.descricao,p.quando,p.valor.toFixed(2).replace('.',','),p.pago?'Pago':'Falta pagar',p.pagoEm])); });
+    return baixar('pagamentos-casamento.csv','\ufeff'+linhas.map(l=>l.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(';')).join('\n'),'text/csv');
+  }
   const cab=['Lista','Nome','Lado','Grupo','Acompanhantes','Status','Observação'];
   const linhas=TABS.flatMap(t=>S[t].map(p=>[t==='after'?'After':'Convidados',p.nome,LADO[p.lado],p.grupo,p.acompanhantes,STATUS[p.status],p.obs]));
   const csv=[cab,...linhas].map(l=>l.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(';')).join('\n');
@@ -257,7 +395,7 @@ $('restaurar').onclick=()=>$('arquivo').click();
 $('arquivo').onchange=async e=>{
   try{ const d=JSON.parse(await e.target.files[0].text());
     if(!Array.isArray(d.convidados)) throw 0;
-    if(confirm('Substituir a lista atual por este backup?')){ S={convidados:d.convidados.map(limpa),after:(d.after||[]).map(limpa),removidos:d.removidos||[]}; salvar(); }
+    if(confirm('Substituir a lista atual por este backup?')){ S={convidados:d.convidados.map(limpa),after:(d.after||[]).map(limpa),fornecedores:(d.fornecedores||[]).map(limpaF),removidos:d.removidos||[]}; salvar(); }
   }catch(err){ alert('Arquivo de backup inválido.'); }
   e.target.value='';
 };

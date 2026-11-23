@@ -222,9 +222,17 @@ const brl = v => (v||0).toLocaleString('pt-BR',{style:'currency',currency:'BRL'}
 const totalF = f => f.total ?? f.parcelas.reduce((a,p)=>a+p.valor,0);
 const pagoF = f => f.parcelas.filter(p=>p.pago).reduce((a,p)=>a+p.valor,0);
 let S = carregar();
-let db = null, downloads = null;
+let db = null, downloads = null, api = false;
+const SENHA_KEY = 'casamento-senha';
+function senha(){ try{ return localStorage.getItem(SENHA_KEY)||''; }catch(e){ return ''; } }
+async function chamar(metodo, caminho, corpo){
+  const r = await fetch('/api/'+caminho, { method:metodo, headers:{'x-senha':senha(),'content-type':'application/json'}, body:corpo?JSON.stringify(corpo):undefined });
+  if(r.status===401){ pedirSenha(); throw {code:'senha'}; }
+  if(!r.ok) throw {code:'unavailable'};
+  return r.json();
+}
 const NORM = { convidados:limpa, after:limpa, fornecedores:limpaF };
-function salvarLocal(){ if(!db){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} } }
+function salvarLocal(){ if(!db && !api){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} } }
 function aviso(t){ $('aviso').textContent = t||''; }
 function erro(e){
   if(e && e.code==='quota_exceeded') aviso('O espaço de dados ficou cheio. Apague itens antigos para continuar.');
@@ -237,14 +245,42 @@ async function guardar(col, item){
   if(i<0) S[col].push(item); else S[col][i]=item;
   render(); salvarLocal();
   if(db){ try{ await db.collection(col).doc(item.id).set(JSON.parse(JSON.stringify(item))); }catch(e){ erro(e); } }
+  if(api){ try{ await chamar('PUT', col+'/'+encodeURIComponent(item.id), item); }catch(e){ if(e.code!=='senha') erro(e); } }
 }
 async function apagar(col, id){
   S[col]=S[col].filter(x=>x.id!==id);
-  if(!db && window.SEED && (SEED[col]||[]).some(x=>x.id===id)) S.removidos.push(id);
+  if(!db && !api && window.SEED && (SEED[col]||[]).some(x=>x.id===id)) S.removidos.push(id);
   render(); salvarLocal();
   if(db){ try{ await db.collection(col).doc(id).delete(); }catch(e){ erro(e); } }
+  if(api){ try{ await chamar('DELETE', col+'/'+encodeURIComponent(id)); }catch(e){ if(e.code!=='senha') erro(e); } }
+}
+function pedirSenha(){
+  const t = prompt('Digite a senha da lista do casamento:');
+  if(t===null) return;
+  try{ localStorage.setItem(SENHA_KEY, t.trim()); }catch(e){}
+  atualizarApi(true);
+}
+async function atualizarApi(primeira){
+  if(!primeira && (document.hidden || document.querySelector('dialog[open]'))) return;
+  try{
+    const d = await chamar('GET','estado');
+    for(const col of Object.keys(NORM)) S[col] = (d[col]||[]).map(NORM[col]);
+    aviso(''); render();
+  }catch(e){ if(e.code!=='senha') aviso('Sem conexão agora. Tentando de novo…'); }
 }
 async function conectar(){
+  // Versão no Cloudflare: usa a API com senha
+  try{
+    const r = await fetch('/api/estado', { headers:{'x-senha':senha()} });
+    if(r.status===200 || r.status===401){
+      api = true; S = { convidados:[], after:[], fornecedores:[], removidos:[] }; render();
+      if(r.status===401){ aviso('Digite a senha para ver a lista.'); pedirSenha(); }
+      else { const d = await r.json(); for(const col of Object.keys(NORM)) S[col]=(d[col]||[]).map(NORM[col]); render(); }
+      setInterval(()=>atualizarApi(false), 20000);
+      document.addEventListener('visibilitychange', ()=>{ if(!document.hidden) atualizarApi(false); });
+      return;
+    }
+  }catch(e){}
   if(!window.claude || !claude.use) return;
   const d = await claude.use('db');
   downloads = await claude.use('downloads');

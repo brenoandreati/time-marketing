@@ -1,0 +1,12 @@
+name = "casamento"
+main = "src/worker.js"
+compatibility_date = "2024-11-01"
+account_id = "c7692f549ea764de8cb3822715354691"
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+
+[[kv_namespaces]]
+binding = "DADOS"
+id = "5df7683506d04318a385cc3816b54413"

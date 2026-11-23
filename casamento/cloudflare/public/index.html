@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lista do Casamento</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf7f2; --card:#fff; --ink:#2b2622; --muted:#8a8178; --line:#ebe4da;
+  --accent:#a07a4f; --accent-soft:#f3ebe0;
+  --ok:#3f7d58; --ok-soft:#e5f1e9; --no:#b0493f; --no-soft:#f7e6e3; --wait:#9a7b2c; --wait-soft:#f6efdc;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --bg:#1b1917; --card:#24211e; --ink:#efe9e1; --muted:#a39a90; --line:#36312c;
+    --accent:#d0a874; --accent-soft:#3a3128; --ok:#7cc497; --ok-soft:#21352a; --no:#e58a80; --no-soft:#3d2523; --wait:#dcbb64; --wait-soft:#3a3320; }
+}
+:root[data-theme="dark"]{ --bg:#1b1917; --card:#24211e; --ink:#efe9e1; --muted:#a39a90; --line:#36312c;
+    --accent:#d0a874; --accent-soft:#3a3128; --ok:#7cc497; --ok-soft:#21352a; --no:#e58a80; --no-soft:#3d2523; --wait:#dcbb64; --wait-soft:#3a3320; }
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 Inter,system-ui,sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:24px 16px 80px}
+header{text-align:center;margin-bottom:20px}
+header h1{font:600 2.4rem/1.1 "Cormorant Garamond",serif;margin:0;letter-spacing:.5px}
+header p{margin:4px 0 0;color:var(--muted)}
+.tabs{display:flex;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px;width:fit-content;margin:0 auto 20px}
+.tabs button{border:0;background:none;color:var(--muted);font:500 14px Inter;padding:9px 18px;border-radius:999px;cursor:pointer}
+.tabs button.on{background:var(--accent);color:#fff}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:16px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.stat b{display:block;font:600 1.7rem/1 "Cormorant Garamond",serif}
+.stat span{color:var(--muted);font-size:12.5px}
+.bar[hidden]{display:none}
+.bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.bar input,.bar select{flex:1 1 160px;min-width:0;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font:14px Inter}
+.btn{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:9px 14px;border-radius:10px;font:500 13.5px Inter;cursor:pointer;white-space:nowrap}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn:hover{filter:brightness(.97)}
+.list{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.row{display:grid;grid-template-columns:1fr auto;gap:8px;padding:12px 14px;border-top:1px solid var(--line);align-items:center}
+.row:first-child{border-top:0}
+.name{font-weight:600}
+.meta{color:var(--muted);font-size:12.5px;margin-top:2px}
+.meta .tag{display:inline-block;background:var(--accent-soft);color:var(--accent);border-radius:6px;padding:1px 7px;margin-right:4px;font-weight:500}
+.acts{display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.pill{border:0;border-radius:999px;padding:5px 11px;font:600 12px Inter;cursor:pointer}
+.pill.pendente{background:var(--wait-soft);color:var(--wait)}
+.pill.confirmado{background:var(--ok-soft);color:var(--ok)}
+.pill.recusou{background:var(--no-soft);color:var(--no)}
+.icon{border:0;background:none;color:var(--muted);cursor:pointer;font-size:15px;padding:4px 6px;border-radius:6px}
+.icon:hover{background:var(--accent-soft);color:var(--ink)}
+.icon.after-on{color:var(--accent)}
+.prog{height:6px;background:var(--line);border-radius:99px;overflow:hidden;margin-top:8px}
+.prog i{display:block;height:100%;background:var(--ok)}
+.forn{border-top:1px solid var(--line);padding:14px}
+.forn:first-child{border-top:0}
+.fhead{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.fval{text-align:right;font-size:12.5px;color:var(--muted)}
+.fval b{display:block;font-size:15px;color:var(--ink)}
+.parc{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:8px 0 0;font-size:14px}
+.parc input{width:18px;height:18px;accent-color:var(--ok);margin:0}
+.parc.pago .pd{text-decoration:line-through;color:var(--muted)}
+.parc small{display:block;color:var(--muted);font-size:12px}
+.parc .v{font-variant-numeric:tabular-nums;font-weight:500}
+.prow{display:grid;grid-template-columns:1fr 90px 1fr auto;gap:6px;margin-top:6px}
+.prow input{padding:7px 8px}
+@media (max-width:560px){ .prow{grid-template-columns:1fr 1fr} }
+.empty{padding:40px 16px;text-align:center;color:var(--muted)}
+.foot{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:22px}
+dialog{border:1px solid var(--line);border-radius:16px;background:var(--card);color:var(--ink);padding:20px;width:min(440px,calc(100vw - 32px))}
+dialog::backdrop{background:rgba(0,0,0,.35)}
+dialog h3{margin:0 0 14px;font:600 1.5rem "Cormorant Garamond",serif}
+dialog label{display:block;font-size:12.5px;color:var(--muted);margin:10px 0 4px}
+dialog input,dialog select,dialog textarea{width:100%;padding:9px 11px;border:1px solid var(--line);border-radius:9px;background:var(--bg);color:var(--ink);font:14px Inter}
+dialog .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+dialog .end{display:flex;gap:8px;justify-content:flex-end;margin-top:18px}
+.hint{font-size:12px;color:var(--muted);margin-top:4px}
+@media (max-width:560px){ .row{grid-template-columns:1fr} .acts{justify-content:flex-start} header h1{font-size:2rem} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Nosso Casamento</h1>
+    <p>Convidados, after e pagamentos</p>
+    <p id="aviso" class="hint"></p>
+  </header>
+
+  <nav class="tabs">
+    <button data-tab="convidados" class="on">Convidados</button>
+    <button data-tab="after">After</button>
+    <button data-tab="pagamentos">Pagamentos</button>
+  </nav>
+
+  <section class="stats" id="stats"></section>
+
+  <div class="bar" id="barConv">
+    <input id="busca" type="search" placeholder="Buscar pelo nome…">
+    <select id="fStatus">
+      <option value="">Todos os status</option>
+      <option value="confirmado">Confirmados</option>
+      <option value="pendente">Pendentes</option>
+      <option value="recusou">Não vão</option>
+    </select>
+    <select id="fLado">
+      <option value="">Noiva e noivo</option>
+      <option value="noiva">Lado da noiva</option>
+      <option value="noivo">Lado do noivo</option>
+      <option value="ambos">Dos dois</option>
+    </select>
+    <button class="btn primary" id="novo">+ Adicionar</button>
+  </div>
+
+  <div class="bar" id="barPag" hidden>
+    <select id="fPag">
+      <option value="">Todos os fornecedores</option>
+      <option value="falta">Com pagamento pendente</option>
+      <option value="quitado">Quitados</option>
+    </select>
+    <button class="btn primary" id="novoForn">+ Fornecedor</button>
+  </div>
+
+  <div class="list" id="lista"></div>
+
+  <div class="foot">
+    <button class="btn" id="csv">Baixar planilha (CSV)</button>
+    <button class="btn" id="backup">Salvar backup</button>
+    <button class="btn" id="restaurar">Carregar backup</button>
+    <input type="file" id="arquivo" accept=".json" hidden>
+  </div>
+</div>
+
+<dialog id="dlg">
+  <form method="dialog" id="form">
+    <h3 id="dlgTitulo">Novo convidado</h3>
+    <label>Nome</label>
+    <input name="nome" required autocomplete="off">
+    <div class="two">
+      <div><label>Lado</label>
+        <select name="lado"><option value="noiva">Noiva</option><option value="noivo">Noivo</option><option value="ambos">Dos dois</option></select></div>
+      <div><label>Grupo</label>
+        <select name="grupo"><option>Família</option><option>Amigos</option><option>Padrinhos</option><option>Trabalho</option><option>Outros</option></select></div>
+    </div>
+    <div class="two">
+      <div><label>Acompanhantes</label><input name="acompanhantes" type="number" min="0" value="0"></div>
+      <div><label>Status</label>
+        <select name="status"><option value="pendente">Pendente</option><option value="confirmado">Confirmado</option><option value="recusou">Não vai</option></select></div>
+    </div>
+    <label>Observação</label>
+    <textarea name="obs" rows="2"></textarea>
+    <div class="end">
+      <button type="button" class="btn" id="excluir" style="margin-right:auto;color:var(--no)">Excluir</button>
+      <button type="button" class="btn" id="cancelar">Cancelar</button>
+      <button type="submit" class="btn primary">Salvar</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="dlgF">
+  <form method="dialog" id="formF">
+    <h3 id="dlgFTitulo">Fornecedor</h3>
+    <label>Nome</label>
+    <input name="nome" required autocomplete="off">
+    <label>Valor total do contrato (R$)</label>
+    <input name="total" inputmode="decimal" placeholder="Deixe vazio se ainda não sabe">
+    <label>Observação</label>
+    <input name="obs" autocomplete="off">
+    <label>Pagamentos (descrição · valor · quando)</label>
+    <div id="parcelas"></div>
+    <button type="button" class="btn" id="addParc" style="margin-top:8px">+ Pagamento</button>
+    <div class="hint">Marque como pago direto na lista, clicando na caixinha.</div>
+    <div class="end">
+      <button type="button" class="btn" id="excluirF" style="margin-right:auto;color:var(--no)">Excluir</button>
+      <button type="button" class="btn" id="cancelarF">Cancelar</button>
+      <button type="submit" class="btn primary">Salvar</button>
+    </div>
+  </form>
+</dialog>
+
+
+<script>
+const KEY = 'casamento-lista-v1';
+const STATUS = { pendente:'Pendente', confirmado:'Confirmado', recusou:'Não vai' };
+const PROX = { pendente:'confirmado', confirmado:'recusou', recusou:'pendente' };
+const LADO = { noiva:'Noiva', noivo:'Noivo', ambos:'Dos dois' };
+const TABS = ['convidados','after'];
+const uid = () => Math.random().toString(36).slice(2,10);
+const norm = s => (s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().trim();
+
+function limpa(p){
+  return { id:p.id||uid(), nome:(p.nome||'').trim(), lado:p.lado||'ambos', grupo:p.grupo||'Outros',
+    acompanhantes:+p.acompanhantes||0, status:STATUS[p.status]?p.status:'pendente', obs:p.obs||'' };
+}
+
+function carregar(){
+  let st; try{ st = JSON.parse(localStorage.getItem(KEY)); }catch(e){}
+  st = st || { convidados:[], after:[], removidos:[] };
+  const seed = window.SEED || {};
+  // Junta pessoas novas do arquivo convidados.js sem apagar o que já foi editado aqui
+  for(const t of TABS){
+    st[t] = st[t] || [];
+    for(const p of (seed[t]||[])){
+      const id = p.id || ('s-'+t+'-'+norm(p.nome).replace(/\W+/g,'-'));
+      if(st.removidos.includes(id) || st[t].some(x=>x.id===id)) continue;
+      st[t].push(limpa({...p,id}));
+    }
+  }
+  st.fornecedores = st.fornecedores || [];
+  for(const f of (seed.fornecedores||[])){
+    if(st.removidos.includes(f.id) || st.fornecedores.some(x=>x.id===f.id)) continue;
+    st.fornecedores.push(limpaF(f));
+  }
+  return st;
+}
+function limpaF(f){
+  const num = v => { if(v===null||v===undefined||v==='') return null; const n=typeof v==='number'?v:parseFloat(String(v).replace(/[^\d,.-]/g,'').replace(/\.(?=\d{3}(\D|$))/g,'').replace(',','.')); return isNaN(n)?null:n; };
+  return { id:f.id||uid(), nome:(f.nome||'').trim(), total:num(f.total), obs:f.obs||'',
+    parcelas:(f.parcelas||[]).map(p=>({ id:p.id||uid(), descricao:p.descricao||'', valor:num(p.valor)||0, quando:p.quando||'', pago:!!p.pago, pagoEm:p.pagoEm||'' })) };
+}
+const brl = v => (v||0).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+const totalF = f => f.total ?? f.parcelas.reduce((a,p)=>a+p.valor,0);
+const pagoF = f => f.parcelas.filter(p=>p.pago).reduce((a,p)=>a+p.valor,0);
+let S = carregar();
+let db = null, downloads = null, api = false;
+const SENHA_KEY = 'casamento-senha';
+function senha(){ try{ return localStorage.getItem(SENHA_KEY)||''; }catch(e){ return ''; } }
+async function chamar(metodo, caminho, corpo){
+  const r = await fetch('/api/'+caminho, { method:metodo, headers:{'x-senha':senha(),'content-type':'application/json'}, body:corpo?JSON.stringify(corpo):undefined });
+  if(r.status===401){ pedirSenha(); throw {code:'senha'}; }
+  if(!r.ok) throw {code:'unavailable'};
+  return r.json();
+}
+const NORM = { convidados:limpa, after:limpa, fornecedores:limpaF };
+function salvarLocal(){ if(!db && !api){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} } }
+function aviso(t){ $('aviso').textContent = t||''; }
+function erro(e){
+  if(e && e.code==='quota_exceeded') aviso('O espaço de dados ficou cheio. Apague itens antigos para continuar.');
+  else if(e && (e.code==='invalid_argument')) aviso('Você só pode ver esta lista. Peça acesso de edição para mudar algo.');
+  else aviso('Não foi possível salvar agora. Tente de novo em instantes.');
+}
+// Salva um item (convidado, pessoa do after ou fornecedor)
+async function guardar(col, item){
+  const i = S[col].findIndex(x=>x.id===item.id);
+  if(i<0) S[col].push(item); else S[col][i]=item;
+  render(); salvarLocal();
+  if(db){ try{ await db.collection(col).doc(item.id).set(JSON.parse(JSON.stringify(item))); }catch(e){ erro(e); } }
+  if(api){ try{ await chamar('PUT', col+'/'+encodeURIComponent(item.id), item); }catch(e){ if(e.code!=='senha') erro(e); } }
+}
+async function apagar(col, id){
+  S[col]=S[col].filter(x=>x.id!==id);
+  if(!db && !api && window.SEED && (SEED[col]||[]).some(x=>x.id===id)) S.removidos.push(id);
+  render(); salvarLocal();
+  if(db){ try{ await db.collection(col).doc(id).delete(); }catch(e){ erro(e); } }
+  if(api){ try{ await chamar('DELETE', col+'/'+encodeURIComponent(id)); }catch(e){ if(e.code!=='senha') erro(e); } }
+}
+function pedirSenha(){
+  const t = prompt('Digite a senha da lista do casamento:');
+  if(t===null) return;
+  try{ localStorage.setItem(SENHA_KEY, t.trim()); }catch(e){}
+  atualizarApi(true);
+}
+async function atualizarApi(primeira){
+  if(!primeira && (document.hidden || document.querySelector('dialog[open]'))) return;
+  try{
+    const d = await chamar('GET','estado');
+    for(const col of Object.keys(NORM)) S[col] = (d[col]||[]).map(NORM[col]);
+    aviso(''); render();
+  }catch(e){ if(e.code!=='senha') aviso('Sem conexão agora. Tentando de novo…'); }
+}
+async function conectar(){
+  // Versão no Cloudflare: usa a API com senha
+  try{
+    const r = await fetch('/api/estado', { headers:{'x-senha':senha()} });
+    if(r.status===200 || r.status===401){
+      api = true; S = { convidados:[], after:[], fornecedores:[], removidos:[] }; render();
+      if(r.status===401){ aviso('Digite a senha para ver a lista.'); pedirSenha(); }
+      else { const d = await r.json(); for(const col of Object.keys(NORM)) S[col]=(d[col]||[]).map(NORM[col]); render(); }
+      setInterval(()=>atualizarApi(false), 20000);
+      document.addEventListener('visibilitychange', ()=>{ if(!document.hidden) atualizarApi(false); });
+      return;
+    }
+  }catch(e){}
+  if(!window.claude || !claude.use) return;
+  const d = await claude.use('db');
+  downloads = await claude.use('downloads');
+  if(!d) return;
+  db = d; S = { convidados:[], after:[], fornecedores:[], removidos:[] };
+  aviso('Carregando a lista…'); render();
+  const timer = setTimeout(()=>aviso('Não deu para carregar a lista ainda. Verifique a internet.'), 10000);
+  for(const col of Object.keys(NORM)){
+    db.collection(col).onSnapshot(snap=>{
+      S[col] = snap.docs.map(x=>NORM[col]({...x.data(), id:x.id}));
+      if(!snap.metadata.fromCache){ clearTimeout(timer); if($('aviso').textContent.startsWith('Carregando')||$('aviso').textContent.startsWith('Não deu')) aviso(''); }
+      render();
+    }, e=>{ clearTimeout(timer); erro(e); });
+  }
+}
+
+let aba = 'convidados', editando = null;
+const $ = id => document.getElementById(id);
+
+function render(){
+  $('barConv').hidden = aba==='pagamentos'; $('barPag').hidden = aba!=='pagamentos';
+  if(aba==='pagamentos') return renderPag();
+  const lista = S[aba];
+  const pessoas = p => 1 + p.acompanhantes;
+  const soma = f => lista.filter(f).reduce((a,p)=>a+pessoas(p),0);
+  const total = soma(()=>true), conf = soma(p=>p.status==='confirmado'),
+        pend = soma(p=>p.status==='pendente'), rec = soma(p=>p.status==='recusou');
+  $('stats').innerHTML = [
+    [lista.length, aba==='after'?'nomes no after':'convites (nomes)'],
+    [total, 'pessoas no total'],
+    [conf, 'confirmadas'],
+    [pend, 'pendentes'],
+    [rec, 'não vão'],
+  ].map(([n,l])=>`<div class="stat"><b>${n}</b><span>${l}</span></div>`).join('');
+
+  const q = norm($('busca').value), fs = $('fStatus').value, fl = $('fLado').value;
+  const vis = lista.filter(p => (!q || norm(p.nome).includes(q)) && (!fs || p.status===fs) && (!fl || p.lado===fl))
+                   .sort((a,b)=>a.nome.localeCompare(b.nome,'pt-BR'));
+  const noAfter = new Set(S.after.map(p=>norm(p.nome)));
+
+  $('lista').innerHTML = vis.length ? vis.map(p=>`
+    <div class="row">
+      <div>
+        <div class="name">${esc(p.nome)}${p.acompanhantes?` <span style="color:var(--muted);font-weight:400">+${p.acompanhantes}</span>`:''}</div>
+        <div class="meta"><span class="tag">${LADO[p.lado]}</span><span class="tag">${esc(p.grupo)}</span>${p.obs?esc(p.obs):''}</div>
+      </div>
+      <div class="acts">
+        ${aba==='convidados'?`<button class="icon ${noAfter.has(norm(p.nome))?'after-on':''}" title="${noAfter.has(norm(p.nome))?'Já está no after':'Adicionar ao after'}" data-after="${p.id}">🥂</button>`:''}
+        <button class="pill ${p.status}" data-status="${p.id}" title="Clique para mudar">${STATUS[p.status]}</button>
+        <button class="icon" title="Editar" data-edit="${p.id}">✎</button>
+      </div>
+    </div>`).join('')
+    : `<div class="empty">${lista.length ? 'Ninguém encontrado com esses filtros.' : (aba==='after' ? 'A lista do after ainda está vazia.' : 'A lista de convidados ainda está vazia.')}</div>`;
+}
+function renderPag(){
+  const F=S.fornecedores;
+  const contratado=F.reduce((a,f)=>a+totalF(f),0), pago=F.reduce((a,f)=>a+pagoF(f),0);
+  const indef=F.filter(f=>f.total===null).length;
+  $('stats').innerHTML=[
+    [brl(contratado),'total contratado'+(indef?` (${indef} sem valor total)`:'')],
+    [brl(pago),'já pago'],
+    [brl(contratado-pago),'falta pagar'],
+    [F.filter(f=>totalF(f)>0&&pagoF(f)>=totalF(f)).length+' de '+F.length,'fornecedores quitados'],
+  ].map(([n,l])=>`<div class="stat"><b>${n}</b><span>${l}</span></div>`).join('');
+  const fp=$('fPag').value;
+  const vis=F.filter(f=>{const q=totalF(f)>0&&pagoF(f)>=totalF(f); return !fp||(fp==='quitado'?q:!q);});
+  $('lista').innerHTML = vis.length ? vis.map(f=>{
+    const t=totalF(f), p=pagoF(f), pct=t?Math.min(100,p/t*100):0;
+    const semParc = t - f.parcelas.reduce((a,x)=>a+x.valor,0);
+    return `<div class="forn">
+      <div class="fhead">
+        <div><div class="name">${esc(f.nome)} <button class="icon" title="Editar" data-editf="${f.id}">✎</button></div>
+          ${f.obs?`<div class="meta">${esc(f.obs)}</div>`:''}</div>
+        <div class="fval"><b>${f.total===null&&!t?'A definir':brl(t)}${f.total===null&&t?'*':''}</b>pago ${brl(p)} · falta ${brl(t-p)}</div>
+      </div>
+      <div class="prog"><i style="width:${pct}%"></i></div>
+      ${f.parcelas.map(x=>`<label class="parc ${x.pago?'pago':''}">
+        <input type="checkbox" data-pf="${f.id}" data-pp="${x.id}" ${x.pago?'checked':''}>
+        <span class="pd">${esc(x.descricao||'Pagamento')}<small>${x.pago?'Pago'+(x.pagoEm?' em '+x.pagoEm:''):esc(x.quando||'')}</small></span>
+        <span class="v">${brl(x.valor)}</span></label>`).join('')}
+      ${semParc>0.009?`<div class="meta" style="margin-top:8px">${brl(semParc)} do contrato ainda sem pagamento cadastrado</div>`:''}
+      ${f.total===null?`<div class="meta" style="margin-top:8px">${t?'* soma dos pagamentos cadastrados; o valor total não foi informado':'Edite para colocar o valor quando souber'}</div>`:''}
+    </div>`;}).join('')
+    : `<div class="empty">${F.length?'Nenhum fornecedor com esse filtro.':'Nenhum fornecedor cadastrado.'}</div>`;
+}
+function esc(s){ return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{
+  aba=b.dataset.tab; document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===b)); render();
+});
+['busca','fStatus','fLado','fPag'].forEach(id=>$(id).oninput=render);
+
+$('lista').onchange = e=>{
+  const c=e.target; if(!c.dataset.pf) return;
+  const f=JSON.parse(JSON.stringify(S.fornecedores.find(f=>f.id===c.dataset.pf)));
+  const p=f.parcelas.find(x=>x.id===c.dataset.pp);
+  p.pago=c.checked; p.pagoEm=c.checked?new Date().toLocaleDateString('pt-BR'):''; guardar('fornecedores',f);
+};
+$('lista').onclick = e=>{
+  const t = e.target.closest('button'); if(!t) return;
+  if(t.dataset.status){ const p=S[aba].find(x=>x.id===t.dataset.status); guardar(aba,{...p,status:PROX[p.status]}); }
+  if(t.dataset.editf){ abrirF(S.fornecedores.find(x=>x.id===t.dataset.editf)); return; }
+  if(t.dataset.edit){ abrir(S[aba].find(x=>x.id===t.dataset.edit)); }
+  if(t.dataset.after){
+    const p=S.convidados.find(x=>x.id===t.dataset.after);
+    const ja=S.after.find(x=>norm(x.nome)===norm(p.nome));
+    if(ja){ if(confirm(`Tirar ${p.nome} do after?`)) apagar('after',ja.id); }
+    else guardar('after',limpa({...p,id:uid(),status:'pendente'}));
+  }
+};
+
+function abrir(p){
+  editando = p||null;
+  const f=$('form'); f.reset();
+  $('dlgTitulo').textContent = p ? 'Editar' : (aba==='after'?'Novo no after':'Novo convidado');
+  $('excluir').style.display = p ? '' : 'none';
+  if(p) for(const k of ['nome','lado','grupo','acompanhantes','status','obs']) f.elements[k].value=p[k];
+  $('dlg').showModal(); f.elements.nome.focus();
+}
+$('novo').onclick=()=>abrir();
+$('cancelar').onclick=()=>$('dlg').close();
+$('form').onsubmit=e=>{
+  const d=Object.fromEntries(new FormData(e.target));
+  if(editando) return guardar(aba, limpa({...d,id:editando.id}));
+  const dup=S[aba].find(x=>norm(x.nome)===norm(d.nome));
+  if(dup && !confirm(`${dup.nome} já está na lista. Adicionar mesmo assim?`)) return;
+  guardar(aba, limpa(d));
+};
+$('excluir').onclick=()=>{
+  if(!editando || !confirm(`Excluir ${editando.nome} desta lista?`)) return;
+  $('dlg').close(); apagar(aba, editando.id);
+};
+
+let editF=null;
+function linhaParc(p={}){
+  const d=document.createElement('div'); d.className='prow'; d.dataset.id=p.id||''; d.dataset.pago=p.pago?'1':''; d.dataset.pagoEm=p.pagoEm||'';
+  d.innerHTML=`<input placeholder="Ex.: Entrada" value="${esc(p.descricao||'')}"><input placeholder="R$" inputmode="decimal" value="${p.valor!=null?String(p.valor).replace('.',','):''}"><input placeholder="Quando pagar" value="${esc(p.quando||'')}"><button type="button" class="icon" title="Remover">✕</button>`;
+  d.querySelector('button').onclick=()=>d.remove();
+  $('parcelas').append(d);
+}
+function abrirF(f){
+  editF=f||null; const fm=$('formF'); fm.reset(); $('parcelas').innerHTML='';
+  $('dlgFTitulo').textContent=f?'Editar fornecedor':'Novo fornecedor';
+  $('excluirF').style.display=f?'':'none';
+  if(f){ fm.elements.nome.value=f.nome; fm.elements.total.value=f.total!=null?String(f.total).replace('.',','):''; fm.elements.obs.value=f.obs; f.parcelas.forEach(linhaParc); }
+  else linhaParc({descricao:'Entrada'});
+  $('dlgF').showModal(); fm.elements.nome.focus();
+}
+$('novoForn').onclick=()=>abrirF();
+$('addParc').onclick=()=>linhaParc();
+$('cancelarF').onclick=()=>$('dlgF').close();
+$('formF').onsubmit=()=>{
+  const fm=$('formF');
+  const parcelas=[...$('parcelas').children].map(r=>{const [a,b,c]=r.querySelectorAll('input');
+    return {id:r.dataset.id||undefined,descricao:a.value,valor:b.value,quando:c.value,pago:!!r.dataset.pago,pagoEm:r.dataset.pagoEm};}).filter(p=>p.descricao||p.valor);
+  const novo=limpaF({id:editF?.id,nome:fm.elements.nome.value,total:fm.elements.total.value,obs:fm.elements.obs.value,parcelas});
+  guardar('fornecedores', novo);
+};
+$('excluirF').onclick=()=>{
+  if(!editF||!confirm(`Excluir ${editF.nome}?`)) return;
+  $('dlgF').close(); apagar('fornecedores', editF.id);
+};
+
+async function baixar(nome, conteudo, tipo){
+  if(downloads){ try{ await downloads.save({filename:nome, data:new Blob([conteudo],{type:tipo})}); }catch(e){} return; }
+  const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([conteudo],{type:tipo})); a.download=nome; a.click();
+}
+$('csv').onclick=()=>{
+  if(aba==='pagamentos'){
+    const linhas=[['Fornecedor','Pagamento','Quando','Valor','Situação','Pago em']];
+    S.fornecedores.forEach(f=>{ if(!f.parcelas.length) linhas.push([f.nome,'','','','Valor a definir','']);
+      f.parcelas.forEach(p=>linhas.push([f.nome,p.descricao,p.quando,p.valor.toFixed(2).replace('.',','),p.pago?'Pago':'Falta pagar',p.pagoEm])); });
+    return baixar('pagamentos-casamento.csv','\ufeff'+linhas.map(l=>l.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(';')).join('\n'),'text/csv');
+  }
+  const cab=['Lista','Nome','Lado','Grupo','Acompanhantes','Status','Observação'];
+  const linhas=TABS.flatMap(t=>S[t].map(p=>[t==='after'?'After':'Convidados',p.nome,LADO[p.lado],p.grupo,p.acompanhantes,STATUS[p.status],p.obs]));
+  const csv=[cab,...linhas].map(l=>l.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(';')).join('\n');
+  baixar('lista-casamento.csv','﻿'+csv,'text/csv');
+};
+$('backup').onclick=()=>baixar('backup-casamento.json',JSON.stringify(S,null,2),'application/json');
+$('restaurar').onclick=()=>$('arquivo').click();
+$('arquivo').onchange=async e=>{
+  try{ const d=JSON.parse(await e.target.files[0].text());
+    if(!Array.isArray(d.convidados)) throw 0;
+    if(confirm('Substituir a lista atual por este backup?')){
+      const novo={convidados:d.convidados.map(limpa),after:(d.after||[]).map(limpa),fornecedores:(d.fornecedores||[]).map(limpaF)};
+      for(const col of Object.keys(NORM)){
+        for(const x of [...S[col]]) if(!novo[col].some(y=>y.id===x.id)) await apagar(col,x.id);
+        for(const x of novo[col]) await guardar(col,x);
+      }
+    }
+  }catch(err){ alert('Arquivo de backup inválido.'); }
+  e.target.value='';
+};
+render();
+conectar();
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "converso",
+  "private": true,
+  "packageManager": "pnpm@10.28.0",
+  "scripts": {
+    "dev:api": "pnpm --filter @converso/api dev",
+    "dev:worker": "pnpm --filter @converso/api dev:worker",
+    "dev:web": "pnpm --filter @converso/web dev",
+    "db:migrate": "pnpm --filter @converso/api db:migrate",
+    "db:generate": "pnpm --filter @converso/api db:generate",
+    "db:seed": "pnpm --filter @converso/api db:seed",
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "pnpm -r lint"
+  }
+}

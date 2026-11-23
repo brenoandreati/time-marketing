@@ -13,9 +13,11 @@
   --ok:#3f7d58; --ok-soft:#e5f1e9; --no:#b0493f; --no-soft:#f7e6e3; --wait:#9a7b2c; --wait-soft:#f6efdc;
 }
 @media (prefers-color-scheme: dark){
-  :root{ --bg:#1b1917; --card:#24211e; --ink:#efe9e1; --muted:#a39a90; --line:#36312c;
+  :root:not([data-theme="light"]){ --bg:#1b1917; --card:#24211e; --ink:#efe9e1; --muted:#a39a90; --line:#36312c;
     --accent:#d0a874; --accent-soft:#3a3128; --ok:#7cc497; --ok-soft:#21352a; --no:#e58a80; --no-soft:#3d2523; --wait:#dcbb64; --wait-soft:#3a3320; }
 }
+:root[data-theme="dark"]{ --bg:#1b1917; --card:#24211e; --ink:#efe9e1; --muted:#a39a90; --line:#36312c;
+    --accent:#d0a874; --accent-soft:#3a3128; --ok:#7cc497; --ok-soft:#21352a; --no:#e58a80; --no-soft:#3d2523; --wait:#dcbb64; --wait-soft:#3a3320; }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 Inter,system-ui,sans-serif}
 .wrap{max-width:980px;margin:0 auto;padding:24px 16px 80px}
@@ -82,6 +84,7 @@ dialog .end{display:flex;gap:8px;justify-content:flex-end;margin-top:18px}
   <header>
     <h1>Nosso Casamento</h1>
     <p>Convidados, after e pagamentos</p>
+    <p id="aviso" class="hint"></p>
   </header>
 
   <nav class="tabs">
@@ -219,7 +222,44 @@ const brl = v => (v||0).toLocaleString('pt-BR',{style:'currency',currency:'BRL'}
 const totalF = f => f.total ?? f.parcelas.reduce((a,p)=>a+p.valor,0);
 const pagoF = f => f.parcelas.filter(p=>p.pago).reduce((a,p)=>a+p.valor,0);
 let S = carregar();
-function salvar(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} render(); }
+let db = null, downloads = null;
+const NORM = { convidados:limpa, after:limpa, fornecedores:limpaF };
+function salvarLocal(){ if(!db){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} } }
+function aviso(t){ $('aviso').textContent = t||''; }
+function erro(e){
+  if(e && e.code==='quota_exceeded') aviso('O espaço de dados ficou cheio. Apague itens antigos para continuar.');
+  else if(e && (e.code==='invalid_argument')) aviso('Você só pode ver esta lista. Peça acesso de edição para mudar algo.');
+  else aviso('Não foi possível salvar agora. Tente de novo em instantes.');
+}
+// Salva um item (convidado, pessoa do after ou fornecedor)
+async function guardar(col, item){
+  const i = S[col].findIndex(x=>x.id===item.id);
+  if(i<0) S[col].push(item); else S[col][i]=item;
+  render(); salvarLocal();
+  if(db){ try{ await db.collection(col).doc(item.id).set(JSON.parse(JSON.stringify(item))); }catch(e){ erro(e); } }
+}
+async function apagar(col, id){
+  S[col]=S[col].filter(x=>x.id!==id);
+  if(!db && window.SEED && (SEED[col]||[]).some(x=>x.id===id)) S.removidos.push(id);
+  render(); salvarLocal();
+  if(db){ try{ await db.collection(col).doc(id).delete(); }catch(e){ erro(e); } }
+}
+async function conectar(){
+  if(!window.claude || !claude.use) return;
+  const d = await claude.use('db');
+  downloads = await claude.use('downloads');
+  if(!d) return;
+  db = d; S = { convidados:[], after:[], fornecedores:[], removidos:[] };
+  aviso('Carregando a lista…'); render();
+  const timer = setTimeout(()=>aviso('Não deu para carregar a lista ainda. Verifique a internet.'), 10000);
+  for(const col of Object.keys(NORM)){
+    db.collection(col).onSnapshot(snap=>{
+      S[col] = snap.docs.map(x=>NORM[col]({...x.data(), id:x.id}));
+      if(!snap.metadata.fromCache){ clearTimeout(timer); if($('aviso').textContent.startsWith('Carregando')||$('aviso').textContent.startsWith('Não deu')) aviso(''); }
+      render();
+    }, e=>{ clearTimeout(timer); erro(e); });
+  }
+}
 
 let aba = 'convidados', editando = null;
 const $ = id => document.getElementById(id);
@@ -299,19 +339,20 @@ document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{
 
 $('lista').onchange = e=>{
   const c=e.target; if(!c.dataset.pf) return;
-  const p=S.fornecedores.find(f=>f.id===c.dataset.pf).parcelas.find(x=>x.id===c.dataset.pp);
-  p.pago=c.checked; p.pagoEm=c.checked?new Date().toLocaleDateString('pt-BR'):''; salvar();
+  const f=JSON.parse(JSON.stringify(S.fornecedores.find(f=>f.id===c.dataset.pf)));
+  const p=f.parcelas.find(x=>x.id===c.dataset.pp);
+  p.pago=c.checked; p.pagoEm=c.checked?new Date().toLocaleDateString('pt-BR'):''; guardar('fornecedores',f);
 };
 $('lista').onclick = e=>{
   const t = e.target.closest('button'); if(!t) return;
-  if(t.dataset.status){ const p=S[aba].find(x=>x.id===t.dataset.status); p.status=PROX[p.status]; salvar(); }
+  if(t.dataset.status){ const p=S[aba].find(x=>x.id===t.dataset.status); guardar(aba,{...p,status:PROX[p.status]}); }
   if(t.dataset.editf){ abrirF(S.fornecedores.find(x=>x.id===t.dataset.editf)); return; }
   if(t.dataset.edit){ abrir(S[aba].find(x=>x.id===t.dataset.edit)); }
   if(t.dataset.after){
     const p=S.convidados.find(x=>x.id===t.dataset.after);
     const ja=S.after.find(x=>norm(x.nome)===norm(p.nome));
-    if(ja){ if(confirm(`Tirar ${p.nome} do after?`)){ S.after=S.after.filter(x=>x!==ja); salvar(); } }
-    else { S.after.push(limpa({...p,id:uid(),status:'pendente'})); salvar(); }
+    if(ja){ if(confirm(`Tirar ${p.nome} do after?`)) apagar('after',ja.id); }
+    else guardar('after',limpa({...p,id:uid(),status:'pendente'}));
   }
 };
 
@@ -327,19 +368,14 @@ $('novo').onclick=()=>abrir();
 $('cancelar').onclick=()=>$('dlg').close();
 $('form').onsubmit=e=>{
   const d=Object.fromEntries(new FormData(e.target));
-  if(editando) Object.assign(editando, limpa({...d,id:editando.id}));
-  else {
-    const dup=S[aba].find(x=>norm(x.nome)===norm(d.nome));
-    if(dup && !confirm(`${dup.nome} já está na lista. Adicionar mesmo assim?`)) return;
-    S[aba].push(limpa(d));
-  }
-  salvar();
+  if(editando) return guardar(aba, limpa({...d,id:editando.id}));
+  const dup=S[aba].find(x=>norm(x.nome)===norm(d.nome));
+  if(dup && !confirm(`${dup.nome} já está na lista. Adicionar mesmo assim?`)) return;
+  guardar(aba, limpa(d));
 };
 $('excluir').onclick=()=>{
   if(!editando || !confirm(`Excluir ${editando.nome} desta lista?`)) return;
-  S[aba]=S[aba].filter(x=>x!==editando);
-  if(window.SEED && (SEED[aba]||[]).some(x=>x.id===editando.id)) S.removidos.push(editando.id);
-  $('dlg').close(); salvar();
+  $('dlg').close(); apagar(aba, editando.id);
 };
 
 let editF=null;
@@ -365,17 +401,15 @@ $('formF').onsubmit=()=>{
   const parcelas=[...$('parcelas').children].map(r=>{const [a,b,c]=r.querySelectorAll('input');
     return {id:r.dataset.id||undefined,descricao:a.value,valor:b.value,quando:c.value,pago:!!r.dataset.pago,pagoEm:r.dataset.pagoEm};}).filter(p=>p.descricao||p.valor);
   const novo=limpaF({id:editF?.id,nome:fm.elements.nome.value,total:fm.elements.total.value,obs:fm.elements.obs.value,parcelas});
-  if(editF) Object.assign(editF,novo); else S.fornecedores.push(novo);
-  salvar();
+  guardar('fornecedores', novo);
 };
 $('excluirF').onclick=()=>{
   if(!editF||!confirm(`Excluir ${editF.nome}?`)) return;
-  S.fornecedores=S.fornecedores.filter(x=>x!==editF);
-  if(editF.id.startsWith('f-')) S.removidos.push(editF.id);
-  $('dlgF').close(); salvar();
+  $('dlgF').close(); apagar('fornecedores', editF.id);
 };
 
-function baixar(nome, conteudo, tipo){
+async function baixar(nome, conteudo, tipo){
+  if(downloads){ try{ await downloads.save({filename:nome, data:new Blob([conteudo],{type:tipo})}); }catch(e){} return; }
   const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([conteudo],{type:tipo})); a.download=nome; a.click();
 }
 $('csv').onclick=()=>{
@@ -395,11 +429,18 @@ $('restaurar').onclick=()=>$('arquivo').click();
 $('arquivo').onchange=async e=>{
   try{ const d=JSON.parse(await e.target.files[0].text());
     if(!Array.isArray(d.convidados)) throw 0;
-    if(confirm('Substituir a lista atual por este backup?')){ S={convidados:d.convidados.map(limpa),after:(d.after||[]).map(limpa),fornecedores:(d.fornecedores||[]).map(limpaF),removidos:d.removidos||[]}; salvar(); }
+    if(confirm('Substituir a lista atual por este backup?')){
+      const novo={convidados:d.convidados.map(limpa),after:(d.after||[]).map(limpa),fornecedores:(d.fornecedores||[]).map(limpaF)};
+      for(const col of Object.keys(NORM)){
+        for(const x of [...S[col]]) if(!novo[col].some(y=>y.id===x.id)) await apagar(col,x.id);
+        for(const x of novo[col]) await guardar(col,x);
+      }
+    }
   }catch(err){ alert('Arquivo de backup inválido.'); }
   e.target.value='';
 };
 render();
+conectar();
 </script>
 </body>
 </html>

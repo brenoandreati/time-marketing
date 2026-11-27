@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunshine by Rai</title>
+<meta name="description" content="Sunshine by Rai — estética e massoterapia a domicílio na Grande Vitória. Agende pelo WhatsApp.">
+<meta name="theme-color" content="#E7DFCF">
+<meta property="og:title" content="Sunshine by Rai">
+<meta property="og:description" content="Estética e massoterapia a domicílio na Grande Vitória.">
+<meta property="og:image" content="img/logo.png">
+<link rel="icon" href="img/sun.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Familjen+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --vinho:#6A1027;
+    --vinho-escuro:#4E0A1C;
+    --bege:#E7DFCF;
+    --bege-claro:#F3EEE4;
+    --dourado:#B8862E;
+    --texto:#4E0A1C;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    min-height:100dvh;
+    background:var(--bege);
+    color:var(--texto);
+    font-family:"Familjen Grotesk",system-ui,sans-serif;
+    display:flex;justify-content:center;
+    position:relative;overflow-x:hidden;
+  }
+  /* formas decorativas do catálogo */
+  .deco{position:fixed;border-radius:50%;pointer-events:none;z-index:0}
+  .deco.a{width:340px;height:340px;right:-170px;top:-170px;border:1px solid var(--vinho);opacity:.35;box-shadow:0 0 0 36px var(--bege),0 0 0 37px rgba(106,16,39,.35)}
+  .deco.b{width:260px;height:260px;left:-130px;bottom:-130px;border:1px solid var(--vinho);opacity:.35;box-shadow:0 0 0 30px var(--bege),0 0 0 31px rgba(106,16,39,.35)}
+  main{
+    position:relative;z-index:1;
+    width:100%;max-width:440px;
+    padding:48px 20px 40px;
+    display:flex;flex-direction:column;align-items:center;text-align:center;
+  }
+  .logo{width:min(280px,78vw);height:auto;display:block}
+  .foto{
+    width:96px;height:96px;border-radius:50%;object-fit:cover;object-position:top;
+    border:3px solid var(--bege-claro);
+    box-shadow:0 0 0 1.5px var(--dourado);
+    margin-top:6px;
+  }
+  .bio{margin-top:16px;font-size:15.5px;line-height:1.5;max-width:330px}
+  .bio strong{font-family:"Playfair Display",serif;font-style:italic;font-weight:700;font-size:19px;display:block;margin-bottom:4px;color:var(--vinho)}
+  .tag{
+    margin-top:14px;display:inline-flex;align-items:center;gap:6px;
+    font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--vinho);opacity:.8;
+  }
+  nav{margin-top:28px;width:100%;display:flex;flex-direction:column;gap:12px}
+  .btn{
+    display:flex;align-items:center;gap:14px;
+    width:100%;min-height:58px;padding:12px 18px;
+    border-radius:16px;text-decoration:none;
+    font-size:16px;font-weight:600;letter-spacing:.01em;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn svg{width:22px;height:22px;flex:none}
+  .btn span{flex:1;text-align:center;margin-right:22px}
+  .btn.principal{background:var(--vinho);color:var(--bege-claro);box-shadow:0 8px 22px -10px rgba(78,10,28,.7)}
+  .btn.principal:hover{background:var(--vinho-escuro)}
+  .btn.sec{background:var(--bege-claro);color:var(--vinho);border:1.5px solid rgba(106,16,39,.22)}
+  .btn.sec:hover{border-color:var(--vinho)}
+  .btn:hover{transform:translateY(-2px)}
+  .btn:active{transform:translateY(0)}
+  .btn:focus-visible{outline:3px solid var(--dourado);outline-offset:3px}
+  .aviso{
+    margin-top:26px;padding:14px 16px;border-radius:14px;
+    background:rgba(106,16,39,.06);font-size:13.5px;line-height:1.5;
+  }
+  .aviso b{color:var(--vinho)}
+  footer{margin-top:28px;font-size:12px;opacity:.65}
+  footer img{width:28px;display:block;margin:0 auto 6px}
+</style>
+</head>
+<body>
+  <div class="deco a" aria-hidden="true"></div>
+  <div class="deco b" aria-hidden="true"></div>
+
+  <main>
+    <img class="logo" src="img/logo.png" alt="Sunshine by Rai — Estética e Massoterapia" width="604" height="493">
+    <img class="foto" src="img/rai.jpg" alt="Foto da Rai, esteticista e massoterapeuta" width="96" height="96">
+
+    <p class="bio">
+      <strong>Prazer, eu sou a Rai!</strong>
+      Levo o conforto de um spa completo até a sua casa: estética facial, massagens e experiências de bem-estar.
+    </p>
+    <p class="tag">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+      Atendimento a domicílio · Grande Vitória
+    </p>
+
+    <nav aria-label="Links">
+      <a class="btn principal" href="https://wa.me/5527996945294?text=Ol%C3%A1%2C%20Rai!%20Vim%20pelo%20Instagram%20e%20quero%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zm8.4-18.2A11.8 11.8 0 0 0 1.7 17.7L0 24l6.4-1.7A11.8 11.8 0 0 0 24 12c0-3.2-1.2-6.1-3.6-8.4z"/></svg>
+        <span>Agendar pelo WhatsApp</span>
+      </a>
+      <a class="btn sec" href="../site/" id="link-site">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+        <span>Conheça os procedimentos</span>
+      </a>
+      <a class="btn sec" href="tel:+5527996945294">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+        <span>(27) 99694-5294</span>
+      </a>
+      <a class="btn sec" href="https://www.instagram.com/sunshine.byrai/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        <span>@sunshine.byrai</span>
+      </a>
+    </nav>
+
+    <p class="aviso">
+      <b>Atendimento exclusivo ao público feminino.</b><br>
+      Dependendo da sua localização, pode haver taxa de deslocamento.
+    </p>
+
+    <footer>
+      <img src="img/sun.png" alt="" aria-hidden="true">
+      Sunshine by Rai · Estética &amp; Massoterapia
+    </footer>
+  </main>
+</body>
+</html>

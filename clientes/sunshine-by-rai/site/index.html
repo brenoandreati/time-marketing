@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunshine Spa · Estética & Massoterapia a domicílio</title>
+<meta name="description" content="Sunshine Spa: limpeza de pele, revitalização facial, drenagem linfática, massagens e experiências de spa no conforto da sua casa, na Grande Vitória.">
+<meta name="theme-color" content="#5A0B20">
+<meta property="og:title" content="Sunshine Spa · Estética & Massoterapia">
+<meta property="og:description" content="Um spa completo no aconchego da sua casa, na Grande Vitória.">
+<meta property="og:image" content="img/logo.png">
+<link rel="icon" href="img/sun.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,700&family=Familjen+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --vinho:#6A1027;
+    --vinho-escuro:#5A0B20;
+    --bege:#E7DFCF;
+    --bege-claro:#F3EEE4;
+    --areia:#D6C192;
+    --dourado:#B8862E;
+    --texto:#4E0A1C;
+    --raio:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{background:var(--bege);color:var(--texto);font-family:"Familjen Grotesk",system-ui,sans-serif;font-size:17px;line-height:1.6;overflow-x:hidden}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  h1,h2,h3{font-family:"Playfair Display",Georgia,serif;line-height:1.15}
+  h2{font-style:italic;font-weight:700;font-size:clamp(32px,5vw,46px)}
+  .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px}
+  .eyebrow{font-size:13px;letter-spacing:.22em;text-transform:uppercase;font-weight:500}
+  section{padding:88px 0;scroll-margin-top:64px}
+  .intro{max-width:640px;margin:14px auto 0;text-align:center;opacity:.9}
+  .centro{text-align:center}
+
+  /* ===== Cabeçalho ===== */
+  header{position:sticky;top:0;z-index:20;background:rgba(231,223,207,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid rgba(106,16,39,.12)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+  .marca{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:"Playfair Display",serif;font-weight:700;font-size:22px;color:var(--vinho)}
+  .marca img{width:34px;height:34px}
+  header nav{display:flex;gap:26px;font-size:15px}
+  header nav a{text-decoration:none;opacity:.85}
+  header nav a:hover{opacity:1;color:var(--vinho)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 22px;border-radius:999px;text-decoration:none;font-weight:600;font-size:16px;transition:transform .15s,background .15s,box-shadow .15s;border:0;cursor:pointer}
+  .btn svg{width:20px;height:20px;flex:none}
+  .btn:hover{transform:translateY(-2px)}
+  .btn:focus-visible,a:focus-visible{outline:3px solid var(--dourado);outline-offset:3px}
+  .btn.vinho{background:var(--vinho);color:var(--bege-claro);box-shadow:0 10px 24px -12px rgba(78,10,28,.8)}
+  .btn.vinho:hover{background:var(--vinho-escuro)}
+  .btn.claro{background:var(--bege-claro);color:var(--vinho)}
+  .btn.contorno{border:1.5px solid currentColor;background:transparent}
+  header .btn{min-height:40px;padding:8px 18px;font-size:14.5px}
+  @media (max-width:860px){header nav{display:none}}
+
+  /* ===== Hero ===== */
+  .hero{background:var(--vinho-escuro);color:var(--bege);position:relative;overflow:hidden;padding:96px 0 104px;text-align:center}
+  .hero .arco{position:absolute;border-radius:50%;pointer-events:none}
+  .hero .a1{width:420px;height:420px;right:-210px;top:-210px;background:var(--bege);box-shadow:0 0 0 70px var(--vinho-escuro),0 0 0 71px var(--bege),0 0 0 140px var(--vinho-escuro),0 0 0 141px var(--bege)}
+  .hero .a2{width:360px;height:360px;left:-180px;bottom:-180px;background:var(--bege);box-shadow:0 0 0 60px var(--vinho-escuro),0 0 0 61px var(--bege),0 0 0 120px var(--vinho-escuro),0 0 0 121px var(--bege)}
+  .hero .sol{width:150px;margin:0 auto 26px;animation:gira 80s linear infinite}
+  @keyframes gira{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.hero .sol{animation:none}html{scroll-behavior:auto}}
+  .hero h1{font-size:clamp(52px,10vw,96px);font-weight:700;letter-spacing:-.01em;margin:10px 0 12px}
+  .hero .sub{font-size:clamp(15px,2.4vw,19px);letter-spacing:.28em;text-transform:uppercase;font-weight:400}
+  .hero p.lead{max-width:540px;margin:26px auto 34px;font-size:18px;opacity:.92}
+  .hero .acoes{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+  .hero .local{margin-top:26px;font-size:14px;opacity:.8;display:flex;gap:6px;justify-content:center;align-items:center}
+
+  /* ===== Sobre ===== */
+  .sobre .grid{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:56px;align-items:center}
+  .sobre .foto{border-radius:var(--raio);overflow:hidden;aspect-ratio:4/5;box-shadow:18px 18px 0 var(--vinho)}
+  .sobre .foto img{width:100%;height:100%;object-fit:cover;object-position:top}
+  .sobre h2{color:var(--vinho);margin-bottom:18px}
+  .sobre p+p{margin-top:14px}
+  .sobre .ola{font-family:"Playfair Display",serif;font-style:italic;font-size:22px;color:var(--vinho);margin-bottom:8px}
+  @media (max-width:760px){.sobre .grid{grid-template-columns:1fr;gap:40px}.sobre .foto{max-width:320px;margin:0 auto;box-shadow:12px 12px 0 var(--vinho)}}
+
+  /* ===== Cards de serviço ===== */
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px;margin-top:48px}
+  .card{background:var(--bege-claro);border-radius:var(--raio);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 0 rgba(106,16,39,.08);transition:transform .2s,box-shadow .2s}
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 36px -20px rgba(78,10,28,.5)}
+  .card img{width:100%;aspect-ratio:4/3;object-fit:cover}
+  .card .corpo{padding:20px 20px 22px;display:flex;flex-direction:column;flex:1}
+  .card h3{font-style:italic;font-size:23px;color:var(--vinho)}
+  .dur{display:inline-flex;align-items:center;gap:6px;margin:8px 0 12px;font-size:14px;font-weight:600;color:var(--dourado)}
+  .dur svg{width:16px;height:16px}
+  .card p{font-size:15.5px;line-height:1.55;flex:1}
+  .card .agendar{margin-top:16px;align-self:flex-start;font-size:15px;font-weight:600;color:var(--vinho);text-decoration:none;display:inline-flex;align-items:center;gap:6px;border-bottom:1.5px solid rgba(106,16,39,.3);padding-bottom:2px}
+  .card .agendar:hover{border-color:var(--vinho)}
+
+  .escuro{background:var(--vinho-escuro);color:var(--bege)}
+  .escuro h2{color:var(--bege)}
+  .escuro .card{background:rgba(243,238,228,.06);border:1px solid rgba(214,193,146,.22);color:var(--bege)}
+  .escuro .card h3{color:var(--areia)}
+  .escuro .card .dur{color:var(--areia)}
+  .escuro .card .agendar{color:var(--bege);border-color:rgba(231,223,207,.35)}
+  .escuro .card .agendar:hover{border-color:var(--bege)}
+  .faciais h2{color:var(--vinho)}
+
+  /* ===== Experiências ===== */
+  .exp{background:var(--bege-claro)}
+  .exp h2{color:var(--vinho)}
+  .exp-lista{display:grid;gap:28px;margin-top:52px}
+  .exp-item{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);background:var(--bege);border-radius:24px;overflow:hidden}
+  .exp-item:nth-child(even){grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
+  .exp-item:nth-child(even) .exp-foto{order:2}
+  .exp-foto{min-height:300px;position:relative}
+  .exp-foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .exp-txt{padding:40px 40px 38px;position:relative}
+  .exp-txt .selo{position:absolute;right:26px;top:22px;width:64px;opacity:.55}
+  .exp-txt h3{font-size:clamp(28px,3.6vw,36px);font-weight:700;color:var(--vinho);padding-right:60px}
+  .exp-txt .dur{font-size:15px}
+  .exp-txt ul{list-style:none;margin:16px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+  .exp-txt li{font-size:14px;padding:6px 12px;border-radius:999px;background:rgba(106,16,39,.08);color:var(--vinho);font-weight:500}
+  .exp-txt .btn{margin-top:24px}
+  .exp-item.destaque{background:var(--vinho);color:var(--bege)}
+  .exp-item.destaque h3{color:var(--bege)}
+  .exp-item.destaque .dur{color:var(--areia)}
+  .exp-item.destaque li{background:rgba(231,223,207,.14);color:var(--bege)}
+  @media (max-width:760px){
+    .exp-item,.exp-item:nth-child(even){grid-template-columns:1fr}
+    .exp-item:nth-child(even) .exp-foto{order:0}
+    .exp-foto{min-height:240px}
+    .exp-txt{padding:28px 22px 30px}
+  }
+
+  /* ===== Domicílio / Por que ===== */
+  .dom .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:48px}
+  .dom .item{background:var(--bege-claro);border-radius:var(--raio);padding:30px 26px}
+  .dom .item .ic{width:52px;height:52px;border-radius:50%;background:var(--vinho);color:var(--bege);display:grid;place-items:center;margin-bottom:16px}
+  .dom .item .ic svg{width:24px;height:24px}
+  .dom .item h3{font-size:22px;color:var(--vinho);margin-bottom:8px}
+  .dom .item p{font-size:15.5px}
+  .avisos{margin-top:28px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  .aviso{display:flex;gap:14px;align-items:flex-start;padding:18px 20px;border-radius:14px;border:1.5px dashed rgba(106,16,39,.3);font-size:15.5px}
+  .aviso svg{width:22px;height:22px;flex:none;color:var(--vinho);margin-top:2px}
+  .aviso b{color:var(--vinho)}
+  .dom h2{color:var(--vinho)}
+  @media (max-width:860px){.dom .grid{grid-template-columns:1fr}.avisos{grid-template-columns:1fr}}
+
+  /* ===== Contato ===== */
+  .contato{text-align:center;position:relative;overflow:hidden}
+  .contato .logo{width:min(320px,80vw);margin:0 auto 20px}
+  .contato h2{color:var(--vinho);font-style:normal;max-width:620px;margin:0 auto}
+  .contato .acoes{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+  .contato .vinho{font-size:18px;min-height:56px;padding:14px 28px}
+  .contato .info{margin-top:22px;font-size:15px;opacity:.85}
+
+  footer{background:var(--vinho-escuro);color:var(--bege);padding:28px 0;font-size:14px}
+  footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
+  footer a{text-decoration:none;opacity:.9}
+  footer a:hover{opacity:1;text-decoration:underline}
+
+  /* botão flutuante */
+  .flutuante{position:fixed;right:18px;bottom:18px;z-index:30;width:58px;height:58px;border-radius:50%;background:var(--vinho);color:var(--bege-claro);display:grid;place-items:center;box-shadow:0 12px 28px -10px rgba(78,10,28,.9);transition:transform .15s}
+  .flutuante:hover{transform:scale(1.06)}
+  .flutuante svg{width:28px;height:28px}
+
+  /* entrada suave */
+  .surge{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+  .surge.visivel{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.surge{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zm8.4-18.2A11.8 11.8 0 0 0 1.7 17.7L0 24l6.4-1.7A11.8 11.8 0 0 0 24 12c0-3.2-1.2-6.1-3.6-8.4z"/></symbol>
+  <symbol id="i-relogio" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+  <symbol id="i-seta" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></g></symbol>
+</svg>
+
+<header>
+  <div class="wrap">
+    <a class="marca" href="#topo"><img src="img/sun.png" alt="" width="34" height="34">Sunshine Spa</a>
+    <nav aria-label="Seções">
+      <a href="#sobre">Sobre</a>
+      <a href="#faciais">Faciais</a>
+      <a href="#massagens">Massagens</a>
+      <a href="#experiencias">Experiências</a>
+      <a href="#atendimento">Atendimento</a>
+    </nav>
+    <a class="btn vinho" data-wa="Olá, Rai! Vim pelo site e quero agendar um horário." href="#contato">Agendar</a>
+  </div>
+</header>
+
+<main id="topo">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="arco a1" aria-hidden="true"></div>
+    <div class="arco a2" aria-hidden="true"></div>
+    <div class="wrap" style="position:relative;z-index:1">
+      <img class="sol" src="img/sun.png" alt="" width="150" height="155">
+      <p class="eyebrow">Spa a domicílio</p>
+      <h1>Sunshine Spa</h1>
+      <p class="sub">Estética &amp; Massoterapia</p>
+      <p class="lead">O conforto e a tranquilidade de um spa completo, no aconchego da sua casa.</p>
+      <div class="acoes">
+        <a class="btn claro" data-wa="Olá, Rai! Vim pelo site e quero agendar um horário." href="#contato"><svg><use href="#i-wa"/></svg>Agendar pelo WhatsApp</a>
+        <a class="btn contorno" href="#faciais" style="color:var(--bege)">Ver procedimentos</a>
+      </div>
+      <p class="local"><svg width="16" height="16"><use href="#i-pin"/></svg>Atendimento em toda a Grande Vitória</p>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="sobre" id="sobre">
+    <div class="wrap grid">
+      <div class="foto surge"><img src="img/rai.jpg" alt="Rai, esteticista e massoterapeuta da Sunshine Spa" loading="lazy" width="488" height="1021"></div>
+      <div class="surge">
+        <p class="eyebrow" style="color:var(--dourado)">Sobre mim</p>
+        <h2>Cuidado que vai até você</h2>
+        <p class="ola">Prazer, eu sou a Rai!</p>
+        <p>Apaixonada pela área da estética e massoterapia, criei a Sunshine Spa com o propósito de cuidar da autoestima, da saúde e do bem-estar através do toque, do acolhimento e do autocuidado.</p>
+        <p>Meu objetivo é proporcionar experiências únicas de relaxamento, cuidado e renovação, levando luz, leveza e bem-estar para a vida das pessoas. Quero que cada atendimento seja mais do que um momento de cuidado estético: seja uma experiência de paz, acolhimento e reconexão consigo mesma.</p>
+        <p>Por isso, levo até você o conforto e a tranquilidade de um spa completo, no aconchego da sua casa.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACIAIS -->
+  <section class="faciais" id="faciais" style="padding-top:24px">
+    <div class="wrap">
+      <div class="centro surge">
+        <p class="eyebrow" style="color:var(--dourado)">Serviços faciais</p>
+        <h2>Sua pele, iluminada</h2>
+        <p class="intro">Tratamentos faciais pensados para realçar sua beleza natural, proporcionando hidratação profunda, renovação celular e luminosidade à sua pele.</p>
+      </div>
+      <div class="cards">
+        <article class="card surge">
+          <img src="img/limpeza.jpg" alt="Limpeza de pele com extração" loading="lazy">
+          <div class="corpo">
+            <h3>Limpeza de pele</h3>
+            <span class="dur"><svg><use href="#i-relogio"/></svg>1h30</span>
+            <p>Remoção de cravos, impurezas e células mortas, promovendo uma pele mais limpa, saudável, hidratada e iluminada.</p>
+            <a class="agendar" data-servico="Limpeza de pele" href="#contato">Agendar <svg width="16" height="16"><use href="#i-seta"/></svg></a>
+          </div>
+        </article>
+        <article class="card surge">
+          <img src="img/limpeza-revitalizacao.jpg" alt="Aplicação de máscara facial" loading="lazy">
+          <div class="corpo">
+            <h3>Limpeza + Revitalização</h3>
+            <span class="dur"><svg><use href="#i-relogio"/></svg>2h</span>
+            <p>Combinação da limpeza profunda da pele com técnicas de revitalização facial para proporcionar limpeza, hidratação e luminosidade.</p>
+            <a class="agendar" data-servico="Limpeza + Revitalização" href="#contato">Agendar <svg width="16" height="16"><use href="#i-seta"/></svg></a>
+          </div>
+        </article>
+        <article class="card surge">
+          <img src="img/drenagem-facial.jpg" alt="Drenagem linfática facial" loading="lazy">
+          <div class="corpo">
+            <h3>Drenagem linfática facial</h3>
+            <span class="dur"><svg><use href="#i-relogio"/></svg>30 min</span>
+            <p>Estimula a circulação e o sistema linfático, ajudando a reduzir o inchaço e eliminar toxinas. Também auxilia na recuperação de procedimentos estéticos, na redução de edemas e acelera o processo de cicatrização.</p>
+            <a class="agendar" data-servico="Drenagem linfática facial" href="#contato">Agendar <svg width="16" height="16"><use href="#i-seta"/></svg></a>
+          </div>
+        </article>
+        <article class="card surge">
+          <img src="img/revitalizacao.jpg" alt="Revitalização facial com máscara" loading="lazy">
+          <div class="corpo">
+            <h3>Revitalização facial</h3>
+            <span class="dur"><svg><use href="#i-relogio"/></svg>30 min</span>
+            <p>Promove hidratação profunda, nutrição e renovação da pele, devolvendo o viço, a maciez e a luminosidade natural do rosto.</p>
+            <a class="agendar" data-servico="Revitalização facial" href="#contato">Agendar <svg width="16" height="16"><use href="#i-seta"/></svg></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- MASSAGENS -->
+  <section class="escuro" id="massagens">
+    <div class="wrap">
+      <div class="centro surge">
+        <p class="eyebrow" style="color:var(--areia)">Massagens tradicionais</p>
+        <h2>Corpo leve, mente tranquila</h2>
+        <p class="intro">Técnicas profissionais aplicadas com carinho e dedicação para proporcionar bem-estar, relaxamento e resultados visíveis no conforto da sua casa.</p>
+      </div>
+      <div class="cards">
+        <article class="card surge">
+          <img src="img/relaxante.jpg" alt="Massagem relaxante nas costas" loading="lazy">
+          <div class="corpo">
+            <h3>Massagem relaxante</h3>
+            <span class="dur"><svg><use href="#i-relogio"/></svg>1h</span>
+            <p>Movimentos suaves e envolventes que ajudam a aliviar tensões, reduzir o estresse e proporcionar relaxamento físico e mental.</p>
+            <a class="agendar" data-servico="Massagem relaxante" href="#contato">Agendar <svg width="16" height="16"><use href="#i-seta"/></svg></a>
+          </div>
+        </article>
+        <article class="card surge">
+          <img src="img/modeladora.jpg" alt="Massagem modeladora" loading="lazy">
+          <div class="corpo">
+            <h3>Massagem modeladora</h3>
+            <span class="dur"><svg><use href="#i-relogio"/></svg>1h</span>
+            <p>Movimentos intensos e firmes que auxiliam na modelagem corporal, na ativação da circulação e na melhora do contorno corporal.</p>
+            <a class="agendar" data-servico="Massagem modeladora" href="#contato">Agendar <svg width="16" height="16"><use href="#i-seta"/></svg></a>
+          </div>
+        </article>
+        <article class="card surge">
+          <img src="img/drenagem.jpg" alt="Drenagem linfática nas pernas" loading="lazy">
+          <div class="corpo">
+            <h3>Drenagem linfática</h3>
+            <span class="dur"><svg><use href="#i-relogio"/></svg>1h</span>
+            <p>Técnica que auxilia na eliminação de líquidos retidos, na melhora da circulação e na redução de inchaços, proporcionando sensação de leveza e bem-estar.</p>
+            <a class="agendar" data-servico="Drenagem linfática" href="#contato">Agendar <svg width="16" height="16"><use href="#i-seta"/></svg></a>
+          </div>
+        </article>
+        <article class="card surge">
+          <img src="img/terapeutica.jpg" alt="Massagem terapêutica no pescoço" loading="lazy">
+          <div class="corpo">
+            <h3>Massagem terapêutica</h3>
+            <span class="dur"><svg><use href="#i-relogio"/></svg>1h30</span>
+            <p>Movimentos mais firmes, focados no alívio de dores musculares, tensões e desconfortos físicos, proporcionando relaxamento profundo da musculatura.</p>
+            <a class="agendar" data-servico="Massagem terapêutica" href="#contato">Agendar <svg width="16" height="16"><use href="#i-seta"/></svg></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIÊNCIAS -->
+  <section class="exp" id="experiencias">
+    <div class="wrap">
+      <div class="centro surge">
+        <img src="img/sun.png" alt="" width="84" style="margin:0 auto 14px">
+        <p class="eyebrow" style="color:var(--dourado)">Experiências Sunshine</p>
+        <h2>Momentos únicos, criados para você</h2>
+        <p class="intro">Experiências pensadas para levar conforto, acolhimento e leveza ao aconchego da sua casa, combinando técnicas exclusivas com produtos selecionados especialmente para você.</p>
+      </div>
+
+      <div class="exp-lista">
+        <article class="exp-item surge">
+          <div class="exp-foto"><img src="img/relaxing-sun.jpg" alt="Massagem com vela quente" loading="lazy"></div>
+          <div class="exp-txt">
+            <img class="selo" src="img/sun.png" alt="">
+            <h3>Relaxing Sun</h3>
+            <span class="dur"><svg><use href="#i-relogio"/></svg>1h30</span>
+            <p>Mais do que uma massagem relaxante, a Relaxing Sun é uma experiência de cuidado e bem-estar dos pés à cabeça. Com movimentos suaves e envolventes, aromaterapia e o toque aconchegante da vela quente, ajuda a aliviar tensões, reduzir o estresse e renovar as energias. Um momento para desacelerar, cuidar de si e sentir o corpo relaxar por completo.</p>
+            <ul><li>Massagem relaxante</li><li>Aromaterapia</li><li>Vela quente</li></ul>
+            <a class="btn vinho" data-servico="Relaxing Sun" href="#contato"><svg><use href="#i-wa"/></svg>Quero essa experiência</a>
+          </div>
+        </article>
+
+        <article class="exp-item surge">
+          <div class="exp-foto"><img src="img/sun-slim.jpg" alt="Massagem modeladora no abdômen" loading="lazy"></div>
+          <div class="exp-txt">
+            <img class="selo" src="img/sun.png" alt="">
+            <h3>Sun Slim</h3>
+            <span class="dur"><svg><use href="#i-relogio"/></svg>1h30</span>
+            <p>Uma massagem intensiva que combina drenagem linfática, técnicas modeladoras e movimentos relaxantes para auxiliar na redução de medidas, na retenção de líquidos e na definição corporal. Além dos benefícios estéticos, proporciona sensação de leveza, bem-estar e relaxamento.</p>
+            <ul><li>Drenagem linfática</li><li>Técnicas modeladoras</li><li>Movimentos relaxantes</li></ul>
+            <a class="btn vinho" data-servico="Sun Slim" href="#contato"><svg><use href="#i-wa"/></svg>Quero essa experiência</a>
+          </div>
+        </article>
+
+        <article class="exp-item surge">
+          <div class="exp-foto"><img src="img/sun-therapy.jpg" alt="Ventosaterapia" loading="lazy"></div>
+          <div class="exp-txt">
+            <img class="selo" src="img/sun.png" alt="">
+            <h3>Sun Therapy</h3>
+            <span class="dur"><svg><use href="#i-relogio"/></svg>2h</span>
+            <p>Uma experiência terapêutica intensa que combina massagem terapêutica, ventosaterapia e pistola massageadora, proporcionando relaxamento profundo da musculatura, alívio de tensões e dores, além de promover bem-estar e renovação do corpo.</p>
+            <ul><li>Massagem terapêutica</li><li>Ventosaterapia</li><li>Pistola massageadora</li></ul>
+            <a class="btn vinho" data-servico="Sun Therapy" href="#contato"><svg><use href="#i-wa"/></svg>Quero essa experiência</a>
+          </div>
+        </article>
+
+        <article class="exp-item surge">
+          <div class="exp-foto"><img src="img/spa-pes.jpg" alt="Ofurô dos pés com pedras e flores" loading="lazy"></div>
+          <div class="exp-txt">
+            <img class="selo" src="img/sun.png" alt="">
+            <h3>Spa dos pés</h3>
+            <p style="margin-top:10px">Um tratamento completo de relaxamento e cuidado para os pés.</p>
+            <ul><li>Ofurô dos pés</li><li>Esfoliação</li><li>Hidratação</li><li>Massagem</li><li>Chá relaxante</li></ul>
+            <a class="btn vinho" data-servico="Spa dos pés" href="#contato"><svg><use href="#i-wa"/></svg>Quero essa experiência</a>
+          </div>
+        </article>
+
+        <article class="exp-item destaque surge">
+          <div class="exp-foto"><img src="img/spa-day.jpg" alt="Ambiente de spa com velas e toalhas" loading="lazy"></div>
+          <div class="exp-txt">
+            <img class="selo" src="img/sun.png" alt="">
+            <p class="eyebrow" style="color:var(--areia);margin-bottom:6px">A experiência completa</p>
+            <h3>Sunshine Spa Day</h3>
+            <p style="margin-top:10px">Uma experiência completa de renovação do corpo, da mente e da energia, sem sair de casa. Puro cuidado e relaxamento, pensados especialmente para você.</p>
+            <ul><li>Relaxing Sun</li><li>Revitalização facial</li><li>Ofurô dos pés</li><li>Chá relaxante</li></ul>
+            <a class="btn claro" data-servico="Sunshine Spa Day" href="#contato"><svg><use href="#i-wa"/></svg>Quero meu Spa Day</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATENDIMENTO -->
+  <section class="dom" id="atendimento">
+    <div class="wrap">
+      <div class="centro surge">
+        <p class="eyebrow" style="color:var(--dourado)">Por que escolher a Sunshine</p>
+        <h2>Um spa inteiro na sua casa</h2>
+      </div>
+      <div class="grid">
+        <div class="item surge">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></div>
+          <h3>Atendimento personalizado</h3>
+          <p>Cada sessão é pensada com carinho e atenção aos seus desejos e necessidades, adaptada ao seu momento de vida e bem-estar.</p>
+        </div>
+        <div class="item surge">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M9 21v-6h6v6"/></svg></div>
+          <h3>Conforto da sua casa</h3>
+          <p>Levo todo o necessário para transformar seu lar em um verdadeiro spa, num ambiente aconchegante e seguro, sem você precisar sair de casa.</p>
+        </div>
+        <div class="item surge">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 3 2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.4 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg></div>
+          <h3>Qualidade e exclusividade</h3>
+          <p>Qualificação, técnicas exclusivas e produtos cuidadosamente selecionados, com um atendimento que prioriza seu bem-estar e resultados efetivos.</p>
+        </div>
+      </div>
+      <div class="avisos">
+        <div class="aviso surge"><svg><use href="#i-pin"/></svg><p><b>Atendo em toda a Grande Vitória.</b> Dependendo da sua localização, pode haver uma taxa de deslocamento. Consulte pelo WhatsApp.</p></div>
+        <div class="aviso surge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><p><b>Atendimento exclusivo ao público feminino</b>, visando segurança, conforto e bem-estar durante cada experiência.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="contato" id="contato" style="padding-top:40px">
+    <div class="wrap surge">
+      <img class="logo" src="img/logo.png" alt="Sunshine by Rai — Estética e Massoterapia" loading="lazy" width="604" height="493">
+      <h2>Agende seu momento de cuidado e bem-estar. Estou pronta para você!</h2>
+      <div class="acoes">
+        <a class="btn vinho" data-wa="Olá, Rai! Vim pelo site e quero agendar um horário." href="https://wa.me/5527996945294"><svg><use href="#i-wa"/></svg>(27) 99694-5294</a>
+        <a class="btn contorno" href="https://www.instagram.com/sunshine.byrai/" target="_blank" rel="noopener" style="color:var(--vinho)">@sunshine.byrai</a>
+      </div>
+      <p class="info">Agendamentos pelo WhatsApp · Valores sob consulta</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="ano">2026</span> Sunshine Spa · Estética &amp; Massoterapia</span>
+    <a href="https://www.instagram.com/sunshine.byrai/" target="_blank" rel="noopener">@sunshine.byrai</a>
+  </div>
+</footer>
+
+<a class="flutuante" data-wa="Olá, Rai! Vim pelo site e quero agendar um horário." href="#contato" aria-label="Agendar pelo WhatsApp"><svg><use href="#i-wa"/></svg></a>
+
+<script>
+  // Links do WhatsApp com mensagem pronta por serviço
+  const WA = "5527996945294";
+  const link = msg => `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
+  document.querySelectorAll("[data-wa]").forEach(a => {
+    a.href = link(a.dataset.wa); a.target = "_blank"; a.rel = "noopener";
+  });
+  document.querySelectorAll("[data-servico]").forEach(a => {
+    a.href = link(`Olá, Rai! Vim pelo site e tenho interesse em: ${a.dataset.servico}. Pode me passar mais informações?`);
+    a.target = "_blank"; a.rel = "noopener";
+  });
+  document.getElementById("ano").textContent = new Date().getFullYear();
+
+  // Animação de entrada
+  const els = document.querySelectorAll(".surge");
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("visivel"); io.unobserve(e.target); }
+    }), { threshold: .12 });
+    els.forEach(el => io.observe(el));
+  } else els.forEach(el => el.classList.add("visivel"));
+</script>
+</body>
+</html>

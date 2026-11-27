@@ -61,7 +61,7 @@
   .hero .arco{position:absolute;border-radius:50%;pointer-events:none}
   .hero .a1{width:420px;height:420px;right:-210px;top:-210px;background:var(--bege);box-shadow:0 0 0 70px var(--vinho-escuro),0 0 0 71px var(--bege),0 0 0 140px var(--vinho-escuro),0 0 0 141px var(--bege)}
   .hero .a2{width:360px;height:360px;left:-180px;bottom:-180px;background:var(--bege);box-shadow:0 0 0 60px var(--vinho-escuro),0 0 0 61px var(--bege),0 0 0 120px var(--vinho-escuro),0 0 0 121px var(--bege)}
-  .hero .sol{width:150px;margin:0 auto 26px;animation:gira 80s linear infinite}
+  .hero .sol{width:150px;height:auto;margin:0 auto 26px;animation:gira 80s linear infinite}
   @keyframes gira{to{transform:rotate(360deg)}}
   @media (prefers-reduced-motion:reduce){.hero .sol{animation:none}html{scroll-behavior:auto}}
   .hero h1{font-size:clamp(52px,10vw,96px);font-weight:700;letter-spacing:-.01em;margin:10px 0 12px}
@@ -144,7 +144,7 @@
 
   /* ===== Contato ===== */
   .contato{text-align:center;position:relative;overflow:hidden}
-  .contato .logo{width:min(320px,80vw);margin:0 auto 20px}
+  .contato .logo{width:min(320px,80vw);height:auto;margin:0 auto 20px}
   .contato h2{color:var(--vinho);font-style:normal;max-width:620px;margin:0 auto}
   .contato .acoes{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
   .contato .vinho{font-size:18px;min-height:56px;padding:14px 28px}

@@ -6,84 +6,62 @@
 <title>Mazzêra Movelaria | Links</title>
 <meta name="description" content="Espelho camarim, penteadeiras com LED e móveis sob medida em Vila Velha (ES). Peça seu orçamento pelo WhatsApp.">
 <meta property="og:title" content="Mazzêra Movelaria">
-<meta property="og:description" content="Móvel sob medida, com luz própria. Orçamento pelo WhatsApp.">
+<meta property="og:description" content="Móveis sob medida com luz própria. Orçamento pelo WhatsApp.">
 <meta property="og:image" content="../assets/img/penteadeira-luxo-led.webp">
-<meta name="theme-color" content="#ECE7E0">
+<meta name="theme-color" content="#FAF8F5">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=Cinzel:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Cinzel:wght@600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --paper:#ECE7E0; --paper-2:#E2DBD1; --ink:#151311; --ink-2:#3a3531;
-  --muted:#675f57; --rule:#cbc2b6; --red:#B3242A; --led:#F2D59A;
-  --ease:cubic-bezier(.2,.7,.1,1);
-}
+:root{--bg:#FAF8F5;--soft:#F1EDE7;--text:#1D1B19;--body:#4A4540;--muted:#857D75;--line:#E5E0D9;--ease:cubic-bezier(.22,.7,.12,1)}
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%}
-body{background:var(--paper);color:var(--ink);font-family:"Archivo",system-ui,sans-serif;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:var(--bg);color:var(--text);font-family:"Jost",system-ui,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit;text-decoration:none}
-:focus-visible{outline:2px solid var(--red);outline-offset:3px}
-.page{max-width:480px;margin:0 auto;padding:28px 16px calc(32px + env(safe-area-inset-bottom))}
+:focus-visible{outline:2px solid var(--text);outline-offset:3px;border-radius:6px}
+.page{max-width:460px;margin:0 auto;padding:40px 20px calc(36px + env(safe-area-inset-bottom))}
 
-/* topo */
-.head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:18px;border-bottom:1px solid var(--ink)}
-.brand{display:flex;align-items:center;gap:10px}
-.brand img{width:46px}
-.brand b{font-family:"Cinzel",serif;font-weight:600;font-size:17px;letter-spacing:.06em;line-height:1;display:block}
-.brand small{display:block;font-family:"Cinzel",serif;font-size:7.5px;letter-spacing:.5em;color:var(--muted);margin-top:4px}
-.where{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-stretch:110%;color:var(--muted);text-align:right;line-height:1.35}
+.profile{text-align:center}
+.mark{width:96px;height:96px;margin:0 auto 18px;border-radius:50%;background:#0d0b0a;display:grid;place-items:center}
+.mark img{width:58px}
+.name{font-family:"Cinzel",serif;font-weight:600;font-size:22px;letter-spacing:.07em;line-height:1}
+.sub{font-family:"Cinzel",serif;font-size:9px;letter-spacing:.5em;padding-left:.5em;color:var(--muted);margin-top:6px}
+.bio{color:var(--body);font-size:15.5px;margin:18px auto 0;max-width:330px}
+.loc{font-size:13px;color:var(--muted);margin-top:8px;letter-spacing:.02em}
 
-h1{font-weight:620;font-stretch:78%;letter-spacing:-.025em;line-height:.95;font-size:clamp(44px,13vw,60px);margin:26px 0 14px}
-h1 span{color:var(--muted)}
-.bio{color:var(--ink-2);font-size:15.5px;max-width:400px}
+.photo{position:relative;display:block;margin-top:30px;border-radius:18px;overflow:hidden;aspect-ratio:4/5;background:var(--soft)}
+.photo img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.photo:hover img{transform:scale(1.03)}
+.photo span{position:absolute;left:14px;bottom:14px;padding:8px 14px;border-radius:999px;background:rgba(250,248,245,.92);font-size:13.5px;font-weight:500}
 
-/* foto principal */
-.hero{position:relative;display:block;margin-top:22px;aspect-ratio:4/5;overflow:hidden;background:var(--paper-2)}
-.hero img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
-.hero:hover img{transform:scale(1.03)}
-.hero .tag{position:absolute;left:12px;bottom:12px;right:12px;display:flex;justify-content:space-between;align-items:center;gap:10px;background:rgba(236,231,224,.94);padding:12px 14px;font-size:14px}
-.hero .tag b{font-weight:600}
-.hero .tag span{color:var(--muted);font-size:13px;white-space:nowrap}
+.cta{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:14px;min-height:58px;border-radius:999px;background:var(--text);color:var(--bg);font-size:16px;font-weight:500;transition:background .25s}
+.cta:hover{background:#3a3530}
+.cta svg{width:21px;height:21px;color:#4ade80}
 
-/* CTA principal */
-.cta{display:flex;align-items:center;gap:14px;margin-top:12px;min-height:66px;padding:0 20px;background:var(--ink);color:var(--paper);transition:background .2s}
-.cta:hover{background:var(--red)}
-.cta svg{width:24px;height:24px;color:#4ade80;flex:none}
-.cta b{font-size:17px;font-weight:600;font-stretch:105%}
-.cta small{display:block;font-size:13px;color:#b9b0a6;font-weight:400}
-.cta .arrow{margin-left:auto;font-size:20px;transition:transform .25s var(--ease)}
-.cta:hover .arrow{transform:translateX(4px)}
+.group{margin-top:36px}
+.label{font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.links a{display:flex;align-items:center;gap:14px;padding:16px 4px;border-bottom:1px solid var(--line);transition:padding .3s var(--ease)}
+.links a:hover{padding-left:10px}
+.links b{display:block;font-weight:400;font-size:17px;line-height:1.3}
+.links small{display:block;font-size:13.5px;color:var(--muted)}
+.links svg{width:18px;height:18px;margin-left:auto;flex:none;color:var(--muted);transition:transform .3s var(--ease),color .2s}
+.links a:hover svg{transform:translateX(4px);color:var(--text)}
 
-/* índice de links */
-.label{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-stretch:110%;color:var(--muted);margin:34px 0 0;padding-bottom:10px;display:flex;align-items:center}
-.win{display:inline-grid;grid-template-columns:4px 4px;gap:1.5px;margin-right:10px}
-.win i{width:4px;height:4px;background:var(--red)}
-.list{list-style:none;border-top:1px solid var(--ink)}
-.list a{display:grid;grid-template-columns:30px 1fr auto;align-items:center;gap:10px;min-height:68px;padding:12px 0;border-bottom:1px solid var(--rule);transition:padding .3s var(--ease)}
-.list a:hover{padding-left:8px}
-.list .n{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
-.list b{display:block;font-size:19px;font-weight:600;font-stretch:88%;letter-spacing:-.005em;line-height:1.15}
-.list small{display:block;font-size:13.5px;color:var(--muted);margin-top:2px}
-.list .arrow{font-size:18px;color:var(--muted);transition:transform .25s var(--ease),color .2s}
-.list a:hover .arrow{transform:translateX(4px);color:var(--ink)}
-
-/* vitrine */
-.shelf{display:grid;grid-auto-flow:column;grid-auto-columns:42%;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:0 16px 4px;scroll-padding:0 16px;scrollbar-width:none}
+.shelf{display:grid;grid-auto-flow:column;grid-auto-columns:44%;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin:10px -20px 0;padding:0 20px 4px;scroll-padding:0 20px;scrollbar-width:none}
 .shelf::-webkit-scrollbar{display:none}
 .shelf a{scroll-snap-align:start}
-.shelf .ph{aspect-ratio:3/4;overflow:hidden;background:var(--paper-2)}
+.shelf .ph{aspect-ratio:3/4;border-radius:12px;overflow:hidden;background:var(--soft)}
 .shelf img{width:100%;height:100%;object-fit:cover}
-.shelf p{font-size:12.5px;font-weight:600;padding-top:7px;margin-top:7px;border-top:1px solid var(--rule)}
+.shelf p{font-size:13.5px;margin-top:8px}
 
-/* aviso */
-.warn{margin-top:30px;padding:14px 16px;background:var(--paper-2);border-left:3px solid var(--red);font-size:14px;color:var(--ink-2)}
-.warn b{color:var(--ink)}
+.note{margin-top:34px;padding:16px 18px;border-radius:14px;background:var(--soft);font-size:14px;color:var(--body);display:flex;gap:10px}
+.note svg{width:18px;height:18px;flex:none;margin-top:2px;color:#B3242A}
+footer{text-align:center;margin-top:30px;font-size:13px;color:var(--muted)}
+footer a{color:var(--body)}
 
-footer{display:flex;justify-content:space-between;gap:10px;margin-top:26px;padding-top:14px;border-top:1px solid var(--rule);font-size:12.5px;color:var(--muted)}
-
-.rv{opacity:0;transform:translateY(12px);animation:up .7s var(--ease) forwards}
+.rv{opacity:0;transform:translateY(12px);animation:up .8s var(--ease) forwards}
 @keyframes up{to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
@@ -91,66 +69,57 @@ footer{display:flex;justify-content:space-between;gap:10px;margin-top:26px;paddi
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.5h-.01a9.4 9.4 0 0 1-4.79-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.23-9.43 9.44-9.43 2.52 0 4.89.98 6.67 2.77a9.37 9.37 0 0 1 2.76 6.67c0 5.2-4.24 9.43-9.44 9.43m8.03-17.46A11.27 11.27 0 0 0 12.05.72C5.79.72.7 5.8.7 12.06c0 2 .52 3.95 1.52 5.67L.6 23.6l6.01-1.58a11.33 11.33 0 0 0 5.43 1.38h.01c6.25 0 11.34-5.09 11.35-11.34 0-3.03-1.18-5.88-3.32-8.02"/></symbol>
+  <symbol id="ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6"/></symbol>
 </svg>
 
 <main class="page">
-  <header class="head rv">
-    <a class="brand" href="../" aria-label="Site da Mazzêra Movelaria">
-      <img src="../assets/logo-mark-ink.svg" alt="" width="46" height="17">
-      <span><b>MAZZÊRA</b><small>MOVELARIA</small></span>
-    </a>
-    <p class="where">Vila Velha · ES<br>desde 2015</p>
+  <header class="profile rv">
+    <div class="mark"><img src="../assets/logo-mark.svg" alt="" width="58" height="22"></div>
+    <h1 class="name">MAZZÊRA</h1>
+    <p class="sub">MOVELARIA</p>
+    <p class="bio">Espelho camarim, penteadeiras com LED e móveis sob medida. Pioneira em espelho camarim desde 2015.</p>
+    <p class="loc">Vila Velha · ES · Envio para todo o Brasil</p>
   </header>
 
-  <section class="rv" style="animation-delay:.05s">
-    <h1>Móvel sob medida, <span>com luz própria.</span></h1>
-    <p class="bio">Pioneira em espelho camarim. Penteadeiras com LED, bancadas para salão e planejados, com envio para todo o Brasil.</p>
-  </section>
-
-  <a class="hero rv" style="animation-delay:.1s" href="https://wa.me/5527988815289?text=Ol%C3%A1!%20Vi%20a%20Penteadeira%20Luxo%20LED%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">
+  <a class="photo rv" style="animation-delay:.08s" href="https://wa.me/5527988815289?text=Ol%C3%A1!%20Vi%20a%20Penteadeira%20Luxo%20LED%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">
     <img src="../assets/img/penteadeira-luxo-led.webp" alt="Penteadeira branca com espelho camarim de LED" width="1200" height="1600" fetchpriority="high">
-    <span class="tag"><b>Penteadeira Luxo LED</b><span>Quero uma →</span></span>
+    <span>Penteadeira Luxo LED</span>
   </a>
 
-  <a class="cta rv" style="animation-delay:.14s" href="https://wa.me/5527988815289?text=Ol%C3%A1!%20Vim%20pelo%20Instagram%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">
-    <svg aria-hidden="true"><use href="#wa"/></svg>
-    <span><b>Pedir orçamento</b><small>WhatsApp (27) 98881-5289</small></span>
-    <span class="arrow" aria-hidden="true">→</span>
-  </a>
+  <a class="cta rv" style="animation-delay:.12s" href="https://wa.me/5527988815289?text=Ol%C3%A1!%20Vim%20pelo%20Instagram%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Pedir orçamento no WhatsApp</a>
 
-  <nav class="rv" style="animation-delay:.2s" aria-label="O que você procura">
-    <p class="label"><span class="win" aria-hidden="true"><i></i><i></i><i></i><i></i></span>O que você procura</p>
-    <ol class="list">
-      <li><a href="https://wa.me/5527988815289?text=Ol%C3%A1!%20Quero%20or%C3%A7amento%20de%20penteadeira%20com%20espelho%20camarim%20LED." target="_blank" rel="noopener"><span class="n">01</span><span><b>Penteadeira e espelho camarim</b><small>LED embutido, sob medida</small></span><span class="arrow" aria-hidden="true">→</span></a></li>
-      <li><a href="https://wa.me/5527988815289?text=Ol%C3%A1!%20Quero%20or%C3%A7amento%20de%20bancada%20para%20sal%C3%A3o%20em%20metalon." target="_blank" rel="noopener"><span class="n">02</span><span><b>Bancada para salão</b><small>Metalon, madeira e espelho LED</small></span><span class="arrow" aria-hidden="true">→</span></a></li>
-      <li><a href="https://wa.me/5527988815289?text=Ol%C3%A1!%20Quero%20or%C3%A7amento%20de%20guarda-roupa%20ou%20m%C3%B3vel%20planejado." target="_blank" rel="noopener"><span class="n">03</span><span><b>Guarda-roupa e planejados</b><small>Do tamanho exato da parede</small></span><span class="arrow" aria-hidden="true">→</span></a></li>
-      <li><a href="https://wa.me/5527988815289?text=Ol%C3%A1!%20Quero%20or%C3%A7amento%20de%20ba%C3%BA%20infantil." target="_blank" rel="noopener"><span class="n">04</span><span><b>Baú infantil</b><small>Guarda brinquedo e vira banco</small></span><span class="arrow" aria-hidden="true">→</span></a></li>
-      <li><a href="https://wa.me/5527988815289?text=Ol%C3%A1!%20Quero%20or%C3%A7amento%20de%20logo%20em%20LED%20para%20minha%20empresa." target="_blank" rel="noopener"><span class="n">05</span><span><b>Logo em LED</b><small>Sua marca iluminada na parede</small></span><span class="arrow" aria-hidden="true">→</span></a></li>
-      <li><a href="https://wa.me/5527988815289?text=Ol%C3%A1!%20Moro%20fora%20do%20ES%20e%20quero%20saber%20sobre%20o%20envio." target="_blank" rel="noopener"><span class="n">06</span><span><b>Moro fora do ES</b><small>Enviamos para todo o Brasil</small></span><span class="arrow" aria-hidden="true">→</span></a></li>
-    </ol>
+  <nav class="group rv" style="animation-delay:.18s" aria-label="Produtos">
+    <p class="label">O que você procura</p>
+    <div class="links">
+      <a href="https://wa.me/5527988815289?text=Ol%C3%A1!%20Quero%20or%C3%A7amento%20de%20penteadeira%20com%20espelho%20camarim%20LED." target="_blank" rel="noopener"><span><b>Penteadeira e espelho camarim</b><small>LED embutido, sob medida</small></span><svg aria-hidden="true"><use href="#ar"/></svg></a>
+      <a href="https://wa.me/5527988815289?text=Ol%C3%A1!%20Quero%20or%C3%A7amento%20de%20bancada%20para%20sal%C3%A3o%20em%20metalon." target="_blank" rel="noopener"><span><b>Bancada para salão</b><small>Metalon, madeira e espelho LED</small></span><svg aria-hidden="true"><use href="#ar"/></svg></a>
+      <a href="https://wa.me/5527988815289?text=Ol%C3%A1!%20Quero%20or%C3%A7amento%20de%20guarda-roupa%20ou%20m%C3%B3vel%20planejado." target="_blank" rel="noopener"><span><b>Guarda-roupa e planejados</b><small>Do tamanho exato da parede</small></span><svg aria-hidden="true"><use href="#ar"/></svg></a>
+      <a href="https://wa.me/5527988815289?text=Ol%C3%A1!%20Quero%20saber%20sobre%20ba%C3%BA%20infantil%20e%20logos%20em%20LED." target="_blank" rel="noopener"><span><b>Baú infantil e logos em LED</b><small>Pergunte pelos modelos</small></span><svg aria-hidden="true"><use href="#ar"/></svg></a>
+      <a href="https://wa.me/5527988815289?text=Ol%C3%A1!%20Moro%20fora%20do%20ES%20e%20quero%20saber%20sobre%20o%20envio." target="_blank" rel="noopener"><span><b>Moro fora do ES</b><small>Enviamos para todo o Brasil</small></span><svg aria-hidden="true"><use href="#ar"/></svg></a>
+    </div>
   </nav>
 
-  <section class="rv" style="animation-delay:.26s" aria-label="Entregas recentes">
-    <p class="label"><span class="win" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Entregas recentes</p>
+  <section class="group rv" style="animation-delay:.24s" aria-label="Entregas recentes">
+    <p class="label">Entregas recentes</p>
     <div class="shelf">
-      <a href="../#projetos"><div class="ph"><img src="../assets/img/bancada-beauty-1-sm.webp" alt="Bancada Beauty para salão com espelho redondo LED" width="600" height="800" loading="lazy"></div><p>Bancada Beauty</p></a>
+      <a href="../#projetos"><div class="ph"><img src="../assets/img/bancada-beauty-1-sm.webp" alt="Bancada Beauty para salão" width="600" height="800" loading="lazy"></div><p>Bancada Beauty</p></a>
       <a href="../#projetos"><div class="ph"><img src="../assets/img/guarda-roupa-2-sm.webp" alt="Guarda-roupa branco de 1,90 m" width="600" height="800" loading="lazy"></div><p>Guarda-roupa 1,90 m</p></a>
       <a href="../#projetos"><div class="ph"><img src="../assets/img/bancada-beauty-3-sm.webp" alt="Espelho redondo com LED" width="600" height="800" loading="lazy"></div><p>Espelho redondo LED</p></a>
       <a href="../#projetos"><div class="ph"><img src="../assets/img/guarda-roupa-4-sm.webp" alt="Quarto com guarda-roupa e cômoda" width="600" height="800" loading="lazy"></div><p>Quarto completo</p></a>
     </div>
   </section>
 
-  <nav class="rv" style="animation-delay:.3s" aria-label="Mais">
+  <nav class="group rv" style="animation-delay:.3s" aria-label="Mais links">
     <p class="label">Mais</p>
-    <ol class="list">
-      <li><a href="../"><span class="n">↗</span><span><b>Nosso site</b><small>Projetos, processo e dúvidas</small></span><span class="arrow" aria-hidden="true">→</span></a></li>
-      <li><a href="https://www.google.com/maps/search/?api=1&query=Aribiri%2C+Vila+Velha+-+ES" target="_blank" rel="noopener"><span class="n">↗</span><span><b>Onde fica a fábrica</b><small>Aribiri, Vila Velha (ES)</small></span><span class="arrow" aria-hidden="true">→</span></a></li>
-    </ol>
+    <div class="links">
+      <a href="../"><span><b>Nosso site</b><small>Projetos e como funciona</small></span><svg aria-hidden="true"><use href="#ar"/></svg></a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Aribiri%2C+Vila+Velha+-+ES" target="_blank" rel="noopener"><span><b>Como chegar</b><small>Aribiri, Vila Velha (ES)</small></span><svg aria-hidden="true"><use href="#ar"/></svg></a>
+    </div>
   </nav>
 
-  <p class="warn rv" style="animation-delay:.34s"><b>Atenção a golpes.</b> Nosso único WhatsApp é o (27) 98881-5289. Não cobramos por outros números.</p>
+  <p class="note rv" style="animation-delay:.34s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3 2 20h20L12 3Z"/><path d="M12 10v4M12 17.5v.01"/></svg><span>Nosso único WhatsApp oficial é o (27) 98881-5289. Não cobramos por outros números.</span></p>
 
-  <footer><span>© <span id="y">2026</span> Mazzêra Movelaria</span><a href="https://www.instagram.com/mazzera.marcenaria/" target="_blank" rel="noopener">@mazzera.marcenaria</a></footer>
+  <footer>© <span id="y">2026</span> Mazzêra Movelaria · <a href="https://www.instagram.com/mazzera.marcenaria/" target="_blank" rel="noopener">@mazzera.marcenaria</a></footer>
 </main>
 <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
